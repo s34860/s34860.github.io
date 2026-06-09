@@ -5,7 +5,7 @@
 <title>หน้าแนะนำาตัวของฉัน</title>
 <style>
 body {
-background-color: #f4f7f6; color: #333;
+background-color: #8F00FF; color: #333;
 text-align: center; padding: 50px;
 
 }
@@ -22,59 +22,116 @@ p { font-size: 18px; line-height: 1.6; }
 <body>
 <div class="card">
 <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-<p>สวัสดีครับ! ผมชื่อ <strong>เปรมทัต (Premmatad)</strong></p>
+<p>สวัสดีครับ! ผมชื่อ <strong>เปรมทัต ประจง (Premmatad Prajong)</strong></p>
 <p>ขณะนี้กำลังศึกษา/สนใจด้าน การแพทย์</p>
 <p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!!!!!!!</p>
 </div>
 </body>
 </html>
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Popup Button</title>
+
 <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f7fa;
+    font-family: Arial, sans-serif;
+}
+.btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37,117,252,0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37,117,252,0.6);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
 }
 
 .modal-content {
-  background: white;
-  margin: 15% auto;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
+    background: white;
+    width: 320px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 15% auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.popup-btn {
+    margin: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.confirm {
+    background: #28a745;
+}
+
+.cancel {
+    background: #dc3545;
 }
 </style>
 </head>
 <body>
 
-<button onclick="openModal()">เปิด Pop-up</button>
+<button class="btn" onclick="openModal()">
+    🚀 เริ่มต้น
+</button>
 
 <div id="myModal" class="modal">
-  <div class="modal-content">
-    <h3>ไปหน้าถัดไป?</h3>
-    <button onclick="goNext()">ตกลง</button>
-    <button onclick="closeModal()">ยกเลิก</button>
-  </div>
+    <div class="modal-content">
+        <h3>ไปหน้าถัดไป?</h3>
+        <p>กด "ตกลง" เพื่อเปิดหน้าถัดไป</p>
+
+        <button class="popup-btn confirm" onclick="goNext()">
+            ตกลง
+        </button>
+
+        <button class="popup-btn cancel" onclick="closeModal()">
+            ยกเลิก
+        </button>
+    </div>
 </div>
 
 <script>
 function openModal() {
-  document.getElementById("myModal").style.display = "block";
+    document.getElementById("myModal").style.display = "block";
 }
 
 function closeModal() {
-  document.getElementById("myModal").style.display = "none";
+    document.getElementById("myModal").style.display = "none";
 }
 
 function goNext() {
-  window.location.href = "nextpage.html";
+    window.location.href = "s34860.github.io";
 }
 </script>
 

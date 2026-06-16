@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta viewport="width=device-width, initial-scale=1.0">
+<title>แฟมสะสมงานของฉัน  </title>
+<style>
+body { font-family: sans-serif; background-color: #9333ea; text-align: center;
+padding: 30px; }
+.container { max-width: 800px; margin: 0 auto; }
+.project-card { background: white; padding: 20px; margin: 20px 0; border-radius:
+8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: left; }
+.btn { display: inline-block; background: #2c3e50; color: white; padding: 10px
+20px; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1> แฟมสะสมงาน  (Portfolio)</h1>
+<p>นี่คือพื้นที่รวบรวมผลงานและกิจกรรมที่ภูมิใจครับ</p>
+<!-- กล่องผลงานชนที่  1 -->
+<div class="project-card">
+<h3>1. โครงงานชนะงานวิทยาศาสตร์คำนวณ </h3>
+<p>รายละเอียดชนะงาน : เขียนอธิบายสันๆ ว่าทำอะไร ได้เรียนรู้อะไรจากงานนี้บ้าง  </p>
+</div>
+<!-- กล่องผลงานชนที่  2 -->
+<div class="project-card">
+<h3>2. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
+<p>รายละเอียดชนงานี้ : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
+</div>
+    <!-- กล่องผลงานชนที่  3 -->
+<div class="project-card">
+<h3>3. กิจกรรม/เกียรติบัตรที่ได้รับ</h3>
+<p>รายละเอียดชนงานี้ : เข้าร่วมการประกวด หรือกิจกรรมของโรงเรียน...</p>
+</div>
+<!-- ปุ่มกดกลับหน้าแรก -->
+<a href="index.html" class="btn"> กลับหน้าแรก</a>
+</div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Popup Button</title>
+
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f5f7fa;
+    font-family: Arial, sans-serif;
+}
+.btn {
+    padding: 14px 32px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37,117,252,0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37,117,252,0.6);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    width: 320px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 15% auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.popup-btn {
+    margin: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.confirm {
+    background: #28a745;
+}
+
+.cancel {
+    background: #dc3545;
+}
+</style>
+</head>
+<body>
+
+<button class="btn" onclick="openModal()">
+    🚀 Previous Page
+</button>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <h3>ไปหน้าที่แล้ว?</h3>
+        <p>กด "ตกลง" เพื่อไปหน้าที่แล้ว</p>
+
+        <button class="popup-btn confirm" onclick="goNext()">
+            ตกลง
+        </button>
+
+        <button class="popup-btn cancel" onclick="closeModal()">
+            ยกเลิก
+        </button>
+    </div>
+</div>
+
+<div align="center">
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center" bgcolor="#0D1117">
+        <img src="iji.jpg" width="250" alt="Profile"><br><br>
+        <b>⚡ Premmatad ⚡</b><br>
+        XD
+      </td>
+    </tr>
+  </table>
+</p>
+</div>

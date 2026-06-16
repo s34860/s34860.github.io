@@ -2,110 +2,130 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>หน้าแนะนำตัวของฉัน</title>
-<style>
-body {
-background-color: #8f00ff; color: #333;
-text-align: center; padding: 50px;
-
-}
-.card {
-background: white; border-radius: 10px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-max-width: 500px; margin: 0 auto; padding: 30px;
-
-}
-h1 { color: #2c3e50; }
-p { font-size: 18px; line-height: 1.6; }
-</style>
-</head>
-<body>
-<div class="card">
-<h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน </h1>
-<p>สวัสดีครับ! ผมชื่อ <strong>เปรมทัต ประจง (Premmatad Prajong)</strong></p>
-<p>ขณะนี้กำลังศึกษา/สนใจด้าน การแพทย์</p>
-<p>นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages!!!!!!!</p>
-</div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gradient Popup Button</title>
+<title>หน้าแนะนำตัวของฉัน</title>
 
 <style>
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #f5f7fa;
-    font-family: Arial, sans-serif;
-}
-.btn {
-    padding: 14px 32px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(37,117,252,0.4);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(37,117,252,0.6);
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding:20px;
 }
 
-.btn:active {
-    transform: scale(0.95);
-}
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background: white;
-    width: 320px;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-    margin: 15% auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+/* กล่องโปรไฟล์ */
+.card{
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    max-width:600px;
+    width:100%;
+    padding:40px;
+    text-align:center;
 }
 
-.popup-btn {
-    margin: 8px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
+h1{
+    color:#2c3e50;
+    margin-bottom:20px;
 }
 
-.confirm {
-    background: #28a745;
+p{
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+    margin-bottom:10px;
 }
 
-.cancel {
-    background: #dc3545;
+/* ปุ่ม */
+.btn{
+    margin-top:25px;
+    padding:14px 35px;
+    border:none;
+    border-radius:50px;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 4px 15px rgba(37,117,252,0.4);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(37,117,252,0.6);
+}
+
+/* Popup */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background:white;
+    width:340px;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    margin:15% auto;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.popup-btn{
+    margin:8px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    color:white;
+    font-size:15px;
+}
+
+.confirm{
+    background:#28a745;
+}
+
+.cancel{
+    background:#dc3545;
 }
 </style>
 </head>
+
 <body>
 
-<button class="btn" onclick="openModal()">
-    🚀 Next Page
-</button>
+<div class="card">
+    <h1>👋 ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
 
+    <p>
+        สวัสดีครับ! ผมชื่อ
+        <strong>เปรมทัต ประจง (Premmatad Prajong)</strong>
+    </p>
+
+    <p>ขณะนี้กำลังศึกษา / สนใจด้าน <strong>การแพทย์</strong></p>
+
+    <p>
+        นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages 🎉
+    </p>
+
+    <button class="btn" onclick="openModal()">
+        🚀 Next Page
+    </button>
+</div>
+
+<!-- Popup -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <h3>ไปหน้าถัดไป?</h3>

@@ -3,156 +3,560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>หน้าแนะนำตัวของฉัน</title>
 
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
 body{
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    padding:20px;
-}
 
-/* กล่องโปรไฟล์ */
-.card{
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    max-width:600px;
-    width:100%;
-    padding:40px;
-    text-align:center;
-}
+    padding:25px;
 
-h1{
-    color:#2c3e50;
-    margin-bottom:20px;
-}
+    font-family:'Segoe UI', Tahoma, sans-serif;
 
-p{
-    font-size:18px;
-    line-height:1.8;
-    color:#444;
-    margin-bottom:10px;
-}
-
-/* ปุ่ม */
-.btn{
-    margin-top:25px;
-    padding:14px 35px;
-    border:none;
-    border-radius:50px;
-    background: linear-gradient(135deg, #2575fc, #6a11cb);
     color:white;
-    font-size:18px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,0.15),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #2563eb 0%,
+            #4f46e5 50%,
+            #7c3aed 100%
+        );
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.card{
+    width:100%;
+    max-width:650px;
+
+    padding:45px 40px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.96);
+
+    color:#333;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,0.5);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.22);
+
+    backdrop-filter:blur(10px);
+
+    animation:fadeUp 0.8s ease;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.card h1{
+    color:#4f46e5;
+
+    font-size:clamp(
+        1.8rem,
+        5vw,
+        2.4rem
+    );
+
+    margin-bottom:25px;
+
+    line-height:1.4;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.card p{
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    color:#4b5563;
+
+    margin-bottom:12px;
+}
+
+.card strong{
+    color:#4f46e5;
+}
+
+
+/* =========================
+   DECORATION
+========================= */
+
+.divider{
+    width:70px;
+
+    height:4px;
+
+    margin:0 auto 25px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #9333ea
+        );
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #9333ea
+        );
+
+    color:white;
+
+    font-size:17px;
+
     font-weight:bold;
+
     cursor:pointer;
-    transition:0.3s;
-    box-shadow:0 4px 15px rgba(37,117,252,0.4);
+
+    box-shadow:
+        0 6px 18px rgba(79,70,229,0.4);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 25px rgba(37,117,252,0.6);
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 25px rgba(79,70,229,0.5);
 }
 
-/* Popup */
+
+/* =========================
+   MODAL BACKGROUND
+========================= */
+
 .modal{
     display:none;
+
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,0.5);
+
+    z-index:1000;
+
+    padding:20px;
+
+    background:rgba(0,0,0,0.65);
+
+    backdrop-filter:blur(5px);
 }
+
+
+/* =========================
+   MODAL CONTENT
+========================= */
 
 .modal-content{
+    width:min(400px,100%);
+
+    padding:30px;
+
+    margin:15vh auto;
+
     background:white;
-    width:340px;
-    padding:25px;
-    border-radius:15px;
+
+    color:#333;
+
     text-align:center;
-    margin:15% auto;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.3);
+
+    animation:zoomIn 0.3s ease;
 }
 
+.modal-content h3{
+    color:#4f46e5;
+
+    font-size:1.3rem;
+
+    margin-bottom:10px;
+}
+
+.modal-content p{
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   POPUP BUTTON
+========================= */
+
 .popup-btn{
-    margin:8px;
-    padding:10px 20px;
+    margin:6px;
+
+    padding:11px 23px;
+
     border:none;
+
     border-radius:10px;
-    cursor:pointer;
+
     color:white;
+
     font-size:15px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.popup-btn:hover{
+    transform:translateY(-2px);
 }
 
 .confirm{
-    background:#28a745;
+    background:#22c55e;
+
+    box-shadow:
+        0 4px 10px rgba(34,197,94,0.3);
 }
 
 .cancel{
-    background:#dc3545;
+    background:#ef4444;
+
+    box-shadow:
+        0 4px 10px rgba(239,68,68,0.3);
 }
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    margin-top:25px;
+
+    font-size:0.85rem;
+
+    color:#9ca3af;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(0.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:15px;
+    }
+
+    .card{
+        padding:30px 20px;
+
+        border-radius:18px;
+    }
+
+    .card h1{
+        font-size:1.7rem;
+    }
+
+    .card p{
+        font-size:0.95rem;
+        line-height:1.8;
+    }
+
+    .btn{
+        width:100%;
+
+        padding:13px 20px;
+    }
+
+    .modal-content{
+        margin:25vh auto;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================
+     MAIN CARD
+========================= -->
+
 <div class="card">
-    <h1>👋 ยินดีต้อนรับสู่โปรไฟล์ของฉัน</h1>
+
+    <h1>
+        👋 ยินดีต้อนรับสู่โปรไฟล์ของฉัน
+    </h1>
+
+    <div class="divider"></div>
+
 
     <p>
         สวัสดีครับ! ผมชื่อ
-        <strong>เปรมทัต ประจง (Premmatad Prajong)</strong>
+        <strong>
+            เปรมทัต ประจง
+        </strong>
+        <br>
+
+        <span>
+            (Premmatad Prajong)
+        </span>
     </p>
 
-    <p>ขณะนี้กำลังศึกษา / สนใจด้าน <strong>การแพทย์</strong></p>
 
     <p>
-        นี่คือเว็บไซต์แรกของผมที่โฮสต์บน GitHub Pages 🎉
+        ขณะนี้กำลังศึกษา / สนใจด้าน
+        <strong>
+            การแพทย์
+        </strong>
     </p>
 
-    <button class="btn" onclick="openModal()">
+
+    <p>
+        นี่คือเว็บไซต์แรกของผม
+        ที่โฮสต์บน GitHub Pages 🎉
+    </p>
+
+
+    <!-- Next Button -->
+
+    <button
+        class="btn"
+        onclick="openModal()"
+    >
         🚀 Next Page
     </button>
+
+
+    <div class="footer">
+        © 2569 Premmatad | Portfolio
+    </div>
+
 </div>
 
-<!-- Popup -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <h3>ไปหน้าถัดไป?</h3>
-        <p>กด "ตกลง" เพื่อเปิดหน้าถัดไป</p>
 
-        <button class="popup-btn confirm" onclick="goNext()">
+
+<!-- =========================
+     POPUP
+========================= -->
+
+<div
+    id="myModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <h3>
+            🚀 ไปหน้าถัดไป?
+        </h3>
+
+        <p>
+            กด "ตกลง"
+            เพื่อเปิดหน้า Portfolio
+        </p>
+
+
+        <button
+            class="popup-btn confirm"
+            onclick="goNext()"
+        >
             ตกลง
         </button>
 
-        <button class="popup-btn cancel" onclick="closeModal()">
+
+        <button
+            class="popup-btn cancel"
+            onclick="closeModal()"
+        >
             ยกเลิก
         </button>
+
     </div>
+
 </div>
 
+
+
 <script>
-function openModal() {
+
+/* =========================
+   OPEN MODAL
+========================= */
+
+function openModal(){
+
     document.getElementById("myModal").style.display = "block";
+
 }
 
-function closeModal() {
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+function closeModal(){
+
     document.getElementById("myModal").style.display = "none";
+
 }
 
-function goNext() {
+
+/* =========================
+   NEXT PAGE
+========================= */
+
+function goNext(){
+
     window.location.href = "portfolio.html";
+
 }
+
+
+/* =========================
+   CLOSE MODAL WHEN CLICK
+   OUTSIDE THE BOX
+========================= */
+
+window.onclick = function(event){
+
+    const modal =
+        document.getElementById("myModal");
+
+    if(event.target === modal){
+
+        closeModal();
+
+    }
+
+}
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeModal();
+
+        }
+
+    }
+);
+
 </script>
 
 </body>

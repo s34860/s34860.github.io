@@ -328,14 +328,16 @@ header h1{
     animation:skillLoad 1.5s ease forwards;
 }
 
-.skill-1{--skill:85%;}
-.skill-2{--skill:80%;}
+/* Skill Percentage */
+.skill-1{--skill:100%;}
+.skill-2{--skill:90%;}
 .skill-3{--skill:90%;}
 .skill-4{--skill:75%;}
 .skill-5{--skill:70%;}
 
-.skill-1 .skill-fill{width:85%;}
-.skill-2 .skill-fill{width:80%;}
+/* Skill Bar Width */
+.skill-1 .skill-fill{width:100%;}
+.skill-2 .skill-fill{width:90%;}
 .skill-3 .skill-fill{width:90%;}
 .skill-4 .skill-fill{width:75%;}
 .skill-5 .skill-fill{width:70%;}
@@ -558,6 +560,7 @@ footer{
         opacity:0;
         transform:translateY(20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -569,6 +572,7 @@ footer{
         opacity:0;
         transform:translateY(-20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -576,7 +580,9 @@ footer{
 }
 
 @keyframes skillLoad{
-    from{width:0;}
+    from{
+        width:0;
+    }
 }
 
 /* =========================
@@ -782,12 +788,14 @@ footer{
         <h2>👋 แนะนำตัว</h2>
 
         <p class="about-text">
+
             สวัสดีครับ ผม นายเปรมทัต ประจง
             เป็นผู้ที่มีความสนใจในการเรียนรู้สิ่งใหม่ ๆ
             พร้อมพัฒนาตนเองอยู่เสมอ และสามารถนำความรู้
             ที่ได้รับมาปรับใช้ในสถานการณ์ต่าง ๆ ได้
             ผมเชื่อว่าการเรียนรู้และประสบการณ์
             จะช่วยให้เราพัฒนาตัวเองได้อย่างต่อเนื่อง
+
         </p>
 
     </div>
@@ -800,33 +808,56 @@ footer{
         <div class="info-grid">
 
             <div class="info-item">
+
                 <strong>ชื่อ</strong>
+
                 นายเปรมทัต ประจง
+
             </div>
 
+
             <div class="info-item">
+
                 <strong>อายุ</strong>
+
                 18 ปี
+
             </div>
 
+
             <div class="info-item">
+
                 <strong>Facebook</strong>
+
                 Premmatad Prajong
+
             </div>
 
+
             <div class="info-item">
+
                 <strong>Line ID</strong>
+
                 nongiji
+
             </div>
 
+
             <div class="info-item">
+
                 <strong>เบอร์ติดต่อ</strong>
+
                 098-832-0364
+
             </div>
 
+
             <div class="info-item">
+
                 <strong>ความสนใจ</strong>
+
                 การเรียนรู้ • เทคโนโลยี • กิจกรรม
+
             </div>
 
         </div>
@@ -842,7 +873,7 @@ footer{
 
             “เรียนให้สูง แล้วหางานที่มั่นคง
             พร้อมพัฒนาตัวเองให้มีความสามารถ
-            และสามารถนำความรู้ไปใช้ในอนาคต”
+            และสามารถนำความรู้ไปใช้ในการทำงานได้อย่างเต็มที่”
 
         </div>
 
@@ -862,6 +893,7 @@ footer{
         <h2>🎓 ประวัติการศึกษา</h2>
 
         <div class="timeline">
+
 
             <div class="timeline-item">
 
@@ -913,6 +945,7 @@ footer{
 
             </div>
 
+
         </div>
 
     </div>
@@ -930,71 +963,127 @@ footer{
 
         <h2>💡 ความสามารถ</h2>
 
+
+        <!-- 100% -->
+
         <div class="skill skill-1">
 
             <div class="skill-top">
-                <span>💪 ความมั่นใจในตนเอง</span>
-                <span>100%</span>
+
+                <span>
+                    💪 ความมั่นใจในตนเอง
+                </span>
+
+                <span>
+                    100%
+                </span>
+
             </div>
 
             <div class="skill-bar">
+
                 <div class="skill-fill"></div>
+
             </div>
 
         </div>
 
+
+        <!-- 90% -->
 
         <div class="skill skill-2">
 
             <div class="skill-top">
-                <span>🔥 กล้าที่จะทำสิ่งต่าง ๆ</span>
-                <span>95%</span>
+
+                <span>
+                    🔥 ความกล้าที่จะทำสิ่งต่าง ๆ
+                </span>
+
+                <span>
+                    90%
+                </span>
+
             </div>
 
             <div class="skill-bar">
+
                 <div class="skill-fill"></div>
+
             </div>
 
         </div>
 
+
+        <!-- 90% -->
 
         <div class="skill skill-3">
 
             <div class="skill-top">
-                <span>🧠 เรียนรู้เร็วและนำมาปรับใช้</span>
-                <span>90%</span>
+
+                <span>
+                    🧠 เรียนรู้เร็วและนำมาปรับใช้
+                </span>
+
+                <span>
+                    90%
+                </span>
+
             </div>
 
             <div class="skill-bar">
+
                 <div class="skill-fill"></div>
+
             </div>
 
         </div>
 
+
+        <!-- 75% -->
 
         <div class="skill skill-4">
 
             <div class="skill-top">
-                <span>🎤 การนำเสนอ</span>
-                <span>75%</span>
+
+                <span>
+                    🎤 การนำเสนอ
+                </span>
+
+                <span>
+                    75%
+                </span>
+
             </div>
 
             <div class="skill-bar">
+
                 <div class="skill-fill"></div>
+
             </div>
 
         </div>
 
 
+        <!-- 70% -->
+
         <div class="skill skill-5">
 
             <div class="skill-top">
-                <span>💻 เทคโนโลยี</span>
-                <span>70%</span>
+
+                <span>
+                    💻 เทคโนโลยี
+                </span>
+
+                <span>
+                    70%
+                </span>
+
             </div>
 
             <div class="skill-bar">
+
                 <div class="skill-fill"></div>
+
             </div>
 
         </div>
@@ -1044,12 +1133,16 @@ footer{
 
                 <div class="project-content">
 
-                    <h3>🏆 การแข่งขันตอบปัญหาวิทยาศาสตร์</h3>
+                    <h3>
+                        🏆 การแข่งขันตอบปัญหาวิทยาศาสตร์
+                    </h3>
 
                     <p>
+
                         เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
                         ณ โรงเรียนสวนกุหลาบวิทยาลัย
                         ในปีการศึกษา 2568
+
                     </p>
 
                 </div>
@@ -1067,12 +1160,16 @@ footer{
 
                 <div class="project-content">
 
-                    <h3>📜 กิจกรรมทำบุญ</h3>
+                    <h3>
+                        📜 กิจกรรมทำบุญ
+                    </h3>
 
                     <p>
+
                         เข้าร่วมกิจกรรมตักบาตรเนื่องในวันครบรอบ
                         การก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569
                         โดยเข้าร่วมกิจกรรมพร้อมผู้ปกครอง
+
                     </p>
 
                 </div>
@@ -1090,12 +1187,16 @@ footer{
 
                 <div class="project-content">
 
-                    <h3>🎯 ประสบการณ์วิชาชีพ</h3>
+                    <h3>
+                        🎯 ประสบการณ์วิชาชีพ
+                    </h3>
 
                     <p>
+
                         เข้าร่วมกิจกรรมฝึกประสบการณ์
                         ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง
                         ระหว่างวันที่ 9–13 มีนาคม 2569
+
                     </p>
 
                 </div>
@@ -1132,18 +1233,23 @@ footer{
                     🏆 1. รางวัลการแข่งขัน
                 </h3>
 
-                <span class="arrow">▼</span>
+                <span class="arrow">
+                    ▼
+                </span>
 
             </div>
+
 
             <div class="certificate-detail">
 
                 <p>
+
                     เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
                     ณ โรงเรียนสวนกุหลาบวิทยาลัย
                     ในปีการศึกษา 2568
                     โดยได้เตรียมตัวและฝึกฝนอย่างต่อเนื่อง
                     รวมถึงเรียนรู้การทำงานภายใต้ความกดดัน
+
                 </p>
 
                 <img
@@ -1168,16 +1274,21 @@ footer{
                     📜 2. กิจกรรม / เกียรติบัตรที่ได้รับ
                 </h3>
 
-                <span class="arrow">▼</span>
+                <span class="arrow">
+                    ▼
+                </span>
 
             </div>
+
 
             <div class="certificate-detail">
 
                 <p>
+
                     เข้าร่วมกิจกรรมตักบาตรเนื่องในวันครบรอบ
                     การก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569
                     โดยเข้าร่วมกิจกรรมพร้อมผู้ปกครอง
+
                 </p>
 
                 <img
@@ -1202,16 +1313,21 @@ footer{
                     🎯 3. กิจกรรมพิเศษ
                 </h3>
 
-                <span class="arrow">▼</span>
+                <span class="arrow">
+                    ▼
+                </span>
 
             </div>
+
 
             <div class="certificate-detail">
 
                 <p>
+
                     เข้าร่วมกิจกรรมฝึกประสบการณ์วิชาชีพ
                     ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง
                     ระหว่างวันที่ 9–13 มีนาคม 2569
+
                 </p>
 
                 <img
@@ -1239,9 +1355,15 @@ footer{
 
         <h2>🖼️ Gallery</h2>
 
-        <p class="about-text" style="margin-bottom:20px;">
+        <p
+            class="about-text"
+            style="margin-bottom:20px;"
+        >
+
             รวมภาพกิจกรรมและผลงานที่สำคัญ
+
         </p>
+
 
         <div class="gallery">
 
@@ -1261,7 +1383,12 @@ footer{
                 src="workC.png"
                 onclick="openImage('workC.png')"
                 alt="Gallery 3"
-            
+            >
+
+            <img
+                src="ijii.jpg"
+                onclick="openImage('ijii.jpg')"
+                alt="Gallery 4"
             >
 
         </div>
@@ -1286,13 +1413,19 @@ footer{
 
             <div class="goal-box">
 
-                <div class="icon">📚</div>
+                <div class="icon">
+                    📚
+                </div>
 
-                <h3>ระยะสั้น</h3>
+                <h3>
+                    ระยะสั้น
+                </h3>
 
                 <p>
+
                     ตั้งใจเรียนและพัฒนาความรู้
                     เพื่อเตรียมพร้อมสำหรับการศึกษาต่อ
+
                 </p>
 
             </div>
@@ -1300,13 +1433,19 @@ footer{
 
             <div class="goal-box">
 
-                <div class="icon">🎓</div>
+                <div class="icon">
+                    🎓
+                </div>
 
-                <h3>ระยะกลาง</h3>
+                <h3>
+                    ระยะกลาง
+                </h3>
 
                 <p>
+
                     ศึกษาต่อในระดับที่สูงขึ้น
                     และพัฒนาทักษะที่จำเป็นต่ออนาคต
+
                 </p>
 
             </div>
@@ -1314,14 +1453,20 @@ footer{
 
             <div class="goal-box">
 
-                <div class="icon">💼</div>
+                <div class="icon">
+                    💼
+                </div>
 
-                <h3>ระยะยาว</h3>
+                <h3>
+                    ระยะยาว
+                </h3>
 
                 <p>
+
                     มีงานที่มั่นคง
                     และสามารถนำความรู้ความสามารถ
                     มาใช้ในการทำงานได้อย่างเต็มที่
+
                 </p>
 
             </div>
@@ -1334,7 +1479,9 @@ footer{
 
     <div class="card">
 
-        <h2>🌟 คติประจำใจ</h2>
+        <h2>
+            🌟 คติประจำใจ
+        </h2>
 
         <div class="goal">
 
@@ -1352,7 +1499,9 @@ footer{
 
 <footer>
 
-    <p>⚡ Premmatad Portfolio ⚡</p>
+    <p>
+        ⚡ Premmatad Portfolio ⚡
+    </p>
 
     <p>
         © 2026 All Rights Reserved
@@ -1390,7 +1539,10 @@ footer{
 
 <!-- ================= TOP BUTTON ================= -->
 
-<button id="topBtn" onclick="window.scrollTo(0,0)">
+<button
+    id="topBtn"
+    onclick="window.scrollTo(0,0)"
+>
     ↑
 </button>
 
@@ -1405,23 +1557,35 @@ function showPage(pageId,button){
 
     document.querySelectorAll(".page")
         .forEach(page=>{
+
             page.classList.remove("active");
+
         });
+
 
     document.getElementById(pageId)
         .classList.add("active");
 
+
     document.querySelectorAll(".nav-btn")
         .forEach(btn=>{
+
             btn.classList.remove("active");
+
         });
+
 
     button.classList.add("active");
 
+
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
+
 }
 
 
@@ -1448,16 +1612,21 @@ function openImage(src){
     document.getElementById("viewerImage")
         .src=src;
 
+
     document.getElementById("viewer")
         .classList.add("active");
 
 }
 
+
 function closeImage(event){
 
     if(event){
+
         event.stopPropagation();
+
     }
+
 
     document.getElementById("viewer")
         .classList.remove("active");
@@ -1474,7 +1643,9 @@ document.addEventListener(
     function(event){
 
         if(event.key==="Escape"){
+
             closeImage();
+
         }
 
     }
@@ -1489,8 +1660,10 @@ function toggleDarkMode(){
 
     document.body.classList.toggle("dark");
 
+
     const isDark =
         document.body.classList.contains("dark");
+
 
     localStorage.setItem(
         "portfolioDarkMode",
@@ -1543,6 +1716,7 @@ window.addEventListener(
 
         const btn =
             document.getElementById("topBtn");
+
 
         if(window.scrollY>400){
 

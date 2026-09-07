@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>แฟ้มสะสมงานของฉัน | Premmatad</title>
+<title>Premmatad | Portfolio</title>
 
 <style>
-/* =========================
+
+/* =====================================================
    RESET
-========================= */
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -24,558 +26,737 @@ body{
     font-family:"Segoe UI",Tahoma,sans-serif;
     color:white;
     min-height:100vh;
+    overflow-x:hidden;
+
     background:
-        linear-gradient(
-            135deg,
-            #2563eb,
-            #4f46e5,
-            #7c3aed
-        );
-    transition:background .5s,color .5s;
+        radial-gradient(circle at 15% 20%,rgba(59,130,246,.45),transparent 30%),
+        radial-gradient(circle at 85% 20%,rgba(139,92,246,.45),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(14,165,233,.3),transparent 35%),
+        linear-gradient(135deg,#0f172a,#1e1b4b,#312e81);
+
+    transition:.5s;
 }
 
-/* =========================
-   DARK MODE
-========================= */
-body.dark{
-    background:
-        radial-gradient(circle at top left,#172554,#111827 45%,#020617);
+
+/* =====================================================
+   AURORA BACKGROUND
+===================================================== */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.25;
+    z-index:-2;
+    pointer-events:none;
 }
 
-/* =========================
+body::before{
+    background:#3b82f6;
+    top:-150px;
+    left:-150px;
+    animation:aurora1 12s infinite alternate ease-in-out;
+}
+
+body::after{
+    background:#a855f7;
+    right:-150px;
+    bottom:-150px;
+    animation:aurora2 15s infinite alternate ease-in-out;
+}
+
+@keyframes aurora1{
+    0%{transform:translate(0,0) scale(1);}
+    100%{transform:translate(180px,120px) scale(1.25);}
+}
+
+@keyframes aurora2{
+    0%{transform:translate(0,0) scale(1);}
+    100%{transform:translate(-180px,-120px) scale(1.3);}
+}
+
+
+/* =====================================================
+   FLOATING LIGHT
+===================================================== */
+
+.bg-light{
+    position:fixed;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:white;
+    opacity:.45;
+    box-shadow:0 0 15px white;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.light1{
+    top:20%;
+    left:10%;
+    animation:float 7s infinite ease-in-out;
+}
+
+.light2{
+    top:60%;
+    left:80%;
+    animation:float 9s infinite ease-in-out reverse;
+}
+
+.light3{
+    top:75%;
+    left:20%;
+    animation:float 11s infinite ease-in-out;
+}
+
+.light4{
+    top:15%;
+    left:70%;
+    animation:float 8s infinite ease-in-out reverse;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+        opacity:.25;
+    }
+    50%{
+        transform:translateY(-35px);
+        opacity:.7;
+    }
+}
+
+
+/* =====================================================
+   MOUSE SPOTLIGHT
+===================================================== */
+
+.mouse-light{
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:-1;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.08),
+        transparent 65%
+    );
+
+    transform:translate(-50%,-50%);
+}
+
+
+/* =====================================================
    CONTAINER
-========================= */
+===================================================== */
+
 .container{
-    width:min(1100px,92%);
+    width:min(1120px,92%);
     margin:auto;
 }
 
-/* =========================
-   HEADER
-========================= */
+
+/* =====================================================
+   HEADER / HERO
+===================================================== */
+
 header{
     text-align:center;
-    padding:55px 20px 25px;
-    animation:fadeDown .8s ease;
+    padding:65px 20px 30px;
+    animation:heroIn 1s ease;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(-35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.hero-badge{
+    display:inline-block;
+    padding:7px 16px;
+    border-radius:999px;
+
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+
+    backdrop-filter:blur(15px);
+
+    font-size:13px;
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+
+    box-shadow:
+        0 0 25px rgba(255,255,255,.08);
 }
 
 .profile{
-    width:150px;
-    height:150px;
+    width:165px;
+    height:165px;
+
     object-fit:cover;
     border-radius:50%;
-    border:5px solid rgba(255,255,255,.8);
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    border:4px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 0 0 8px rgba(255,255,255,.04),
+        0 0 50px rgba(96,165,250,.4),
+        0 20px 60px rgba(0,0,0,.35);
+
     cursor:pointer;
-    transition:.4s;
+
+    transition:.5s;
 }
 
 .profile:hover{
-    transform:scale(1.08) rotate(2deg);
+    transform:scale(1.07) rotate(2deg);
+
+    box-shadow:
+        0 0 0 12px rgba(255,255,255,.05),
+        0 0 70px rgba(129,140,248,.7),
+        0 25px 70px rgba(0,0,0,.45);
 }
 
 header h1{
-    margin-top:18px;
-    font-size:clamp(28px,5vw,42px);
+    margin-top:22px;
+
+    font-size:clamp(34px,6vw,58px);
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #bfdbfe,
+        #ddd6fe,
+        #fff
+    );
+
+    background-size:250% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    animation:titleGlow 5s linear infinite;
+}
+
+@keyframes titleGlow{
+    to{
+        background-position:250% center;
+    }
 }
 
 .subtitle{
-    opacity:.85;
-    margin-top:8px;
-    font-size:18px;
+    margin-top:10px;
+
+    font-size:17px;
+
+    opacity:.75;
+
+    letter-spacing:1px;
 }
 
-/* =========================
-   TOP CONTROLS
-========================= */
+.hero-quote{
+    margin:20px auto 0;
+
+    max-width:650px;
+
+    font-size:18px;
+
+    opacity:.85;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   CONTROL BUTTONS
+===================================================== */
+
 .top-controls{
     display:flex;
     justify-content:center;
     gap:10px;
     flex-wrap:wrap;
-    margin:20px auto 10px;
+
+    margin:25px auto 10px;
+}
+
+.control-btn,
+.nav-btn,
+.back-btn{
+    color:white;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    cursor:pointer;
+
+    transition:.35s;
 }
 
 .control-btn{
-    border:none;
-    color:white;
-    background:rgba(255,255,255,.15);
-    border:1px solid rgba(255,255,255,.25);
-    backdrop-filter:blur(12px);
-    padding:10px 18px;
     border-radius:999px;
-    cursor:pointer;
-    transition:.3s;
+
+    padding:10px 18px;
+
     font-size:14px;
 }
 
 .control-btn:hover{
-    background:rgba(255,255,255,.25);
-    transform:translateY(-2px);
+    background:rgba(255,255,255,.18);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-/* =========================
+
+/* =====================================================
    NAVIGATION
-========================= */
+===================================================== */
+
 .navbar{
     display:flex;
     justify-content:center;
     gap:10px;
     flex-wrap:wrap;
-    margin:25px 0 15px;
+
+    margin:28px 0 15px;
+
+    position:sticky;
+    top:10px;
+
+    z-index:100;
 }
 
 .nav-btn{
-    border:none;
-    color:white;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.2);
-    backdrop-filter:blur(12px);
     padding:12px 20px;
+
     border-radius:999px;
-    cursor:pointer;
-    font-size:15px;
-    transition:.3s;
+
+    font-size:14px;
+
+    box-shadow:0 5px 25px rgba(0,0,0,.08);
 }
 
 .nav-btn:hover{
     transform:translateY(-3px);
-    background:rgba(255,255,255,.2);
+
+    background:rgba(255,255,255,.17);
 }
 
 .nav-btn.active{
+    color:#312e81;
+
     background:white;
-    color:#4338ca;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+    border-color:white;
+
+    box-shadow:
+        0 8px 30px rgba(255,255,255,.15),
+        0 0 25px rgba(255,255,255,.1);
 }
 
-/* =========================
+
+/* =====================================================
    BACK BUTTON
-========================= */
+===================================================== */
+
 .back-area{
     display:flex;
     justify-content:center;
-    margin:10px 0 25px;
+
+    margin:12px 0 28px;
 }
 
 .back-btn{
-    border:none;
-    color:white;
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.25);
-    backdrop-filter:blur(15px);
-    padding:9px 18px;
+    padding:9px 20px;
+
     border-radius:999px;
-    cursor:pointer;
-    transition:.3s;
+
+    font-size:14px;
 }
 
 .back-btn:hover{
-    background:rgba(255,255,255,.2);
-    transform:translateX(-4px);
+    transform:translateX(-5px);
+
+    background:rgba(255,255,255,.16);
 }
 
-/* =========================
-   PAGE
-========================= */
+
+/* =====================================================
+   PAGE ANIMATION
+===================================================== */
+
 .page{
     display:none;
-    animation:fadeUp .5s ease;
 }
 
 .page.active{
     display:block;
+
+    animation:
+        pageIn .55s ease;
 }
 
-/* =========================
-   CARD
-========================= */
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(18px) scale(.99);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+
+/* =====================================================
+   GLASS CARD
+===================================================== */
+
 .card{
-    background:rgba(255,255,255,.11);
-    border:1px solid rgba(255,255,255,.2);
-    backdrop-filter:blur(16px);
-    border-radius:24px;
-    padding:28px;
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.075);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:26px;
+
+    padding:30px;
+
     margin-bottom:22px;
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-    transition:.35s;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.15);
+
+    transition:.4s;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.06),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:.7s;
+
+    pointer-events:none;
+}
+
+.card:hover::before{
+    left:130%;
 }
 
 .card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 20px 45px rgba(0,0,0,.18);
+    transform:translateY(-5px);
+
+    border-color:rgba(255,255,255,.25);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.2),
+        0 0 30px rgba(129,140,248,.05);
 }
 
 .card h2{
-    margin-bottom:18px;
-    font-size:25px;
+    margin-bottom:20px;
+
+    font-size:26px;
 }
 
 .card h3{
     margin-bottom:8px;
 }
 
-/* =========================
+
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
+
 .about-text{
-    line-height:1.9;
-    opacity:.92;
+    line-height:1.95;
+
+    opacity:.9;
+
+    font-size:16px;
 }
 
 .info-grid{
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:14px;
 }
 
 .info-item{
-    padding:16px;
-    border-radius:16px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.12);
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.3s;
+}
+
+.info-item:hover{
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.1);
 }
 
 .info-item strong{
     display:block;
-    margin-bottom:5px;
+
+    margin-bottom:6px;
+
+    opacity:.7;
+
+    font-size:13px;
 }
 
-/* =========================
+
+/* =====================================================
    GOAL
-========================= */
+===================================================== */
+
 .goal{
     text-align:center;
-    font-size:22px;
-    line-height:1.7;
-    padding:25px;
-    border-radius:20px;
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.15),
-        rgba(255,255,255,.05)
-    );
+
+    font-size:21px;
+
+    line-height:1.8;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.13),
+            rgba(255,255,255,.035)
+        );
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:inset 0 1px rgba(255,255,255,.08);
 }
 
-/* =========================
-   EDUCATION
-========================= */
+
+/* =====================================================
+   EDUCATION TIMELINE
+===================================================== */
+
 .timeline{
     position:relative;
-    margin-top:20px;
-    padding-left:35px;
+
+    margin-top:25px;
+
+    padding-left:38px;
 }
 
 .timeline::before{
     content:"";
+
     position:absolute;
-    left:9px;
+
+    left:10px;
+
     top:0;
     bottom:0;
+
     width:3px;
-    background:rgba(255,255,255,.35);
-    border-radius:10px;
+
+    background:linear-gradient(
+        to bottom,
+        #60a5fa,
+        #818cf8,
+        #c084fc
+    );
+
+    border-radius:20px;
+
+    box-shadow:0 0 15px rgba(129,140,248,.5);
 }
 
 .timeline-item{
     position:relative;
-    margin-bottom:25px;
+
+    margin-bottom:28px;
 }
 
 .timeline-dot{
     position:absolute;
-    left:-32px;
-    top:5px;
-    width:18px;
-    height:18px;
+
+    left:-36px;
+
+    top:7px;
+
+    width:19px;
+    height:19px;
+
     border-radius:50%;
+
     background:white;
-    box-shadow:0 0 0 5px rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 0 5px rgba(129,140,248,.18),
+        0 0 20px rgba(255,255,255,.7);
 }
 
 .timeline-content{
-    background:rgba(255,255,255,.08);
-    border-radius:16px;
-    padding:18px;
+    padding:20px;
+
+    border-radius:19px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.3s;
 }
 
-/* =========================
+.timeline-content:hover{
+    transform:translateX(6px);
+
+    background:rgba(255,255,255,.1);
+}
+
+.timeline-content p{
+    opacity:.8;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
    SKILLS
-========================= */
+===================================================== */
+
 .skill{
-    margin:20px 0;
+    margin:24px 0;
 }
 
 .skill-top{
     display:flex;
+
     justify-content:space-between;
-    margin-bottom:7px;
+
+    margin-bottom:9px;
+
+    font-size:15px;
+}
+
+.skill-top span:last-child{
+    opacity:.8;
 }
 
 .skill-bar{
     width:100%;
-    height:11px;
-    background:rgba(255,255,255,.15);
+
+    height:12px;
+
+    background:rgba(255,255,255,.09);
+
     border-radius:20px;
+
     overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.06);
 }
 
 .skill-fill{
     height:100%;
+
     width:0;
-    background:white;
+
     border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #60a5fa,
+            #818cf8,
+            #c084fc
+        );
+
+    position:relative;
+
     animation:skillLoad 1.5s ease forwards;
+
+    box-shadow:
+        0 0 15px rgba(129,140,248,.4);
 }
 
-/* Skill Percentage */
-.skill-1{--skill:100%;}
-.skill-2{--skill:90%;}
-.skill-3{--skill:90%;}
-.skill-4{--skill:75%;}
-.skill-5{--skill:70%;}
+.skill-fill::after{
+    content:"";
 
-/* Skill Bar Width */
-.skill-1 .skill-fill{width:100%;}
-.skill-2 .skill-fill{width:90%;}
-.skill-3 .skill-fill{width:90%;}
-.skill-4 .skill-fill{width:75%;}
-.skill-5 .skill-fill{width:70%;}
-
-/* =========================
-   PROJECTS
-========================= */
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.project{
-    overflow:hidden;
-    padding:0;
-}
-
-.project img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    cursor:pointer;
-    transition:.4s;
-}
-
-.project:hover img{
-    transform:scale(1.05);
-}
-
-.project-content{
-    padding:20px;
-}
-
-.project-content p{
-    line-height:1.7;
-    opacity:.9;
-}
-
-/* =========================
-   CERTIFICATE
-========================= */
-.certificate{
-    border-radius:18px;
-    background:rgba(255,255,255,.08);
-    margin:14px 0;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.12);
-}
-
-.certificate-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px;
-    cursor:pointer;
-}
-
-.certificate-header h3{
-    margin:0;
-}
-
-.arrow{
-    font-size:20px;
-    transition:.3s;
-}
-
-.certificate.open .arrow{
-    transform:rotate(180deg);
-}
-
-.certificate-detail{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .5s ease;
-    padding:0 18px;
-}
-
-.certificate.open .certificate-detail{
-    max-height:700px;
-    padding:0 18px 20px;
-}
-
-.certificate-detail p{
-    line-height:1.8;
-    margin-bottom:15px;
-}
-
-.certificate-detail img{
-    width:100%;
-    max-height:450px;
-    object-fit:contain;
-    border-radius:15px;
-    cursor:pointer;
-}
-
-/* =========================
-   GALLERY
-========================= */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.gallery img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:18px;
-    cursor:pointer;
-    transition:.35s;
-}
-
-.gallery img:hover{
-    transform:scale(1.03);
-    filter:brightness(1.1);
-}
-
-/* =========================
-   TARGETS
-========================= */
-.goal-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.goal-box{
-    text-align:center;
-    padding:25px 18px;
-    border-radius:20px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.12);
-}
-
-.goal-box .icon{
-    font-size:42px;
-    margin-bottom:12px;
-}
-
-.goal-box p{
-    line-height:1.7;
-    opacity:.9;
-}
-
-/* =========================
-   IMAGE VIEWER
-========================= */
-.viewer{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.82);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
-    padding:20px;
-}
-
-.viewer.active{
-    display:flex;
-}
-
-.viewer img{
-    max-width:95%;
-    max-height:90vh;
-    border-radius:15px;
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
-
-.close-viewer{
     position:absolute;
-    top:20px;
-    right:25px;
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    color:white;
-    background:rgba(255,255,255,.15);
-    font-size:25px;
-    cursor:pointer;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    animation:shine 2s infinite;
 }
 
-/* =========================
-   TOP BUTTON
-========================= */
-#topBtn{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:48px;
-    height:48px;
-    border:none;
-    border-radius:50%;
-    background:white;
-    color:#4338ca;
-    font-size:20px;
-    cursor:pointer;
-    display:none;
-    z-index:100;
-    box-shadow:0 8px 25px rgba(0,0,0,.25);
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-    text-align:center;
-    padding:35px 15px;
-    opacity:.8;
-}
-
-/* =========================
-   ANIMATION
-========================= */
-@keyframes fadeUp{
+@keyframes shine{
     from{
-        opacity:0;
-        transform:translateY(20px);
+        transform:translateX(-100%);
     }
 
     to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes fadeDown{
-    from{
-        opacity:0;
-        transform:translateY(-20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
+        transform:translateX(100%);
     }
 }
 
@@ -585,14 +766,400 @@ footer{
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
-@media(max-width:800px){
+.skill-1 .skill-fill{width:100%;}
+.skill-2 .skill-fill{width:90%;}
+.skill-3 .skill-fill{width:90%;}
+.skill-4 .skill-fill{width:75%;}
+.skill-5 .skill-fill{width:70%;}
 
-    .project-grid,
-    .goal-grid,
-    .gallery{
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.project-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.project{
+    padding:0;
+
+    overflow:hidden;
+}
+
+.project img{
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    transition:.5s;
+}
+
+.project:hover img{
+    transform:scale(1.06);
+}
+
+.project-content{
+    padding:22px;
+}
+
+.project-content p{
+    line-height:1.8;
+
+    opacity:.85;
+}
+
+
+/* =====================================================
+   CERTIFICATES
+===================================================== */
+
+.certificate{
+    border-radius:20px;
+
+    background:rgba(255,255,255,.055);
+
+    margin:15px 0;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.3s;
+}
+
+.certificate:hover{
+    border-color:rgba(255,255,255,.2);
+}
+
+.certificate-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:20px;
+
+    cursor:pointer;
+}
+
+.arrow{
+    font-size:18px;
+
+    transition:.4s;
+}
+
+.certificate.open .arrow{
+    transform:rotate(180deg);
+}
+
+.certificate-detail{
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .6s ease;
+
+    padding:0 20px;
+}
+
+.certificate.open .certificate-detail{
+    max-height:800px;
+
+    padding:0 20px 22px;
+}
+
+.certificate-detail p{
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+    opacity:.9;
+}
+
+.certificate-detail img{
+    width:100%;
+
+    max-height:450px;
+
+    object-fit:contain;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.certificate-detail img:hover{
+    transform:scale(1.015);
+}
+
+
+/* =====================================================
+   MASONRY GALLERY
+===================================================== */
+
+.gallery{
+    columns:3 250px;
+
+    column-gap:15px;
+}
+
+.gallery img{
+    width:100%;
+
+    margin-bottom:15px;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    display:block;
+
+    transition:.4s;
+
+    break-inside:avoid;
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.gallery img:hover{
+    transform:scale(1.025);
+
+    filter:brightness(1.1);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.2);
+}
+
+
+/* =====================================================
+   FUTURE GOALS
+===================================================== */
+
+.goal-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+}
+
+.goal-box{
+    text-align:center;
+
+    padding:28px 18px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.4s;
+}
+
+.goal-box:hover{
+    transform:translateY(-7px);
+
+    background:rgba(255,255,255,.1);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+}
+
+.goal-box .icon{
+    font-size:44px;
+
+    margin-bottom:14px;
+}
+
+.goal-box p{
+    line-height:1.8;
+
+    opacity:.85;
+
+    margin-top:8px;
+}
+
+
+/* =====================================================
+   IMAGE VIEWER
+===================================================== */
+
+.viewer{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.88);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    padding:20px;
+
+    backdrop-filter:blur(8px);
+}
+
+.viewer.active{
+    display:flex;
+
+    animation:viewerIn .3s ease;
+}
+
+@keyframes viewerIn{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+.viewer img{
+    max-width:95%;
+
+    max-height:88vh;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.6);
+}
+
+.close-viewer{
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    width:48px;
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    color:white;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    font-size:27px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.close-viewer:hover{
+    background:rgba(255,255,255,.25);
+
+    transform:rotate(90deg);
+}
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+
+#topBtn{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#4338ca;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:100;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3);
+
+    transition:.3s;
+}
+
+#topBtn:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(255,255,255,.2);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    text-align:center;
+
+    padding:45px 15px;
+
+    opacity:.7;
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark{
+    background:
+        radial-gradient(circle at 15% 20%,rgba(30,64,175,.3),transparent 30%),
+        radial-gradient(circle at 85% 20%,rgba(109,40,217,.3),transparent 30%),
+        linear-gradient(135deg,#020617,#0f172a,#111827);
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:850px){
+
+    .project-grid{
+        grid-template-columns:1fr;
+    }
+
+    .goal-grid{
         grid-template-columns:1fr;
     }
 
@@ -600,52 +1167,91 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .project img,
-    .gallery img{
-        height:230px;
-    }
-
     header{
-        padding-top:35px;
+        padding-top:45px;
     }
 
     .card{
-        padding:22px;
+        padding:23px;
+    }
+
+    .navbar{
+        position:relative;
+        top:auto;
     }
 }
 
-@media(max-width:500px){
+
+@media(max-width:550px){
 
     .nav-btn{
         width:100%;
     }
 
     .navbar{
-        padding:0 10px;
+        padding:0 5px;
     }
 
     .profile{
-        width:125px;
-        height:125px;
+        width:135px;
+        height:135px;
     }
 
     header h1{
-        font-size:28px;
+        font-size:31px;
+
+        letter-spacing:2px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+
+    .hero-quote{
+        font-size:16px;
     }
 
     .goal{
-        font-size:19px;
+        font-size:18px;
+
+        padding:22px;
+    }
+
+    .card h2{
+        font-size:22px;
+    }
+
+    .gallery{
+        columns:1;
+    }
+
+    .timeline{
+        padding-left:30px;
+    }
+
+    .timeline-dot{
+        left:-29px;
     }
 }
 
-/* =========================
+
+/* =====================================================
    PRINT / PDF
-========================= */
+===================================================== */
+
 @media print{
 
     body{
-        background:white;
-        color:black;
+        background:white !important;
+
+        color:black !important;
+    }
+
+    body::before,
+    body::after,
+    .bg-light,
+    .mouse-light{
+        display:none !important;
     }
 
     .navbar,
@@ -660,27 +1266,56 @@ footer{
     }
 
     .card{
-        background:white;
-        color:black;
+        background:white !important;
+
+        color:black !important;
+
         box-shadow:none;
+
         border:1px solid #ddd;
+
         break-inside:avoid;
+    }
+
+    .skill-bar{
+        border:1px solid #ccc;
     }
 
     footer{
         color:black;
     }
 }
+
 </style>
 </head>
 
+
 <body>
+
+<!-- Background decoration -->
+
+<div class="bg-light light1"></div>
+<div class="bg-light light2"></div>
+<div class="bg-light light3"></div>
+<div class="bg-light light4"></div>
+
+<div class="mouse-light" id="mouseLight"></div>
+
 
 <div class="container">
 
-<!-- ================= HEADER ================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <header>
+
+    <div class="hero-badge">
+        ✦ PORTFOLIO 2026 ✦
+    </div>
+
+    <br>
 
     <img
         src="ijii.jpg"
@@ -689,19 +1324,30 @@ footer{
         alt="รูปโปรไฟล์"
     >
 
-    <h1>⚡ Premmatad ⚡</h1>
+    <h1>⚡ PREMMATAD ⚡</h1>
 
     <div class="subtitle">
-        Portfolio • แฟ้มสะสมงาน
+        Student • Learner • Creator
     </div>
+
+    <p class="hero-quote">
+        “เรียนรู้ พัฒนา และก้าวไปข้างหน้า”
+    </p>
+
 
     <div class="top-controls">
 
-        <button class="control-btn" onclick="toggleDarkMode()">
+        <button
+            class="control-btn"
+            onclick="toggleDarkMode()"
+        >
             🌙 / ☀️ เปลี่ยนธีม
         </button>
 
-        <button class="control-btn" onclick="window.print()">
+        <button
+            class="control-btn"
+            onclick="window.print()"
+        >
             📄 บันทึก / พิมพ์ PDF
         </button>
 
@@ -710,7 +1356,9 @@ footer{
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <div class="navbar">
 
@@ -766,11 +1414,16 @@ footer{
 </div>
 
 
-<!-- ================= BACK ================= -->
+<!-- =====================================================
+     BACK
+===================================================== -->
 
 <div class="back-area">
 
-    <button class="back-btn" onclick="goBack()">
+    <button
+        class="back-btn"
+        onclick="goBack()"
+    >
         ← กลับหน้าที่แล้ว
     </button>
 
@@ -781,7 +1434,10 @@ footer{
      INFORMATION
 ===================================================== -->
 
-<section id="information" class="page active">
+<section
+    id="information"
+    class="page active"
+>
 
     <div class="card">
 
@@ -790,9 +1446,12 @@ footer{
         <p class="about-text">
 
             สวัสดีครับ ผม นายเปรมทัต ประจง
+
             เป็นผู้ที่มีความสนใจในการเรียนรู้สิ่งใหม่ ๆ
-            พร้อมพัฒนาตนเองอยู่เสมอ และสามารถนำความรู้
-            ที่ได้รับมาปรับใช้ในสถานการณ์ต่าง ๆ ได้
+            พร้อมพัฒนาตนเองอยู่เสมอ
+            และสามารถนำความรู้ที่ได้รับมาปรับใช้
+            ในสถานการณ์ต่าง ๆ ได้
+
             ผมเชื่อว่าการเรียนรู้และประสบการณ์
             จะช่วยให้เราพัฒนาตัวเองได้อย่างต่อเนื่อง
 
@@ -808,56 +1467,33 @@ footer{
         <div class="info-grid">
 
             <div class="info-item">
-
                 <strong>ชื่อ</strong>
-
                 นายเปรมทัต ประจง
-
             </div>
 
-
             <div class="info-item">
-
                 <strong>อายุ</strong>
-
                 18 ปี
-
             </div>
 
-
             <div class="info-item">
-
                 <strong>Facebook</strong>
-
                 Premmatad Prajong
-
             </div>
 
-
             <div class="info-item">
-
                 <strong>Line ID</strong>
-
                 nongiji
-
             </div>
 
-
             <div class="info-item">
-
                 <strong>เบอร์ติดต่อ</strong>
-
                 098-832-0364
-
             </div>
 
-
             <div class="info-item">
-
                 <strong>ความสนใจ</strong>
-
                 การเรียนรู้ • เทคโนโลยี • กิจกรรม
-
             </div>
 
         </div>
@@ -873,7 +1509,8 @@ footer{
 
             “เรียนให้สูง แล้วหางานที่มั่นคง
             พร้อมพัฒนาตัวเองให้มีความสามารถ
-            และสามารถนำความรู้ไปใช้ในการทำงานได้อย่างเต็มที่”
+            และสามารถนำความรู้ไปใช้ในการทำงาน
+            ได้อย่างเต็มที่”
 
         </div>
 
@@ -886,7 +1523,10 @@ footer{
      EDUCATION
 ===================================================== -->
 
-<section id="education" class="page">
+<section
+    id="education"
+    class="page"
+>
 
     <div class="card">
 
@@ -901,7 +1541,9 @@ footer{
 
                 <div class="timeline-content">
 
-                    <h3>🏫 ระดับประถมศึกษา</h3>
+                    <h3>
+                        🏫 ระดับประถมศึกษา
+                    </h3>
 
                     <p>
                         โรงเรียนอนุบาลบ้านบึงอำนาจคณูปถัมภ์
@@ -918,7 +1560,9 @@ footer{
 
                 <div class="timeline-content">
 
-                    <h3>📘 ระดับมัธยมศึกษาตอนต้น</h3>
+                    <h3>
+                        📘 ระดับมัธยมศึกษาตอนต้น
+                    </h3>
 
                     <p>
                         โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
@@ -935,7 +1579,9 @@ footer{
 
                 <div class="timeline-content">
 
-                    <h3>🎓 ระดับมัธยมศึกษาตอนปลาย</h3>
+                    <h3>
+                        🎓 ระดับมัธยมศึกษาตอนปลาย
+                    </h3>
 
                     <p>
                         โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
@@ -957,16 +1603,17 @@ footer{
      SKILLS
 ===================================================== -->
 
-<section id="skills" class="page">
+<section
+    id="skills"
+    class="page"
+>
 
     <div class="card">
 
         <h2>💡 ความสามารถ</h2>
 
 
-        <!-- 100% -->
-
-        <div class="skill skill-1">
+        <div class="skill">
 
             <div class="skill-top">
 
@@ -981,17 +1628,13 @@ footer{
             </div>
 
             <div class="skill-bar">
-
-                <div class="skill-fill"></div>
-
+                <div class="skill-fill skill-1"></div>
             </div>
 
         </div>
 
 
-        <!-- 90% -->
-
-        <div class="skill skill-2">
+        <div class="skill">
 
             <div class="skill-top">
 
@@ -1006,17 +1649,13 @@ footer{
             </div>
 
             <div class="skill-bar">
-
-                <div class="skill-fill"></div>
-
+                <div class="skill-fill skill-2"></div>
             </div>
 
         </div>
 
 
-        <!-- 90% -->
-
-        <div class="skill skill-3">
+        <div class="skill">
 
             <div class="skill-top">
 
@@ -1031,17 +1670,13 @@ footer{
             </div>
 
             <div class="skill-bar">
-
-                <div class="skill-fill"></div>
-
+                <div class="skill-fill skill-3"></div>
             </div>
 
         </div>
 
 
-        <!-- 75% -->
-
-        <div class="skill skill-4">
+        <div class="skill">
 
             <div class="skill-top">
 
@@ -1056,17 +1691,13 @@ footer{
             </div>
 
             <div class="skill-bar">
-
-                <div class="skill-fill"></div>
-
+                <div class="skill-fill skill-4"></div>
             </div>
 
         </div>
 
 
-        <!-- 70% -->
-
-        <div class="skill skill-5">
+        <div class="skill">
 
             <div class="skill-top">
 
@@ -1081,12 +1712,11 @@ footer{
             </div>
 
             <div class="skill-bar">
-
-                <div class="skill-fill"></div>
-
+                <div class="skill-fill skill-5"></div>
             </div>
 
         </div>
+
 
     </div>
 
@@ -1114,11 +1744,15 @@ footer{
      PROJECTS
 ===================================================== -->
 
-<section id="projects" class="page">
+<section
+    id="projects"
+    class="page"
+>
 
     <div class="card">
 
         <h2>🚀 ผลงานและกิจกรรม</h2>
+
 
         <div class="project-grid">
 
@@ -1138,11 +1772,9 @@ footer{
                     </h3>
 
                     <p>
-
                         เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
                         ณ โรงเรียนสวนกุหลาบวิทยาลัย
                         ในปีการศึกษา 2568
-
                     </p>
 
                 </div>
@@ -1165,11 +1797,10 @@ footer{
                     </h3>
 
                     <p>
-
-                        เข้าร่วมกิจกรรมตักบาตรเนื่องในวันครบรอบ
-                        การก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569
+                        เข้าร่วมกิจกรรมตักบาตร
+                        เนื่องในวันครบรอบการก่อตั้งโรงเรียน
+                        วันที่ 1 กันยายน 2569
                         โดยเข้าร่วมกิจกรรมพร้อมผู้ปกครอง
-
                     </p>
 
                 </div>
@@ -1192,11 +1823,10 @@ footer{
                     </h3>
 
                     <p>
-
                         เข้าร่วมกิจกรรมฝึกประสบการณ์
-                        ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง
+                        ในกลุ่มงานพยาบาล
+                        ณ โรงพยาบาลบ้านบึง
                         ระหว่างวันที่ 9–13 มีนาคม 2569
-
                     </p>
 
                 </div>
@@ -1215,7 +1845,10 @@ footer{
      CERTIFICATES
 ===================================================== -->
 
-<section id="certificates" class="page">
+<section
+    id="certificates"
+    class="page"
+>
 
     <div class="card">
 
@@ -1247,6 +1880,7 @@ footer{
                     เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
                     ณ โรงเรียนสวนกุหลาบวิทยาลัย
                     ในปีการศึกษา 2568
+
                     โดยได้เตรียมตัวและฝึกฝนอย่างต่อเนื่อง
                     รวมถึงเรียนรู้การทำงานภายใต้ความกดดัน
 
@@ -1285,8 +1919,9 @@ footer{
 
                 <p>
 
-                    เข้าร่วมกิจกรรมตักบาตรเนื่องในวันครบรอบ
-                    การก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569
+                    เข้าร่วมกิจกรรมตักบาตร
+                    เนื่องในวันครบรอบการก่อตั้งโรงเรียน
+                    วันที่ 1 กันยายน 2569
                     โดยเข้าร่วมกิจกรรมพร้อมผู้ปกครอง
 
                 </p>
@@ -1325,7 +1960,8 @@ footer{
                 <p>
 
                     เข้าร่วมกิจกรรมฝึกประสบการณ์วิชาชีพ
-                    ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง
+                    ในกลุ่มงานพยาบาล
+                    ณ โรงพยาบาลบ้านบึง
                     ระหว่างวันที่ 9–13 มีนาคม 2569
 
                 </p>
@@ -1340,6 +1976,7 @@ footer{
 
         </div>
 
+
     </div>
 
 </section>
@@ -1349,7 +1986,10 @@ footer{
      GALLERY
 ===================================================== -->
 
-<section id="gallery" class="page">
+<section
+    id="gallery"
+    class="page"
+>
 
     <div class="card">
 
@@ -1359,9 +1999,7 @@ footer{
             class="about-text"
             style="margin-bottom:20px;"
         >
-
             รวมภาพกิจกรรมและผลงานที่สำคัญ
-
         </p>
 
 
@@ -1402,11 +2040,15 @@ footer{
      GOALS
 ===================================================== -->
 
-<section id="goals" class="page">
+<section
+    id="goals"
+    class="page"
+>
 
     <div class="card">
 
         <h2>🎯 เป้าหมายในอนาคต</h2>
+
 
         <div class="goal-grid">
 
@@ -1422,10 +2064,8 @@ footer{
                 </h3>
 
                 <p>
-
                     ตั้งใจเรียนและพัฒนาความรู้
                     เพื่อเตรียมพร้อมสำหรับการศึกษาต่อ
-
                 </p>
 
             </div>
@@ -1442,10 +2082,8 @@ footer{
                 </h3>
 
                 <p>
-
                     ศึกษาต่อในระดับที่สูงขึ้น
                     และพัฒนาทักษะที่จำเป็นต่ออนาคต
-
                 </p>
 
             </div>
@@ -1462,11 +2100,9 @@ footer{
                 </h3>
 
                 <p>
-
                     มีงานที่มั่นคง
                     และสามารถนำความรู้ความสามารถ
                     มาใช้ในการทำงานได้อย่างเต็มที่
-
                 </p>
 
             </div>
@@ -1479,14 +2115,13 @@ footer{
 
     <div class="card">
 
-        <h2>
-            🌟 คติประจำใจ
-        </h2>
+        <h2>🌟 คติประจำใจ</h2>
 
         <div class="goal">
 
             “ความสำเร็จไม่ได้เกิดจากการรอคอย
-            แต่เกิดจากการลงมือทำและพัฒนาตัวเองในทุกวัน”
+            แต่เกิดจากการลงมือทำ
+            และพัฒนาตัวเองในทุกวัน”
 
         </div>
 
@@ -1495,7 +2130,9 @@ footer{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1509,10 +2146,13 @@ footer{
 
 </footer>
 
+
 </div>
 
 
-<!-- ================= IMAGE VIEWER ================= -->
+<!-- =====================================================
+     IMAGE VIEWER
+===================================================== -->
 
 <div
     class="viewer"
@@ -1537,11 +2177,16 @@ footer{
 </div>
 
 
-<!-- ================= TOP BUTTON ================= -->
+<!-- =====================================================
+     BACK TO TOP
+===================================================== -->
 
 <button
     id="topBtn"
-    onclick="window.scrollTo(0,0)"
+    onclick="window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    })"
 >
     ↑
 </button>
@@ -1549,49 +2194,43 @@ footer{
 
 <script>
 
-/* =========================
-   CHANGE PAGE
-========================= */
+/* =====================================================
+   PAGE SWITCH
+===================================================== */
 
 function showPage(pageId,button){
 
-    document.querySelectorAll(".page")
+    document
+        .querySelectorAll(".page")
         .forEach(page=>{
-
             page.classList.remove("active");
-
         });
 
-
-    document.getElementById(pageId)
+    document
+        .getElementById(pageId)
         .classList.add("active");
 
 
-    document.querySelectorAll(".nav-btn")
+    document
+        .querySelectorAll(".nav-btn")
         .forEach(btn=>{
-
             btn.classList.remove("active");
-
         });
-
 
     button.classList.add("active");
 
 
     window.scrollTo({
-
         top:0,
-
         behavior:"smooth"
-
     });
 
 }
 
 
-/* =========================
+/* =====================================================
    CERTIFICATE
-========================= */
+===================================================== */
 
 function toggleCertificate(header){
 
@@ -1603,17 +2242,18 @@ function toggleCertificate(header){
 }
 
 
-/* =========================
+/* =====================================================
    IMAGE VIEWER
-========================= */
+===================================================== */
 
 function openImage(src){
 
-    document.getElementById("viewerImage")
+    document
+        .getElementById("viewerImage")
         .src=src;
 
-
-    document.getElementById("viewer")
+    document
+        .getElementById("viewer")
         .classList.add("active");
 
 }
@@ -1622,48 +2262,38 @@ function openImage(src){
 function closeImage(event){
 
     if(event){
-
         event.stopPropagation();
-
     }
 
-
-    document.getElementById("viewer")
+    document
+        .getElementById("viewer")
         .classList.remove("active");
 
 }
 
-
-/* =========================
-   ESCAPE
-========================= */
 
 document.addEventListener(
     "keydown",
     function(event){
 
         if(event.key==="Escape"){
-
             closeImage();
-
         }
 
     }
 );
 
 
-/* =========================
+/* =====================================================
    DARK MODE
-========================= */
+===================================================== */
 
 function toggleDarkMode(){
 
     document.body.classList.toggle("dark");
 
-
     const isDark =
         document.body.classList.contains("dark");
-
 
     localStorage.setItem(
         "portfolioDarkMode",
@@ -1673,13 +2303,10 @@ function toggleDarkMode(){
 }
 
 
-/* =========================
-   LOAD DARK MODE
-========================= */
-
 if(
-    localStorage.getItem("portfolioDarkMode")
-    ==="true"
+    localStorage.getItem(
+        "portfolioDarkMode"
+    )==="true"
 ){
 
     document.body.classList.add("dark");
@@ -1687,9 +2314,9 @@ if(
 }
 
 
-/* =========================
+/* =====================================================
    BACK BUTTON
-========================= */
+===================================================== */
 
 function goBack(){
 
@@ -1706,9 +2333,9 @@ function goBack(){
 }
 
 
-/* =========================
-   TOP BUTTON
-========================= */
+/* =====================================================
+   BACK TO TOP
+===================================================== */
 
 window.addEventListener(
     "scroll",
@@ -1716,7 +2343,6 @@ window.addEventListener(
 
         const btn =
             document.getElementById("topBtn");
-
 
         if(window.scrollY>400){
 
@@ -1731,7 +2357,30 @@ window.addEventListener(
     }
 );
 
+
+/* =====================================================
+   MOUSE LIGHT
+===================================================== */
+
+const mouseLight =
+    document.getElementById("mouseLight");
+
+
+document.addEventListener(
+    "mousemove",
+    function(e){
+
+        mouseLight.style.left =
+            e.clientX + "px";
+
+        mouseLight.style.top =
+            e.clientY + "px";
+
+    }
+);
+
 </script>
+
 
 </body>
 </html>

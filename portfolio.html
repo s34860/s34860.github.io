@@ -70,13 +70,23 @@ body::after{
 }
 
 @keyframes aurora1{
-    0%{transform:translate(0,0) scale(1);}
-    100%{transform:translate(180px,120px) scale(1.25);}
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    100%{
+        transform:translate(180px,120px) scale(1.25);
+    }
 }
 
 @keyframes aurora2{
-    0%{transform:translate(0,0) scale(1);}
-    100%{transform:translate(-180px,-120px) scale(1.3);}
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    100%{
+        transform:translate(-180px,-120px) scale(1.3);
+    }
 }
 
 
@@ -86,13 +96,20 @@ body::after{
 
 .bg-light{
     position:fixed;
+
     width:7px;
     height:7px;
+
     border-radius:50%;
+
     background:white;
+
     opacity:.45;
+
     box-shadow:0 0 15px white;
+
     pointer-events:none;
+
     z-index:-1;
 }
 
@@ -121,14 +138,17 @@ body::after{
 }
 
 @keyframes float{
+
     0%,100%{
         transform:translateY(0);
         opacity:.25;
     }
+
     50%{
         transform:translateY(-35px);
         opacity:.7;
     }
+
 }
 
 
@@ -138,17 +158,22 @@ body::after{
 
 .mouse-light{
     position:fixed;
+
     width:350px;
     height:350px;
+
     border-radius:50%;
+
     pointer-events:none;
+
     z-index:-1;
 
-    background:radial-gradient(
-        circle,
-        rgba(255,255,255,.08),
-        transparent 65%
-    );
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08),
+            transparent 65%
+        );
 
     transform:translate(-50%,-50%);
 }
@@ -170,11 +195,14 @@ body::after{
 
 header{
     text-align:center;
+
     padding:65px 20px 30px;
+
     animation:heroIn 1s ease;
 }
 
 @keyframes heroIn{
+
     from{
         opacity:0;
         transform:translateY(-35px);
@@ -184,19 +212,25 @@ header{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
 .hero-badge{
+
     display:inline-block;
+
     padding:7px 16px;
+
     border-radius:999px;
 
     background:rgba(255,255,255,.1);
+
     border:1px solid rgba(255,255,255,.2);
 
     backdrop-filter:blur(15px);
 
     font-size:13px;
+
     letter-spacing:2px;
 
     margin-bottom:20px;
@@ -206,10 +240,12 @@ header{
 }
 
 .profile{
+
     width:165px;
     height:165px;
 
     object-fit:cover;
+
     border-radius:50%;
 
     border:4px solid rgba(255,255,255,.85);
@@ -225,6 +261,7 @@ header{
 }
 
 .profile:hover{
+
     transform:scale(1.07) rotate(2deg);
 
     box-shadow:
@@ -234,6 +271,7 @@ header{
 }
 
 header h1{
+
     margin-top:22px;
 
     font-size:clamp(34px,6vw,58px);
@@ -242,30 +280,35 @@ header h1{
 
     letter-spacing:3px;
 
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #bfdbfe,
-        #ddd6fe,
-        #fff
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #bfdbfe,
+            #ddd6fe,
+            #fff
+        );
 
     background-size:250% auto;
 
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 
     animation:titleGlow 5s linear infinite;
 }
 
 @keyframes titleGlow{
+
     to{
         background-position:250% center;
     }
+
 }
 
 .subtitle{
+
     margin-top:10px;
 
     font-size:17px;
@@ -276,6 +319,7 @@ header h1{
 }
 
 .hero-quote{
+
     margin:20px auto 0;
 
     max-width:650px;
@@ -293,9 +337,13 @@ header h1{
 ===================================================== */
 
 .top-controls{
+
     display:flex;
+
     justify-content:center;
+
     gap:10px;
+
     flex-wrap:wrap;
 
     margin:25px auto 10px;
@@ -304,6 +352,7 @@ header h1{
 .control-btn,
 .nav-btn,
 .back-btn{
+
     color:white;
 
     background:rgba(255,255,255,.08);
@@ -318,6 +367,7 @@ header h1{
 }
 
 .control-btn{
+
     border-radius:999px;
 
     padding:10px 18px;
@@ -326,11 +376,13 @@ header h1{
 }
 
 .control-btn:hover{
+
     background:rgba(255,255,255,.18);
 
     transform:translateY(-3px);
 
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
 }
 
 
@@ -339,36 +391,45 @@ header h1{
 ===================================================== */
 
 .navbar{
+
     display:flex;
+
     justify-content:center;
+
     gap:10px;
+
     flex-wrap:wrap;
 
     margin:28px 0 15px;
 
     position:sticky;
+
     top:10px;
 
     z-index:100;
 }
 
 .nav-btn{
+
     padding:12px 20px;
 
     border-radius:999px;
 
     font-size:14px;
 
-    box-shadow:0 5px 25px rgba(0,0,0,.08);
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.08);
 }
 
 .nav-btn:hover{
+
     transform:translateY(-3px);
 
     background:rgba(255,255,255,.17);
 }
 
 .nav-btn.active{
+
     color:#312e81;
 
     background:white;
@@ -386,13 +447,16 @@ header h1{
 ===================================================== */
 
 .back-area{
+
     display:flex;
+
     justify-content:center;
 
     margin:12px 0 28px;
 }
 
 .back-btn{
+
     padding:9px 20px;
 
     border-radius:999px;
@@ -401,6 +465,7 @@ header h1{
 }
 
 .back-btn:hover{
+
     transform:translateX(-5px);
 
     background:rgba(255,255,255,.16);
@@ -416,6 +481,7 @@ header h1{
 }
 
 .page.active{
+
     display:block;
 
     animation:
@@ -423,6 +489,7 @@ header h1{
 }
 
 @keyframes pageIn{
+
     from{
         opacity:0;
         transform:translateY(18px) scale(.99);
@@ -432,6 +499,7 @@ header h1{
         opacity:1;
         transform:translateY(0) scale(1);
     }
+
 }
 
 
@@ -440,7 +508,9 @@ header h1{
 ===================================================== */
 
 .card{
+
     position:relative;
+
     overflow:hidden;
 
     background:rgba(255,255,255,.075);
@@ -462,6 +532,7 @@ header h1{
 }
 
 .card::before{
+
     content:"";
 
     position:absolute;
@@ -472,12 +543,13 @@ header h1{
     width:70%;
     height:100%;
 
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.06),
-        transparent
-    );
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.06),
+            transparent
+        );
 
     transform:skewX(-20deg);
 
@@ -491,6 +563,7 @@ header h1{
 }
 
 .card:hover{
+
     transform:translateY(-5px);
 
     border-color:rgba(255,255,255,.25);
@@ -501,6 +574,7 @@ header h1{
 }
 
 .card h2{
+
     margin-bottom:20px;
 
     font-size:26px;
@@ -516,6 +590,7 @@ header h1{
 ===================================================== */
 
 .about-text{
+
     line-height:1.95;
 
     opacity:.9;
@@ -524,6 +599,7 @@ header h1{
 }
 
 .info-grid{
+
     display:grid;
 
     grid-template-columns:repeat(2,1fr);
@@ -532,6 +608,7 @@ header h1{
 }
 
 .info-item{
+
     padding:18px;
 
     border-radius:18px;
@@ -544,12 +621,14 @@ header h1{
 }
 
 .info-item:hover{
+
     transform:translateY(-3px);
 
     background:rgba(255,255,255,.1);
 }
 
 .info-item strong{
+
     display:block;
 
     margin-bottom:6px;
@@ -565,6 +644,7 @@ header h1{
 ===================================================== */
 
 .goal{
+
     text-align:center;
 
     font-size:21px;
@@ -584,7 +664,8 @@ header h1{
 
     border:1px solid rgba(255,255,255,.1);
 
-    box-shadow:inset 0 1px rgba(255,255,255,.08);
+    box-shadow:
+        inset 0 1px rgba(255,255,255,.08);
 }
 
 
@@ -593,6 +674,7 @@ header h1{
 ===================================================== */
 
 .timeline{
+
     position:relative;
 
     margin-top:25px;
@@ -601,6 +683,7 @@ header h1{
 }
 
 .timeline::before{
+
     content:"";
 
     position:absolute;
@@ -612,25 +695,29 @@ header h1{
 
     width:3px;
 
-    background:linear-gradient(
-        to bottom,
-        #60a5fa,
-        #818cf8,
-        #c084fc
-    );
+    background:
+        linear-gradient(
+            to bottom,
+            #60a5fa,
+            #818cf8,
+            #c084fc
+        );
 
     border-radius:20px;
 
-    box-shadow:0 0 15px rgba(129,140,248,.5);
+    box-shadow:
+        0 0 15px rgba(129,140,248,.5);
 }
 
 .timeline-item{
+
     position:relative;
 
     margin-bottom:28px;
 }
 
 .timeline-dot{
+
     position:absolute;
 
     left:-36px;
@@ -650,6 +737,7 @@ header h1{
 }
 
 .timeline-content{
+
     padding:20px;
 
     border-radius:19px;
@@ -662,12 +750,14 @@ header h1{
 }
 
 .timeline-content:hover{
+
     transform:translateX(6px);
 
     background:rgba(255,255,255,.1);
 }
 
 .timeline-content p{
+
     opacity:.8;
 
     line-height:1.7;
@@ -679,10 +769,12 @@ header h1{
 ===================================================== */
 
 .skill{
+
     margin:24px 0;
 }
 
 .skill-top{
+
     display:flex;
 
     justify-content:space-between;
@@ -697,6 +789,7 @@ header h1{
 }
 
 .skill-bar{
+
     width:100%;
 
     height:12px;
@@ -711,6 +804,7 @@ header h1{
 }
 
 .skill-fill{
+
     height:100%;
 
     width:0;
@@ -727,30 +821,34 @@ header h1{
 
     position:relative;
 
-    animation:skillLoad 1.5s ease forwards;
+    animation:
+        skillLoad 1.5s ease forwards;
 
     box-shadow:
         0 0 15px rgba(129,140,248,.4);
 }
 
 .skill-fill::after{
+
     content:"";
 
     position:absolute;
 
     inset:0;
 
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.35),
-        transparent
-    );
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
 
     animation:shine 2s infinite;
 }
 
 @keyframes shine{
+
     from{
         transform:translateX(-100%);
     }
@@ -758,19 +856,41 @@ header h1{
     to{
         transform:translateX(100%);
     }
+
 }
 
 @keyframes skillLoad{
+
     from{
         width:0;
     }
+
 }
 
-.skill-1 .skill-fill{width:100%;}
-.skill-2 .skill-fill{width:90%;}
-.skill-3 .skill-fill{width:90%;}
-.skill-4 .skill-fill{width:75%;}
-.skill-5 .skill-fill{width:70%;}
+
+/* =====================================================
+   SKILL WIDTH
+===================================================== */
+
+.skill-1{
+    width:100%;
+}
+
+.skill-2{
+    width:90%;
+}
+
+.skill-3{
+    width:90%;
+}
+
+.skill-4{
+    width:75%;
+}
+
+.skill-5{
+    width:70%;
+}
 
 
 /* =====================================================
@@ -778,6 +898,7 @@ header h1{
 ===================================================== */
 
 .project-grid{
+
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
@@ -786,12 +907,14 @@ header h1{
 }
 
 .project{
+
     padding:0;
 
     overflow:hidden;
 }
 
 .project img{
+
     width:100%;
 
     height:220px;
@@ -812,6 +935,7 @@ header h1{
 }
 
 .project-content p{
+
     line-height:1.8;
 
     opacity:.85;
@@ -823,6 +947,7 @@ header h1{
 ===================================================== */
 
 .certificate{
+
     border-radius:20px;
 
     background:rgba(255,255,255,.055);
@@ -837,10 +962,12 @@ header h1{
 }
 
 .certificate:hover{
+
     border-color:rgba(255,255,255,.2);
 }
 
 .certificate-header{
+
     display:flex;
 
     align-items:center;
@@ -853,6 +980,7 @@ header h1{
 }
 
 .arrow{
+
     font-size:18px;
 
     transition:.4s;
@@ -863,6 +991,7 @@ header h1{
 }
 
 .certificate-detail{
+
     max-height:0;
 
     overflow:hidden;
@@ -873,12 +1002,14 @@ header h1{
 }
 
 .certificate.open .certificate-detail{
+
     max-height:800px;
 
     padding:0 20px 22px;
 }
 
 .certificate-detail p{
+
     line-height:1.9;
 
     margin-bottom:18px;
@@ -887,6 +1018,7 @@ header h1{
 }
 
 .certificate-detail img{
+
     width:100%;
 
     max-height:450px;
@@ -901,24 +1033,31 @@ header h1{
 }
 
 .certificate-detail img:hover{
+
     transform:scale(1.015);
 }
 
 
 /* =====================================================
-   MASONRY GALLERY
+   GALLERY
 ===================================================== */
 
 .gallery{
-    columns:3 250px;
 
-    column-gap:15px;
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
 }
 
 .gallery img{
+
     width:100%;
 
-    margin-bottom:15px;
+    height:240px;
+
+    object-fit:cover;
 
     border-radius:18px;
 
@@ -928,13 +1067,12 @@ header h1{
 
     transition:.4s;
 
-    break-inside:avoid;
-
     border:1px solid rgba(255,255,255,.08);
 }
 
 .gallery img:hover{
-    transform:scale(1.025);
+
+    transform:scale(1.03);
 
     filter:brightness(1.1);
 
@@ -948,6 +1086,7 @@ header h1{
 ===================================================== */
 
 .goal-grid{
+
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
@@ -956,6 +1095,7 @@ header h1{
 }
 
 .goal-box{
+
     text-align:center;
 
     padding:28px 18px;
@@ -970,6 +1110,7 @@ header h1{
 }
 
 .goal-box:hover{
+
     transform:translateY(-7px);
 
     background:rgba(255,255,255,.1);
@@ -979,12 +1120,14 @@ header h1{
 }
 
 .goal-box .icon{
+
     font-size:44px;
 
     margin-bottom:14px;
 }
 
 .goal-box p{
+
     line-height:1.8;
 
     opacity:.85;
@@ -998,6 +1141,7 @@ header h1{
 ===================================================== */
 
 .viewer{
+
     position:fixed;
 
     inset:0;
@@ -1018,12 +1162,14 @@ header h1{
 }
 
 .viewer.active{
+
     display:flex;
 
     animation:viewerIn .3s ease;
 }
 
 @keyframes viewerIn{
+
     from{
         opacity:0;
     }
@@ -1031,9 +1177,11 @@ header h1{
     to{
         opacity:1;
     }
+
 }
 
 .viewer img{
+
     max-width:95%;
 
     max-height:88vh;
@@ -1045,12 +1193,15 @@ header h1{
 }
 
 .close-viewer{
+
     position:absolute;
 
     top:20px;
+
     right:25px;
 
     width:48px;
+
     height:48px;
 
     border:none;
@@ -1071,6 +1222,7 @@ header h1{
 }
 
 .close-viewer:hover{
+
     background:rgba(255,255,255,.25);
 
     transform:rotate(90deg);
@@ -1082,12 +1234,15 @@ header h1{
 ===================================================== */
 
 #topBtn{
+
     position:fixed;
 
     right:20px;
+
     bottom:20px;
 
     width:50px;
+
     height:50px;
 
     border:none;
@@ -1113,6 +1268,7 @@ header h1{
 }
 
 #topBtn:hover{
+
     transform:translateY(-5px);
 
     box-shadow:
@@ -1125,6 +1281,7 @@ header h1{
 ===================================================== */
 
 footer{
+
     text-align:center;
 
     padding:45px 15px;
@@ -1142,15 +1299,31 @@ footer{
 ===================================================== */
 
 body.dark{
+
     background:
-        radial-gradient(circle at 15% 20%,rgba(30,64,175,.3),transparent 30%),
-        radial-gradient(circle at 85% 20%,rgba(109,40,217,.3),transparent 30%),
-        linear-gradient(135deg,#020617,#0f172a,#111827);
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(30,64,175,.3),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(109,40,217,.3),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020617,
+            #0f172a,
+            #111827
+        );
 }
 
 
 /* =====================================================
-   RESPONSIVE
+   TABLET
 ===================================================== */
 
 @media(max-width:850px){
@@ -1175,63 +1348,91 @@ body.dark{
         padding:23px;
     }
 
-    .navbar{
-        position:relative;
-        top:auto;
-    }
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:550px){
 
     .nav-btn{
+
         width:100%;
     }
 
     .navbar{
+
         padding:0 5px;
+
+        position:relative;
+
+        top:auto;
     }
 
     .profile{
+
         width:135px;
+
         height:135px;
     }
 
     header h1{
+
         font-size:31px;
 
         letter-spacing:2px;
     }
 
     .subtitle{
+
         font-size:15px;
     }
 
     .hero-quote{
+
         font-size:16px;
     }
 
     .goal{
+
         font-size:18px;
 
         padding:22px;
     }
 
     .card h2{
+
         font-size:22px;
     }
 
+
+    /* Gallery มือถือ */
+
     .gallery{
-        columns:1;
+
+        grid-template-columns:1fr;
+
+        gap:15px;
     }
 
+    .gallery img{
+
+        height:230px;
+    }
+
+
     .timeline{
+
         padding-left:30px;
     }
 
     .timeline-dot{
+
         left:-29px;
     }
+
 }
 
 
@@ -1242,6 +1443,7 @@ body.dark{
 @media print{
 
     body{
+
         background:white !important;
 
         color:black !important;
@@ -1251,6 +1453,7 @@ body.dark{
     body::after,
     .bg-light,
     .mouse-light{
+
         display:none !important;
     }
 
@@ -1258,14 +1461,17 @@ body.dark{
     .back-area,
     .top-controls,
     #topBtn{
+
         display:none !important;
     }
 
     .page{
+
         display:block !important;
     }
 
     .card{
+
         background:white !important;
 
         color:black !important;
@@ -1278,12 +1484,15 @@ body.dark{
     }
 
     .skill-bar{
+
         border:1px solid #ccc;
     }
 
     footer{
+
         color:black;
     }
+
 }
 
 </style>
@@ -1292,14 +1501,20 @@ body.dark{
 
 <body>
 
-<!-- Background decoration -->
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
 
 <div class="bg-light light1"></div>
 <div class="bg-light light2"></div>
 <div class="bg-light light3"></div>
 <div class="bg-light light4"></div>
 
-<div class="mouse-light" id="mouseLight"></div>
+<div
+    class="mouse-light"
+    id="mouseLight"
+></div>
 
 
 <div class="container">
@@ -1324,7 +1539,9 @@ body.dark{
         alt="รูปโปรไฟล์"
     >
 
-    <h1>⚡ PREMMATAD ⚡</h1>
+    <h1>
+        ⚡ PREMMATAD ⚡
+    </h1>
 
     <div class="subtitle">
         Student • Learner • Creator
@@ -1344,6 +1561,7 @@ body.dark{
             🌙 / ☀️ เปลี่ยนธีม
         </button>
 
+
         <button
             class="control-btn"
             onclick="window.print()"
@@ -1362,12 +1580,14 @@ body.dark{
 
 <div class="navbar">
 
+
     <button
         class="nav-btn active"
         onclick="showPage('information',this)"
     >
         👤 ข้อมูล
     </button>
+
 
     <button
         class="nav-btn"
@@ -1376,12 +1596,14 @@ body.dark{
         🎓 การศึกษา
     </button>
 
+
     <button
         class="nav-btn"
         onclick="showPage('skills',this)"
     >
         💡 ความสามารถ
     </button>
+
 
     <button
         class="nav-btn"
@@ -1390,12 +1612,14 @@ body.dark{
         🚀 ผลงาน
     </button>
 
+
     <button
         class="nav-btn"
         onclick="showPage('certificates',this)"
     >
         🏆 เกียรติบัตร
     </button>
+
 
     <button
         class="nav-btn"
@@ -1404,6 +1628,7 @@ body.dark{
         🖼️ Gallery
     </button>
 
+
     <button
         class="nav-btn"
         onclick="showPage('goals',this)"
@@ -1411,11 +1636,12 @@ body.dark{
         🎯 เป้าหมาย
     </button>
 
+
 </div>
 
 
 <!-- =====================================================
-     BACK
+     BACK BUTTON
 ===================================================== -->
 
 <div class="back-area">
@@ -1439,9 +1665,12 @@ body.dark{
     class="page active"
 >
 
+
     <div class="card">
 
-        <h2>👋 แนะนำตัว</h2>
+        <h2>
+            👋 แนะนำตัว
+        </h2>
 
         <p class="about-text">
 
@@ -1462,39 +1691,79 @@ body.dark{
 
     <div class="card">
 
-        <h2>👤 ข้อมูลส่วนตัว</h2>
+        <h2>
+            👤 ข้อมูลส่วนตัว
+        </h2>
+
 
         <div class="info-grid">
 
+
             <div class="info-item">
-                <strong>ชื่อ</strong>
+
+                <strong>
+                    ชื่อ
+                </strong>
+
                 นายเปรมทัต ประจง
+
             </div>
 
+
             <div class="info-item">
-                <strong>อายุ</strong>
+
+                <strong>
+                    อายุ
+                </strong>
+
                 18 ปี
+
             </div>
 
+
             <div class="info-item">
-                <strong>Facebook</strong>
+
+                <strong>
+                    Facebook
+                </strong>
+
                 Premmatad Prajong
+
             </div>
 
+
             <div class="info-item">
-                <strong>Line ID</strong>
+
+                <strong>
+                    Line ID
+                </strong>
+
                 nongiji
+
             </div>
 
+
             <div class="info-item">
-                <strong>เบอร์ติดต่อ</strong>
+
+                <strong>
+                    เบอร์ติดต่อ
+                </strong>
+
                 098-832-0364
+
             </div>
 
+
             <div class="info-item">
-                <strong>ความสนใจ</strong>
+
+                <strong>
+                    ความสนใจ
+                </strong>
+
                 การเรียนรู้ • เทคโนโลยี • กิจกรรม
+
             </div>
+
 
         </div>
 
@@ -1503,7 +1772,10 @@ body.dark{
 
     <div class="card">
 
-        <h2>💭 เป้าหมายของฉัน</h2>
+        <h2>
+            💭 เป้าหมายของฉัน
+        </h2>
+
 
         <div class="goal">
 
@@ -1515,6 +1787,7 @@ body.dark{
         </div>
 
     </div>
+
 
 </section>
 
@@ -1528,9 +1801,13 @@ body.dark{
     class="page"
 >
 
+
     <div class="card">
 
-        <h2>🎓 ประวัติการศึกษา</h2>
+        <h2>
+            🎓 ประวัติการศึกษา
+        </h2>
+
 
         <div class="timeline">
 
@@ -1538,6 +1815,7 @@ body.dark{
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
+
 
                 <div class="timeline-content">
 
@@ -1558,6 +1836,7 @@ body.dark{
 
                 <div class="timeline-dot"></div>
 
+
                 <div class="timeline-content">
 
                     <h3>
@@ -1576,6 +1855,7 @@ body.dark{
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
+
 
                 <div class="timeline-content">
 
@@ -1596,6 +1876,7 @@ body.dark{
 
     </div>
 
+
 </section>
 
 
@@ -1608,9 +1889,12 @@ body.dark{
     class="page"
 >
 
+
     <div class="card">
 
-        <h2>💡 ความสามารถ</h2>
+        <h2>
+            💡 ความสามารถ
+        </h2>
 
 
         <div class="skill">
@@ -1627,8 +1911,11 @@ body.dark{
 
             </div>
 
+
             <div class="skill-bar">
+
                 <div class="skill-fill skill-1"></div>
+
             </div>
 
         </div>
@@ -1648,8 +1935,11 @@ body.dark{
 
             </div>
 
+
             <div class="skill-bar">
+
                 <div class="skill-fill skill-2"></div>
+
             </div>
 
         </div>
@@ -1669,8 +1959,11 @@ body.dark{
 
             </div>
 
+
             <div class="skill-bar">
+
                 <div class="skill-fill skill-3"></div>
+
             </div>
 
         </div>
@@ -1690,8 +1983,11 @@ body.dark{
 
             </div>
 
+
             <div class="skill-bar">
+
                 <div class="skill-fill skill-4"></div>
+
             </div>
 
         </div>
@@ -1711,8 +2007,11 @@ body.dark{
 
             </div>
 
+
             <div class="skill-bar">
+
                 <div class="skill-fill skill-5"></div>
+
             </div>
 
         </div>
@@ -1723,19 +2022,28 @@ body.dark{
 
     <div class="card">
 
-        <h2>🌟 จุดเด่น</h2>
+        <h2>
+            🌟 จุดเด่น
+        </h2>
+
 
         <p class="about-text">
 
             • มีความมั่นใจในตนเอง<br>
-            • มีความกล้าที่จะทำสิ่งต่าง ๆ ในเวลาที่เหมาะสม<br>
+
+            • มีความกล้าที่จะทำสิ่งต่าง ๆ
+            ในเวลาที่เหมาะสม<br>
+
             • เรียนรู้เร็วและพร้อมนำความรู้มาปรับใช้<br>
+
             • พร้อมพัฒนาตนเอง<br>
+
             • สามารถเรียนรู้จากประสบการณ์
 
         </p>
 
     </div>
+
 
 </section>
 
@@ -1749,9 +2057,12 @@ body.dark{
     class="page"
 >
 
+
     <div class="card">
 
-        <h2>🚀 ผลงานและกิจกรรม</h2>
+        <h2>
+            🚀 ผลงานและกิจกรรม
+        </h2>
 
 
         <div class="project-grid">
@@ -1765,6 +2076,7 @@ body.dark{
                     alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
                 >
 
+
                 <div class="project-content">
 
                     <h3>
@@ -1772,9 +2084,11 @@ body.dark{
                     </h3>
 
                     <p>
+
                         เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
                         ณ โรงเรียนสวนกุหลาบวิทยาลัย
                         ในปีการศึกษา 2568
+
                     </p>
 
                 </div>
@@ -1790,6 +2104,7 @@ body.dark{
                     alt="กิจกรรมทำบุญ"
                 >
 
+
                 <div class="project-content">
 
                     <h3>
@@ -1797,10 +2112,12 @@ body.dark{
                     </h3>
 
                     <p>
+
                         เข้าร่วมกิจกรรมตักบาตร
                         เนื่องในวันครบรอบการก่อตั้งโรงเรียน
                         วันที่ 1 กันยายน 2569
                         โดยเข้าร่วมกิจกรรมพร้อมผู้ปกครอง
+
                     </p>
 
                 </div>
@@ -1816,6 +2133,7 @@ body.dark{
                     alt="ประสบการณ์วิชาชีพ"
                 >
 
+
                 <div class="project-content">
 
                     <h3>
@@ -1823,10 +2141,12 @@ body.dark{
                     </h3>
 
                     <p>
+
                         เข้าร่วมกิจกรรมฝึกประสบการณ์
                         ในกลุ่มงานพยาบาล
                         ณ โรงพยาบาลบ้านบึง
                         ระหว่างวันที่ 9–13 มีนาคม 2569
+
                     </p>
 
                 </div>
@@ -1837,6 +2157,7 @@ body.dark{
         </div>
 
     </div>
+
 
 </section>
 
@@ -1850,12 +2171,16 @@ body.dark{
     class="page"
 >
 
+
     <div class="card">
 
-        <h2>🏆 เกียรติบัตรและกิจกรรม</h2>
+        <h2>
+            🏆 เกียรติบัตรและกิจกรรม
+        </h2>
 
 
         <div class="certificate">
+
 
             <div
                 class="certificate-header"
@@ -1886,6 +2211,7 @@ body.dark{
 
                 </p>
 
+
                 <img
                     src="workA.png"
                     onclick="openImage('workA.png')"
@@ -1898,6 +2224,7 @@ body.dark{
 
 
         <div class="certificate">
+
 
             <div
                 class="certificate-header"
@@ -1926,6 +2253,7 @@ body.dark{
 
                 </p>
 
+
                 <img
                     src="Work.png"
                     onclick="openImage('Work.png')"
@@ -1938,6 +2266,7 @@ body.dark{
 
 
         <div class="certificate">
+
 
             <div
                 class="certificate-header"
@@ -1966,6 +2295,7 @@ body.dark{
 
                 </p>
 
+
                 <img
                     src="workC.png"
                     onclick="openImage('workC.png')"
@@ -1979,6 +2309,7 @@ body.dark{
 
     </div>
 
+
 </section>
 
 
@@ -1991,9 +2322,13 @@ body.dark{
     class="page"
 >
 
+
     <div class="card">
 
-        <h2>🖼️ Gallery</h2>
+        <h2>
+            🖼️ Gallery
+        </h2>
+
 
         <p
             class="about-text"
@@ -2005,17 +2340,20 @@ body.dark{
 
         <div class="gallery">
 
+
             <img
                 src="workA.png"
                 onclick="openImage('workA.png')"
                 alt="Gallery 1"
             >
 
+
             <img
                 src="Work.png"
                 onclick="openImage('Work.png')"
                 alt="Gallery 2"
             >
+
 
             <img
                 src="workC.png"
@@ -2027,6 +2365,7 @@ body.dark{
         </div>
 
     </div>
+
 
 </section>
 
@@ -2040,9 +2379,12 @@ body.dark{
     class="page"
 >
 
+
     <div class="card">
 
-        <h2>🎯 เป้าหมายในอนาคต</h2>
+        <h2>
+            🎯 เป้าหมายในอนาคต
+        </h2>
 
 
         <div class="goal-grid">
@@ -2059,8 +2401,10 @@ body.dark{
                 </h3>
 
                 <p>
+
                     ตั้งใจเรียนและพัฒนาความรู้
                     เพื่อเตรียมพร้อมสำหรับการศึกษาต่อ
+
                 </p>
 
             </div>
@@ -2077,8 +2421,10 @@ body.dark{
                 </h3>
 
                 <p>
+
                     ศึกษาต่อในระดับที่สูงขึ้น
                     และพัฒนาทักษะที่จำเป็นต่ออนาคต
+
                 </p>
 
             </div>
@@ -2095,9 +2441,11 @@ body.dark{
                 </h3>
 
                 <p>
+
                     มีงานที่มั่นคง
                     และสามารถนำความรู้ความสามารถ
                     มาใช้ในการทำงานได้อย่างเต็มที่
+
                 </p>
 
             </div>
@@ -2110,7 +2458,10 @@ body.dark{
 
     <div class="card">
 
-        <h2>🌟 คติประจำใจ</h2>
+        <h2>
+            🌟 คติประจำใจ
+        </h2>
+
 
         <div class="goal">
 
@@ -2121,6 +2472,7 @@ body.dark{
         </div>
 
     </div>
+
 
 </section>
 
@@ -2155,6 +2507,7 @@ body.dark{
     onclick="closeImage()"
 >
 
+
     <button
         class="close-viewer"
         onclick="closeImage(event)"
@@ -2162,12 +2515,14 @@ body.dark{
         ×
     </button>
 
+
     <img
         id="viewerImage"
         src=""
         alt="รูปภาพขนาดใหญ่"
         onclick="event.stopPropagation()"
     >
+
 
 </div>
 
@@ -2198,8 +2553,11 @@ function showPage(pageId,button){
     document
         .querySelectorAll(".page")
         .forEach(page=>{
+
             page.classList.remove("active");
+
         });
+
 
     document
         .getElementById(pageId)
@@ -2209,15 +2567,21 @@ function showPage(pageId,button){
     document
         .querySelectorAll(".nav-btn")
         .forEach(btn=>{
+
             btn.classList.remove("active");
+
         });
+
 
     button.classList.add("active");
 
 
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
 
 }
@@ -2247,6 +2611,7 @@ function openImage(src){
         .getElementById("viewerImage")
         .src=src;
 
+
     document
         .getElementById("viewer")
         .classList.add("active");
@@ -2257,8 +2622,11 @@ function openImage(src){
 function closeImage(event){
 
     if(event){
+
         event.stopPropagation();
+
     }
+
 
     document
         .getElementById("viewer")
@@ -2267,12 +2635,18 @@ function closeImage(event){
 }
 
 
+/* =====================================================
+   ESC CLOSE IMAGE
+===================================================== */
+
 document.addEventListener(
     "keydown",
     function(event){
 
         if(event.key==="Escape"){
+
             closeImage();
+
         }
 
     }
@@ -2287,8 +2661,10 @@ function toggleDarkMode(){
 
     document.body.classList.toggle("dark");
 
+
     const isDark =
         document.body.classList.contains("dark");
+
 
     localStorage.setItem(
         "portfolioDarkMode",
@@ -2339,6 +2715,7 @@ window.addEventListener(
         const btn =
             document.getElementById("topBtn");
 
+
         if(window.scrollY>400){
 
             btn.style.display="block";
@@ -2367,6 +2744,7 @@ document.addEventListener(
 
         mouseLight.style.left =
             e.clientX + "px";
+
 
         mouseLight.style.top =
             e.clientY + "px";

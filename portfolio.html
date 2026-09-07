@@ -3,800 +3,892 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>แฟ้มสะสมงานของฉัน</title>
-
 <style>
-
 /* =========================
    RESET
 ========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 html{
     scroll-behavior:smooth;
 }
-
 body{
     font-family:'Segoe UI', Tahoma, sans-serif;
     min-height:100vh;
-
     background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.15), transparent 35%),
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,0.15),
+            transparent 35%
+        ),
         linear-gradient(
             135deg,
             #2563eb 0%,
             #4f46e5 50%,
             #7c3aed 100%
         );
-
     color:white;
     padding:40px 20px;
 }
-
-
 /* =========================
    CONTAINER
 ========================= */
-
 .container{
     max-width:900px;
     margin:auto;
 }
-
-
 /* =========================
    HEADER
 ========================= */
-
 .header{
     text-align:center;
-    margin-bottom:35px;
+    margin-bottom:25px;
     animation:fadeDown 0.8s ease;
 }
-
 .header h1{
     font-size:clamp(2rem, 5vw, 2.8rem);
     margin-bottom:12px;
-
     text-shadow:
         0 4px 15px rgba(0,0,0,0.2);
 }
-
 .header p{
     font-size:1rem;
     opacity:0.9;
 }
-
-
 /* =========================
    PROFILE
 ========================= */
-
 .profile{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:30px;
     animation:fadeUp 0.8s ease;
 }
-
 .profile img{
     width:180px;
     height:180px;
-
     object-fit:cover;
-
     border-radius:50%;
-
     border:5px solid rgba(255,255,255,0.9);
-
     box-shadow:
         0 10px 30px rgba(0,0,0,0.3);
-
     transition:0.4s;
 }
-
 .profile img:hover{
     transform:scale(1.05) rotate(2deg);
 }
-
 .profile h2{
     margin-top:18px;
     font-size:1.6rem;
 }
-
 .profile p{
     margin-top:5px;
     opacity:0.85;
 }
-
-
 /* =========================
-   PROJECT CARD
+   NAVIGATION
 ========================= */
-
-.project-card{
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+    animation:fadeUp 0.8s ease;
+}
+.nav-btn{
+    border:none;
+    padding:12px 22px;
+    border-radius:50px;
+    background:rgba(255,255,255,0.18);
+    color:white;
+    font-family:inherit;
+    font-size:0.95rem;
+    font-weight:bold;
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,0.25);
+    backdrop-filter:blur(8px);
+    transition:0.3s;
+}
+.nav-btn:hover{
+    background:rgba(255,255,255,0.3);
+    transform:translateY(-3px);
+}
+.nav-btn.active{
+    background:white;
+    color:#4f46e5;
+    box-shadow:
+        0 7px 20px rgba(0,0,0,0.2);
+}
+/* =========================
+   PAGE
+========================= */
+.page{
+    display:none;
+    animation:fadeUp 0.5s ease;
+}
+.page.active{
+    display:block;
+}
+/* =========================
+   CARD
+========================= */
+.card{
     background:rgba(255,255,255,0.96);
     color:#333;
-
-    padding:25px;
-
+    padding:28px;
     border-radius:20px;
-
     margin-bottom:25px;
-
     box-shadow:
         0 10px 30px rgba(0,0,0,0.18);
-
     border:1px solid rgba(255,255,255,0.5);
-
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
-
-    animation:fadeUp 0.8s ease;
 }
-
-.project-card:hover{
-    transform:translateY(-7px);
-
+.card:hover{
+    transform:translateY(-5px);
     box-shadow:
         0 18px 40px rgba(0,0,0,0.25);
 }
-
-
-/* =========================
-   PROJECT TITLE
-========================= */
-
-.project-card h3{
+.card h3{
     color:#4f46e5;
-
-    font-size:1.25rem;
-
-    margin-bottom:18px;
-
-    padding-bottom:10px;
-
+    font-size:1.3rem;
+    margin-bottom:20px;
+    padding-bottom:12px;
     border-bottom:2px solid #e5e7eb;
 }
-
-
+/* =========================
+   INFORMATION
+========================= */
+.info-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+.info-item{
+    padding:14px 16px;
+    background:#f8fafc;
+    border-radius:12px;
+    border-left:4px solid #6366f1;
+    line-height:1.7;
+    color:#4b5563;
+}
+.info-item strong{
+    color:#4f46e5;
+}
+/* =========================
+   GOAL
+========================= */
+.goal{
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,0.1),
+            rgba(147,51,234,0.1)
+        );
+    border:1px solid rgba(99,102,241,0.2);
+    color:#4b5563;
+    line-height:1.8;
+}
+.goal strong{
+    color:#4f46e5;
+}
+/* =========================
+   SKILLS
+========================= */
+.skill-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+.skill-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    padding:18px;
+    background:#f8fafc;
+    border-radius:15px;
+    border:1px solid #e5e7eb;
+    transition:0.3s;
+}
+.skill-item:hover{
+    transform:translateX(5px);
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+}
+.skill-icon{
+    min-width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #9333ea
+        );
+    color:white;
+    font-size:1.3rem;
+}
+.skill-item h4{
+    color:#4f46e5;
+    margin-bottom:5px;
+    font-size:1.1rem;
+}
+.skill-item p{
+    color:#6b7280;
+    line-height:1.7;
+}
+/* =========================
+   CERTIFICATE
+========================= */
+.certificate-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.certificate{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:18px;
+    background:#f8fafc;
+    border-radius:15px;
+    border:1px solid #e5e7eb;
+    cursor:pointer;
+    transition:0.3s;
+}
+.certificate:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.12);
+    border-color:#818cf8;
+}
+.certificate-icon{
+    min-width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #9333ea
+        );
+    color:white;
+    font-size:1.5rem;
+}
+.certificate-text{
+    flex:1;
+}
+.certificate-text h4{
+    color:#4f46e5;
+    margin-bottom:5px;
+    font-size:1.05rem;
+}
+.certificate-text p{
+    color:#6b7280;
+    font-size:0.92rem;
+    line-height:1.6;
+}
+.certificate-arrow{
+    font-size:1.3rem;
+    color:#6366f1;
+}
+/* =========================
+   CERTIFICATE DETAIL
+========================= */
+.certificate-detail{
+    display:none;
+    margin-top:20px;
+    padding-top:20px;
+    border-top:2px solid #e5e7eb;
+    animation:fadeUp 0.4s ease;
+}
+.certificate-detail.active{
+    display:block;
+}
+.certificate-detail p{
+    color:#4b5563;
+    line-height:1.9;
+    text-align:justify;
+    margin-bottom:18px;
+}
 /* =========================
    PROJECT IMAGE
 ========================= */
-
-/*
-   กำหนดรูปทุกใบให้มีพื้นที่เท่ากัน
-*/
-
 .project-image{
     width:100%;
-
     max-width:600px;
-
     height:320px;
-
     display:block;
-
     margin:0 auto 20px;
-
     object-fit:contain;
-
     background:#f3f4f6;
-
     border-radius:14px;
-
     border:1px solid #e5e7eb;
-
     padding:8px;
-
     box-shadow:
         0 5px 15px rgba(0,0,0,0.1);
-
     cursor:pointer;
-
     transition:0.3s;
 }
-
 .project-image:hover{
     transform:scale(1.02);
-
     box-shadow:
         0 8px 20px rgba(0,0,0,0.18);
 }
-
-
-/* =========================
-   DESCRIPTION
-========================= */
-
-.project-card p{
-    font-size:1rem;
-
-    line-height:1.9;
-
-    color:#4b5563;
-
-    text-align:justify;
-}
-
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.button-area{
-    text-align:center;
-
-    margin-top:35px;
-    margin-bottom:20px;
-}
-
-.btn{
-    display:inline-block;
-
-    padding:13px 30px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:linear-gradient(
-        135deg,
-        #6366f1,
-        #9333ea
-    );
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 6px 15px rgba(0,0,0,0.2);
-
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-
-    box-shadow:
-        0 10px 20px rgba(0,0,0,0.25);
-}
-
-
-/* =========================
-   MODAL
-========================= */
-
-.modal{
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,0.65);
-
-    backdrop-filter:blur(5px);
-
-    z-index:1000;
-
-    padding:20px;
-}
-
-.modal-content{
-    background:white;
-
-    color:#333;
-
-    width:min(400px, 100%);
-
-    padding:30px;
-
-    border-radius:20px;
-
-    text-align:center;
-
-    margin:15vh auto;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.3);
-
-    animation:zoomIn 0.3s ease;
-}
-
-.modal-content h3{
-    margin-bottom:10px;
-
-    color:#4f46e5;
-}
-
-.modal-content p{
-    color:#666;
-
-    margin-bottom:15px;
-}
-
-
-/* =========================
-   POPUP BUTTON
-========================= */
-
-.popup-btn{
-    padding:10px 22px;
-
-    margin:6px;
-
-    border:none;
-
-    border-radius:10px;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:0.3s;
-}
-
-.popup-btn:hover{
-    transform:translateY(-2px);
-}
-
-.confirm{
-    background:#22c55e;
-}
-
-.cancel{
-    background:#ef4444;
-}
-
-
 /* =========================
    IMAGE VIEWER
 ========================= */
-
 .image-modal{
     display:none;
-
     position:fixed;
-
     z-index:2000;
-
     inset:0;
-
     background:rgba(0,0,0,0.9);
-
     align-items:center;
-
     justify-content:center;
-
     padding:30px;
 }
-
 .image-modal img{
     max-width:90%;
     max-height:90vh;
-
     object-fit:contain;
-
     border-radius:10px;
-
     box-shadow:
         0 10px 40px rgba(0,0,0,0.5);
 }
-
 .close-image{
     position:absolute;
-
     top:20px;
     right:30px;
-
     color:white;
-
     font-size:40px;
-
     cursor:pointer;
-
     font-weight:bold;
 }
-
-
 /* =========================
    FOOTER
 ========================= */
-
 .footer{
     text-align:center;
-
     margin-top:40px;
-
     opacity:0.8;
-
     font-size:0.9rem;
 }
-
-
 /* =========================
    ANIMATION
 ========================= */
-
 @keyframes fadeUp{
-
     from{
         opacity:0;
         transform:translateY(25px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
-
 }
-
 @keyframes fadeDown{
-
     from{
         opacity:0;
         transform:translateY(-20px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
-
 }
-
-@keyframes zoomIn{
-
-    from{
-        opacity:0;
-        transform:scale(0.9);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-
-}
-
-
 /* =========================
    MOBILE
 ========================= */
-
 @media(max-width:600px){
-
     body{
         padding:25px 12px;
     }
-
-    .project-card{
-        padding:18px;
-    }
-
-    .project-card h3{
-        font-size:1.1rem;
-    }
-
-    .project-image{
-        height:250px;
-    }
-
-    .project-card p{
-        font-size:0.95rem;
-        line-height:1.8;
-        text-align:left;
-    }
-
     .profile img{
         width:150px;
         height:150px;
     }
-
+    .navbar{
+        gap:7px;
+    }
+    .nav-btn{
+        padding:10px 15px;
+        font-size:0.85rem;
+    }
+    .card{
+        padding:18px;
+    }
+    .card h3{
+        font-size:1.1rem;
+    }
+    .project-image{
+        height:250px;
+    }
+    .certificate{
+        padding:14px;
+    }
+    .certificate-icon{
+        min-width:42px;
+        height:42px;
+        font-size:1.2rem;
+    }
+    .certificate-arrow{
+        font-size:1rem;
+    }
 }
-
+/* =========================
+   ACCESSIBILITY
+========================= */
+button:focus,
+.certificate:focus{
+    outline:3px solid rgba(255,255,255,0.7);
+    outline-offset:3px;
+}
 </style>
 </head>
-
-
 <body>
-
 <div class="container">
-
-
     <!-- =========================
          HEADER
     ========================== -->
-
     <div class="header">
-
         <h1>📁 แฟ้มสะสมงาน (Portfolio)</h1>
-
         <p>
-            พื้นที่รวบรวมผลงานและกิจกรรมที่ภาคภูมิใจ
+            พื้นที่รวบรวมข้อมูล ความสามารถ และผลงานที่ภาคภูมิใจ
         </p>
-
     </div>
-
-
     <!-- =========================
          PROFILE
     ========================== -->
-
     <div class="profile">
-
-        <img src="ijii.jpg" alt="Profile">
-
+        <img
+            src="ijii.jpg"
+            alt="Profile"
+        >
         <h2>⚡ Premmatad ⚡</h2>
-
-        <p>XD</p>
-
+        <p>Portfolio</p>
     </div>
-
-
     <!-- =========================
-         PROJECT 1
+         NAVIGATION
     ========================== -->
-
-    <div class="project-card">
-
-        <h3>
-            🏆 1. รางวัลการแข่งขัน
-        </h3>
-
-
-        <img
-            src="workA.png"
-            alt="รางวัลการแข่งขัน"
-            class="project-image"
-            onclick="openImage(this.src)"
+    <div class="navbar">
+        <button
+            class="nav-btn active"
+            onclick="showPage('information', this)"
         >
-
-
-        <p>
-
-            เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
-            เนื่องในงานวันเปิดบ้านวิชาการ ณ โรงเรียนสวนกุหลาบวิทยาลัย
-            ปีการศึกษา 2568
-
-            <br><br>
-
-            เนื่องในการได้เข้าร่วมการแข่งขันตอบปัญหาดังกล่าว
-            ตัวกระผมได้รับประสบการณ์เกี่ยวกับการเตรียมตัว
-            และการรับมือกับความกดดัน
-            เพื่อที่จะนำไปประยุกต์ใช้กับการทำงาน
-            หรือการแข่งขันอื่น ๆ ที่อาจเกิดขึ้นในอนาคต
-
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         PROJECT 2
-    ========================== -->
-
-    <div class="project-card">
-
-        <h3>
-            📜 2. กิจกรรม / เกียรติบัตรที่ได้รับ
-        </h3>
-
-
-        <img
-            src="Work.png"
-            alt="เกียรติบัตรที่ได้รับ"
-            class="project-image"
-            onclick="openImage(this.src)"
-        >
-
-
-        <p>
-
-            เข้าร่วมกิจกรรมการทำบุญตักบาตร
-            เนื่องในวันคล้ายวันสถาปนาโรงเรียน
-            ในวันที่ 1 กันยายน 2569
-            ร่วมกับผู้ปกครอง
-
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         PROJECT 3
-    ========================== -->
-
-    <div class="project-card">
-
-        <h3>
-            🎯 3. กิจกรรมพิเศษ
-        </h3>
-
-
-        <img
-            src="workC.png"
-            alt="กิจกรรมพิเศษ"
-            class="project-image"
-            onclick="openImage(this.src)"
-        >
-
-
-        <p>
-
-            ฝึกประสบการณ์วิชาชีพ
-            ที่กลุ่มงานการพยาบาล
-            ณ โรงพยาบาลบ้านบึง
-            ในวันที่ 9–13 มีนาคม 2569
-
-        </p>
-
-    </div>
-
-
-    <!-- =========================
-         BACK BUTTON
-    ========================== -->
-
-    <div class="button-area">
-
-        <button class="btn" onclick="openModal()">
-            ← กลับหน้าที่แล้ว
+            👤 ข้อมูล
         </button>
-
+        <button
+            class="nav-btn"
+            onclick="showPage('skills', this)"
+        >
+            💡 ความสามารถ
+        </button>
+        <button
+            class="nav-btn"
+            onclick="showPage('certificates', this)"
+        >
+            🏆 เกียรติบัตร
+        </button>
     </div>
-
-
+    <!-- =====================================================
+         PAGE 1 : INFORMATION
+    ====================================================== -->
+    <section
+        id="information"
+        class="page active"
+    >
+        <div class="card">
+            <h3>
+                👤 ข้อมูลส่วนตัว
+            </h3>
+            <div class="info-list">
+                <div class="info-item">
+                    <strong>ชื่อ :</strong>
+                    นายเปรมทัต ประจง
+                </div>
+                <div class="info-item">
+                    <strong>อายุ :</strong>
+                    18 ปี
+                </div>
+                <div class="info-item">
+                    <strong>Facebook :</strong>
+                    Premmatad Prajong
+                </div>
+                <div class="info-item">
+                    <strong>Line ID :</strong>
+                    nongiji
+                </div>
+                <div class="info-item">
+                    <strong>เบอร์ติดต่อ :</strong>
+                    098-832-0364
+                </div>
+            </div>
+            <div class="goal">
+                <strong>🎯 เป้าหมาย :</strong>
+                <br>
+                เรียนให้สูงแล้วหางานที่มั่นคง
+            </div>
+        </div>
+        <div class="card">
+            <h3>
+                ✨ เกี่ยวกับฉัน
+            </h3>
+            <p style="
+                color:#4b5563;
+                line-height:1.9;
+                text-align:justify;
+            ">
+                ผมเป็นผู้ที่มีความตั้งใจในการเรียนรู้
+                พร้อมพัฒนาตนเองอยู่เสมอ
+                และต้องการนำความรู้และประสบการณ์
+                ที่ได้รับไปประยุกต์ใช้ในการศึกษาต่อ
+                รวมถึงการทำงานในอนาคต
+            </p>
+        </div>
+    </section>
+    <!-- =====================================================
+         PAGE 2 : SKILLS
+    ====================================================== -->
+    <section
+        id="skills"
+        class="page"
+    >
+        <div class="card">
+            <h3>
+                💡 ความสามารถ
+            </h3>
+            <div class="skill-list">
+                <!-- SKILL 1 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        💪
+                    </div>
+                    <div>
+                        <h4>
+                            มีความมั่นใจในตนเอง
+                        </h4>
+                        <p>
+                            มีความเชื่อมั่นในความสามารถของตนเอง
+                            และสามารถนำความมั่นใจมาใช้ในการเรียน
+                            และการทำกิจกรรมต่าง ๆ
+                        </p>
+                    </div>
+                </div>
+                <!-- SKILL 2 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        🎯
+                    </div>
+                    <div>
+                        <h4>
+                            มีความกล้าที่จะทำสิ่งต่าง ๆ
+                        </h4>
+                        <p>
+                            มีความกล้าที่จะตัดสินใจและลงมือทำสิ่งต่าง ๆ
+                            ในเวลาที่เหมาะสม
+                            พร้อมรับผิดชอบต่อสิ่งที่ตนเองเลือกทำ
+                        </p>
+                    </div>
+                </div>
+                <!-- SKILL 3 -->
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        🧠
+                    </div>
+                    <div>
+                        <h4>
+                            เรียนรู้เร็วและพร้อมนำมาปรับใช้
+                        </h4>
+                        <p>
+                            สามารถเรียนรู้สิ่งใหม่ ๆ ได้อย่างรวดเร็ว
+                            และนำความรู้หรือประสบการณ์ที่ได้รับ
+                            มาปรับใช้ให้เหมาะสมกับสถานการณ์
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h3>
+                🚀 จุดเด่นของฉัน
+            </h3>
+            <p style="
+                color:#4b5563;
+                line-height:1.9;
+                text-align:justify;
+            ">
+                พร้อมเรียนรู้สิ่งใหม่
+                กล้าลองทำสิ่งที่ไม่เคยทำ
+                และสามารถปรับตัวให้เข้ากับสถานการณ์ต่าง ๆ
+                เพื่อพัฒนาตนเองให้ดีขึ้นอยู่เสมอ
+            </p>
+        </div>
+    </section>
+    <!-- =====================================================
+         PAGE 3 : CERTIFICATES
+    ====================================================== -->
+    <section
+        id="certificates"
+        class="page"
+    >
+        <div class="card">
+            <h3>
+                🏆 ผลงาน / เกียรติบัตร
+            </h3>
+            <div class="certificate-list">
+                <!-- =========================================
+                     CERTIFICATE 1
+                ========================================== -->
+                <div
+                    class="certificate"
+                    onclick="toggleCertificate('cert1')"
+                >
+                    <div class="certificate-icon">
+                        🏆
+                    </div>
+                    <div class="certificate-text">
+                        <h4>
+                            1. รางวัลการแข่งขัน
+                        </h4>
+                        <p>
+                            การแข่งขันตอบปัญหาวิทยาศาสตร์
+                        </p>
+                    </div>
+                    <div
+                        class="certificate-arrow"
+                        id="arrow1"
+                    >
+                        ▼
+                    </div>
+                </div>
+                <div
+                    id="cert1"
+                    class="certificate-detail"
+                >
+                    <img
+                        src="workA.png"
+                        alt="รางวัลการแข่งขัน"
+                        class="project-image"
+                        onclick="openImage(this.src)"
+                    >
+                    <p>
+                        เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
+                        เนื่องในงานวันเปิดบ้านวิชาการ
+                        ณ โรงเรียนสวนกุหลาบวิทยาลัย
+                        ปีการศึกษา 2568
+                        <br><br>
+                        เนื่องในการได้เข้าร่วมการแข่งขันตอบปัญหาดังกล่าว
+                        ตัวกระผมได้รับประสบการณ์เกี่ยวกับการเตรียมตัว
+                        และการรับมือกับความกดดัน
+                        เพื่อที่จะนำไปประยุกต์ใช้กับการทำงาน
+                        หรือการแข่งขันอื่น ๆ ที่อาจเกิดขึ้นในอนาคต
+                    </p>
+                </div>
+                <!-- =========================================
+                     CERTIFICATE 2
+                ========================================== -->
+                <div
+                    class="certificate"
+                    onclick="toggleCertificate('cert2')"
+                >
+                    <div class="certificate-icon">
+                        📜
+                    </div>
+                    <div class="certificate-text">
+                        <h4>
+                            2. กิจกรรม / เกียรติบัตรที่ได้รับ
+                        </h4>
+                        <p>
+                            กิจกรรมการทำบุญตักบาตร
+                        </p>
+                    </div>
+                    <div
+                        class="certificate-arrow"
+                        id="arrow2"
+                    >
+                        ▼
+                    </div>
+                </div>
+                <div
+                    id="cert2"
+                    class="certificate-detail"
+                >
+                    <img
+                        src="Work.png"
+                        alt="เกียรติบัตรที่ได้รับ"
+                        class="project-image"
+                        onclick="openImage(this.src)"
+                    >
+                    <p>
+                        เข้าร่วมกิจกรรมการทำบุญตักบาตร
+                        เนื่องในวันคล้ายวันสถาปนาโรงเรียน
+                        ในวันที่ 1 กันยายน 2569
+                        ร่วมกับผู้ปกครอง
+                    </p>
+                </div>
+                <!-- =========================================
+                     CERTIFICATE 3
+                ========================================== -->
+                <div
+                    class="certificate"
+                    onclick="toggleCertificate('cert3')"
+                >
+                    <div class="certificate-icon">
+                        🎯
+                    </div>
+                    <div class="certificate-text">
+                        <h4>
+                            3. กิจกรรมพิเศษ
+                        </h4>
+                        <p>
+                            ฝึกประสบการณ์วิชาชีพ
+                        </p>
+                    </div>
+                    <div
+                        class="certificate-arrow"
+                        id="arrow3"
+                    >
+                        ▼
+                    </div>
+                </div>
+                <div
+                    id="cert3"
+                    class="certificate-detail"
+                >
+                    <img
+                        src="workC.png"
+                        alt="กิจกรรมพิเศษ"
+                        class="project-image"
+                        onclick="openImage(this.src)"
+                    >
+                    <p>
+                        ฝึกประสบการณ์วิชาชีพ
+                        ที่กลุ่มงานการพยาบาล
+                        ณ โรงพยาบาลบ้านบึง
+                        ในวันที่ 9–13 มีนาคม 2569
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- =========================
          FOOTER
     ========================== -->
-
     <div class="footer">
-
         <p>
             © 2569 Premmatad | Portfolio
         </p>
-
     </div>
-
 </div>
-
-
-
-<!-- =========================
-     BACK MODAL
-========================== -->
-
-<div id="myModal" class="modal">
-
-    <div class="modal-content">
-
-        <h3>
-            ↩️ กลับหน้าที่แล้ว?
-        </h3>
-
-        <p>
-            กด "ตกลง" เพื่อกลับไปหน้าก่อนหน้า
-        </p>
-
-
-        <button
-            class="popup-btn confirm"
-            onclick="history.back()"
-        >
-            ตกลง
-        </button>
-
-
-        <button
-            class="popup-btn cancel"
-            onclick="closeModal()"
-        >
-            ยกเลิก
-        </button>
-
-    </div>
-
-</div>
-
-
-
 <!-- =========================
      IMAGE MODAL
 ========================== -->
-
 <div
     id="imageModal"
     class="image-modal"
     onclick="closeImage()"
 >
-
     <span class="close-image">
         ×
     </span>
-
     <img
         id="fullImage"
         src=""
         alt="รูปภาพขนาดใหญ่"
         onclick="event.stopPropagation()"
     >
-
 </div>
-
-
-
 <script>
-
-/* =========================
-   BACK MODAL
-========================= */
-
-function openModal(){
-
-    document.getElementById("myModal").style.display = "block";
-
+/* =====================================================
+   CHANGE PAGE
+===================================================== */
+function showPage(pageId, button){
+    /* ซ่อนทุกหน้า */
+    const pages =
+        document.querySelectorAll(".page");
+    pages.forEach(function(page){
+        page.classList.remove("active");
+    });
+    /* แสดงหน้าที่เลือก */
+    document
+        .getElementById(pageId)
+        .classList.add("active");
+    /* เอา active ออกจากปุ่มทั้งหมด */
+    const buttons =
+        document.querySelectorAll(".nav-btn");
+    buttons.forEach(function(btn){
+        btn.classList.remove("active");
+    });
+    /* เพิ่ม active ให้ปุ่มที่เลือก */
+    button.classList.add("active");
+    /* เลื่อนกลับด้านบน */
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
-
-
-function closeModal(){
-
-    document.getElementById("myModal").style.display = "none";
-
-}
-
-
-/* =========================
-   IMAGE VIEWER
-========================= */
-
-function openImage(src){
-
-    document.getElementById("fullImage").src = src;
-
-    document.getElementById("imageModal").style.display = "flex";
-
-}
-
-
-function closeImage(){
-
-    document.getElementById("imageModal").style.display = "none";
-
-}
-
-
-/* =========================
-   ESC KEY
-========================= */
-
-document.addEventListener("keydown", function(event){
-
-    if(event.key === "Escape"){
-
-        closeImage();
-        closeModal();
-
+/* =====================================================
+   CERTIFICATE DETAIL
+===================================================== */
+function toggleCertificate(id){
+    const detail =
+        document.getElementById(id);
+    detail.classList.toggle("active");
+    /* เปลี่ยนลูกศร */
+    const number =
+        id.replace("cert","");
+    const arrow =
+        document.getElementById(
+            "arrow" + number
+        );
+    if(detail.classList.contains("active")){
+        arrow.innerHTML = "▲";
+    }else{
+        arrow.innerHTML = "▼";
     }
-
-});
-
+}
+/* =====================================================
+   IMAGE VIEWER
+===================================================== */
+function openImage(src){
+    document
+        .getElementById("fullImage")
+        .src = src;
+    document
+        .getElementById("imageModal")
+        .style.display = "flex";
+}
+function closeImage(){
+    document
+        .getElementById("imageModal")
+        .style.display = "none";
+}
+/* =====================================================
+   ESC KEY
+===================================================== */
+document.addEventListener(
+    "keydown",
+    function(event){
+        if(event.key === "Escape"){
+            closeImage();
+        }
+    }
+);
 </script>
-
 </body>
 </html>

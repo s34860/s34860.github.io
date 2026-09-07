@@ -487,77 +487,37 @@ body{
 
 
 <script>
-
-/* =========================
-   OPEN MODAL
-========================= */
-
-function openModal(){
-
+function openModal() {
     document.getElementById("myModal").style.display = "block";
-
 }
 
-
-/* =========================
-   CLOSE MODAL
-========================= */
-
-function closeModal(){
-
+function closeModal() {
     document.getElementById("myModal").style.display = "none";
-
 }
 
-
-/* =========================
-   NEXT PAGE
-========================= */
-
-function goNext(){
-
+function goNext() {
     window.location.href = "portfolio.html";
-
 }
 
+window.addEventListener("pageshow", function(){
+    document.getElementById("myModal").style.display = "none";
+});
 
-/* =========================
-   CLOSE MODAL WHEN CLICK
-   OUTSIDE THE BOX
-========================= */
-
-window.onclick = function(event){
-
-    const modal =
-        document.getElementById("myModal");
+window.onclick = function(event) {
+    const modal = document.getElementById("myModal");
 
     if(event.target === modal){
-
         closeModal();
-
     }
-
 }
 
-
-/* =========================
-   ESC KEY
-========================= */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Escape"){
-
-            closeModal();
-
-        }
-
+document.addEventListener("keydown", function(event){
+    if(event.key === "Escape"){
+        closeModal();
     }
-);
-
+});
 </script>
+
 
 </body>
 </html>

@@ -2,14 +2,14 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Premmatad | Portfolio</title>
 
 <style>
 
 /* =========================
-   BASE
+   RESET
 ========================= */
 
 *{
@@ -24,20 +24,23 @@
     --border:rgba(255,255,255,.11);
     --text:#f8fafc;
     --muted:#94a3b8;
+
     --blue:#60a5fa;
     --purple:#a78bfa;
     --pink:#c084fc;
 }
 
-html,body{
-    min-height:100%;
-}
+
+/* =========================
+   BODY
+========================= */
 
 body{
     font-family:
         "Segoe UI",
         "Noto Sans Thai",
-        Arial,sans-serif;
+        Arial,
+        sans-serif;
 
     color:var(--text);
 
@@ -101,15 +104,21 @@ body{
 }
 
 @keyframes move1{
-    to{transform:translate(180px,130px)}
+    to{
+        transform:translate(180px,130px);
+    }
 }
 
 @keyframes move2{
-    to{transform:translate(-170px,100px)}
+    to{
+        transform:translate(-170px,100px);
+    }
 }
 
 @keyframes move3{
-    to{transform:translate(130px,-100px)}
+    to{
+        transform:translate(130px,-100px);
+    }
 }
 
 
@@ -134,24 +143,61 @@ body{
     animation:particle linear infinite;
 }
 
-.particles i:nth-child(1){left:8%;top:25%;animation-duration:9s}
-.particles i:nth-child(2){left:20%;top:70%;animation-duration:13s}
-.particles i:nth-child(3){left:40%;top:18%;animation-duration:11s}
-.particles i:nth-child(4){left:63%;top:75%;animation-duration:14s}
-.particles i:nth-child(5){left:80%;top:30%;animation-duration:10s}
-.particles i:nth-child(6){left:93%;top:65%;animation-duration:16s}
-.particles i:nth-child(7){left:52%;top:45%;animation-duration:12s}
-.particles i:nth-child(8){left:30%;top:90%;animation-duration:15s}
+.particles i:nth-child(1){
+    left:8%;
+    top:25%;
+    animation-duration:9s;
+}
+
+.particles i:nth-child(2){
+    left:18%;
+    top:70%;
+    animation-duration:12s;
+}
+
+.particles i:nth-child(3){
+    left:32%;
+    top:18%;
+    animation-duration:10s;
+}
+
+.particles i:nth-child(4){
+    left:48%;
+    top:80%;
+    animation-duration:14s;
+}
+
+.particles i:nth-child(5){
+    left:63%;
+    top:35%;
+    animation-duration:11s;
+}
+
+.particles i:nth-child(6){
+    left:76%;
+    top:65%;
+    animation-duration:15s;
+}
+
+.particles i:nth-child(7){
+    left:88%;
+    top:20%;
+    animation-duration:13s;
+}
+
+.particles i:nth-child(8){
+    left:95%;
+    top:82%;
+    animation-duration:10s;
+}
 
 @keyframes particle{
-    0%,100%{
+    from{
         transform:translateY(0);
-        opacity:.15;
     }
 
-    50%{
-        transform:translateY(-70px);
-        opacity:.8;
+    to{
+        transform:translateY(-120px);
     }
 }
 
@@ -188,8 +234,8 @@ header{
     z-index:100;
 
     background:rgba(3,7,18,.68);
+
     backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
 
     border-bottom:1px solid var(--border);
 }
@@ -224,9 +270,15 @@ header{
     color:transparent;
 }
 
+
+/* =========================
+   MENU
+========================= */
+
 .menu{
     display:flex;
     gap:6px;
+
     overflow-x:auto;
     scrollbar-width:none;
 }
@@ -268,8 +320,7 @@ header{
             rgba(168,85,247,.5)
         );
 
-    border-color:
-        rgba(167,139,250,.3);
+    border-color:rgba(167,139,250,.3);
 
     box-shadow:
         0 0 25px rgba(99,102,241,.18);
@@ -291,15 +342,13 @@ main{
 
 
 /* =========================
-   TOP HERO
+   HERO
 ========================= */
 
 .hero{
     display:grid;
 
-    grid-template-columns:
-        1fr
-        280px;
+    grid-template-columns:1fr 280px;
 
     align-items:center;
 
@@ -334,7 +383,9 @@ main{
 
 .hero h1{
     font-size:clamp(38px,6vw,68px);
+
     line-height:1.05;
+
     font-weight:900;
 
     background:
@@ -349,6 +400,7 @@ main{
     background-size:250%;
 
     -webkit-background-clip:text;
+
     color:transparent;
 
     animation:gradient 6s linear infinite;
@@ -362,15 +414,15 @@ main{
 
 .hero-text p{
     color:var(--muted);
+
     margin-top:12px;
+
     line-height:1.7;
 }
 
 .status{
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
 
     margin-top:18px;
@@ -391,13 +443,18 @@ main{
 .status-dot{
     width:7px;
     height:7px;
+
     border-radius:50%;
+
     background:#4ade80;
+
     box-shadow:0 0 12px #4ade80;
 }
 
 
-/* PROFILE */
+/* =========================
+   PROFILE
+========================= */
 
 .profile{
     display:flex;
@@ -427,12 +484,6 @@ main{
         0 0 50px rgba(99,102,241,.25);
 }
 
-@keyframes spinRing{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
 .profile-ring img{
     width:100%;
     height:100%;
@@ -446,6 +497,12 @@ main{
     animation:counterSpin 8s linear infinite;
 }
 
+@keyframes spinRing{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
 @keyframes counterSpin{
     to{
         transform:rotate(-360deg);
@@ -454,12 +511,8 @@ main{
 
 
 /* =========================
-   PAGE CONTAINER
+   PAGE
 ========================= */
-
-.page-wrap{
-    position:relative;
-}
 
 .page{
     display:none;
@@ -480,7 +533,6 @@ main{
     border:1px solid var(--border);
 
     backdrop-filter:blur(24px);
-    -webkit-backdrop-filter:blur(24px);
 
     box-shadow:
         0 30px 80px rgba(0,0,0,.28);
@@ -490,24 +542,26 @@ main{
     display:block;
 
     animation:
-        pageIn .45s cubic-bezier(.2,.8,.2,1);
+        pageIn .45s
+        cubic-bezier(.2,.8,.2,1);
 }
 
 @keyframes pageIn{
     from{
         opacity:0;
-        transform:
-            translateY(18px)
-            scale(.985);
+        transform:translateY(18px) scale(.985);
     }
 
     to{
         opacity:1;
-        transform:
-            translateY(0)
-            scale(1);
+        transform:translateY(0) scale(1);
     }
 }
+
+
+/* =========================
+   PAGE HEADER
+========================= */
 
 .page-head{
     display:flex;
@@ -532,11 +586,13 @@ main{
         );
 
     -webkit-background-clip:text;
+
     color:transparent;
 }
 
 .page-head p{
     color:var(--muted);
+
     font-size:14px;
 }
 
@@ -548,8 +604,7 @@ main{
 .info-grid{
     display:grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     gap:16px;
 }
@@ -576,7 +631,9 @@ main{
 
 .info-box small{
     color:var(--muted);
+
     display:block;
+
     margin-bottom:7px;
 }
 
@@ -586,11 +643,12 @@ main{
 
 
 /* =========================
-   EDUCATION
+   EDUCATION TIMELINE
 ========================= */
 
 .timeline{
     position:relative;
+
     padding-left:30px;
 }
 
@@ -600,7 +658,9 @@ main{
     position:absolute;
 
     left:6px;
+
     top:5px;
+
     bottom:5px;
 
     width:2px;
@@ -615,6 +675,7 @@ main{
 
 .timeline-item{
     position:relative;
+
     margin-bottom:27px;
 }
 
@@ -628,9 +689,11 @@ main{
     position:absolute;
 
     left:-30px;
+
     top:5px;
 
     width:13px;
+
     height:13px;
 
     border-radius:50%;
@@ -647,6 +710,7 @@ main{
 
 .timeline-item p{
     color:var(--muted);
+
     line-height:1.7;
 }
 
@@ -665,7 +729,9 @@ main{
 
 .skill-top{
     display:flex;
+
     justify-content:space-between;
+
     margin-bottom:8px;
 }
 
@@ -713,8 +779,7 @@ main{
 .cards{
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:18px;
 }
@@ -734,8 +799,7 @@ main{
 .card:hover{
     transform:translateY(-8px);
 
-    border-color:
-        rgba(129,140,248,.35);
+    border-color:rgba(129,140,248,.35);
 
     box-shadow:
         0 20px 50px rgba(0,0,0,.3);
@@ -743,11 +807,15 @@ main{
 
 .card-img{
     position:relative;
+
     overflow:hidden;
+
+    cursor:zoom-in;
 }
 
 .card img{
     width:100%;
+
     height:190px;
 
     object-fit:cover;
@@ -761,6 +829,34 @@ main{
     transform:scale(1.07);
 }
 
+.image-zoom{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,0,0,.4);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+.card-img:hover .image-zoom{
+    opacity:1;
+}
+
 .card-body{
     padding:18px;
 }
@@ -771,7 +867,9 @@ main{
 
 .card-body p{
     color:var(--muted);
+
     line-height:1.65;
+
     font-size:14px;
 }
 
@@ -783,48 +881,101 @@ main{
 .certificate-grid{
     display:grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:18px;
 }
 
 .certificate{
-    padding:23px;
+    overflow:hidden;
+
+    padding:0;
 
     border-radius:20px;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(99,102,241,.08),
-            rgba(168,85,247,.06)
-        );
+    background:rgba(255,255,255,.045);
 
-    border:1px solid rgba(129,140,248,.16);
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.certificate:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(129,140,248,.35);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+}
+
+.certificate-image{
+    position:relative;
+
+    height:360px;
+
+    overflow:hidden;
+
+    cursor:zoom-in;
+
+    background:rgba(0,0,0,.25);
+}
+
+.certificate-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.certificate-image:hover img{
+    transform:scale(1.04);
+}
+
+.certificate-overlay{
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+
+    font-weight:700;
+
+    opacity:0;
 
     transition:.3s;
 }
 
-.certificate:hover{
-    transform:translateY(-5px);
-
-    border-color:
-        rgba(167,139,250,.35);
+.certificate-image:hover .certificate-overlay{
+    opacity:1;
 }
 
-.certificate-icon{
-    font-size:30px;
-    margin-bottom:12px;
+.certificate-body{
+    padding:18px;
 }
 
-.certificate h3{
+.certificate-body h3{
     margin-bottom:8px;
 }
 
-.certificate p{
+.certificate-body p{
     color:var(--muted);
+
     line-height:1.7;
+
+    font-size:14px;
 }
 
 
@@ -835,25 +986,26 @@ main{
 .gallery{
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:16px;
 }
 
 .gallery-item{
     position:relative;
+
     overflow:hidden;
 
     border-radius:18px;
 
-    cursor:pointer;
+    cursor:zoom-in;
 
     border:1px solid rgba(255,255,255,.08);
 }
 
 .gallery-item img{
     width:100%;
+
     height:230px;
 
     object-fit:cover;
@@ -869,6 +1021,7 @@ main{
 
 .gallery-overlay{
     position:absolute;
+
     inset:auto 0 0 0;
 
     padding:25px 15px 14px;
@@ -896,8 +1049,7 @@ main{
 .goal{
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:20px;
 }
@@ -923,6 +1075,7 @@ main{
 
 .goal-box p{
     color:#cbd5e1;
+
     line-height:1.9;
 }
 
@@ -934,8 +1087,7 @@ main{
 .university{
     display:grid;
 
-    grid-template-columns:
-        360px 1fr;
+    grid-template-columns:360px 1fr;
 
     align-items:center;
 
@@ -944,6 +1096,7 @@ main{
 
 .uni-image{
     width:100%;
+
     height:320px;
 
     object-fit:contain;
@@ -960,6 +1113,8 @@ main{
         0 25px 60px rgba(0,0,0,.25);
 
     transition:.4s;
+
+    cursor:zoom-in;
 }
 
 .uni-image:hover{
@@ -976,11 +1131,9 @@ main{
 
     border-radius:999px;
 
-    background:
-        rgba(99,102,241,.12);
+    background:rgba(99,102,241,.12);
 
-    border:
-        1px solid rgba(129,140,248,.25);
+    border:1px solid rgba(129,140,248,.25);
 
     color:#c4b5fd;
 
@@ -1002,6 +1155,7 @@ main{
         );
 
     -webkit-background-clip:text;
+
     color:transparent;
 }
 
@@ -1022,11 +1176,13 @@ main{
 
 .lightbox{
     position:fixed;
+
     inset:0;
 
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
     padding:25px;
@@ -1040,16 +1196,13 @@ main{
 
 .lightbox.show{
     display:flex;
-    animation:fade .25s;
-}
 
-@keyframes fade{
-    from{opacity:0}
-    to{opacity:1}
+    animation:fade .25s;
 }
 
 .lightbox img{
     max-width:94%;
+
     max-height:88vh;
 
     border-radius:20px;
@@ -1062,11 +1215,45 @@ main{
     position:absolute;
 
     top:20px;
+
     right:28px;
 
-    font-size:38px;
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.1);
+
+    color:white;
+
+    font-size:32px;
 
     cursor:pointer;
+
+    transition:.3s;
+}
+
+.close:hover{
+    background:rgba(255,255,255,.2);
+
+    transform:rotate(90deg);
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
 }
 
 
@@ -1093,6 +1280,7 @@ footer{
 
     .hero{
         grid-template-columns:1fr;
+
         text-align:center;
     }
 
@@ -1109,22 +1297,29 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .certificate-grid{
+        grid-template-columns:1fr;
+    }
+
     .university{
         grid-template-columns:1fr;
     }
 
     .uni-image{
         max-width:450px;
+
         margin:auto;
     }
-
 }
+
 
 @media(max-width:700px){
 
     .nav{
         align-items:flex-start;
+
         flex-direction:column;
+
         padding:14px 0;
     }
 
@@ -1138,7 +1333,9 @@ footer{
 
     .page{
         padding:22px;
+
         border-radius:22px;
+
         min-height:430px;
     }
 
@@ -1151,7 +1348,6 @@ footer{
     }
 
     .info-grid,
-    .certificate-grid,
     .goal{
         grid-template-columns:1fr;
     }
@@ -1164,10 +1360,17 @@ footer{
         height:220px;
     }
 
+    .certificate-image{
+        height:420px;
+    }
+
     .uni-content h3{
         font-size:30px;
     }
 
+    .uni-content p{
+        font-size:15px;
+    }
 }
 
 </style>
@@ -1177,22 +1380,24 @@ footer{
 <body>
 
 
-<!-- AURORA -->
+<!-- =========================
+     BACKGROUND
+========================= -->
 
 <div class="aurora a1"></div>
 <div class="aurora a2"></div>
 <div class="aurora a3"></div>
 
-
-<!-- PARTICLES -->
-
 <div class="particles">
-    <i></i><i></i><i></i><i></i>
-    <i></i><i></i><i></i><i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
 </div>
-
-
-<!-- SPOTLIGHT -->
 
 <div class="spotlight"></div>
 
@@ -1203,49 +1408,49 @@ footer{
 
 <header>
 
-<div class="nav">
+    <div class="nav">
 
-    <div class="logo">
-        ⚡ Premmatad
+        <div class="logo">
+            ⚡ Premmatad
+        </div>
+
+        <nav class="menu">
+
+            <button data-page="info">
+                👤 ข้อมูล
+            </button>
+
+            <button data-page="education">
+                🎓 การศึกษา
+            </button>
+
+            <button data-page="skills">
+                💡 ความสามารถ
+            </button>
+
+            <button data-page="works">
+                🚀 ผลงาน
+            </button>
+
+            <button data-page="certificates">
+                🏆 เกียรติบัตร
+            </button>
+
+            <button data-page="gallery">
+                🖼️ Gallery
+            </button>
+
+            <button data-page="goals">
+                🎯 เป้าหมาย
+            </button>
+
+            <button data-page="university">
+                🏫 สถาบันเป้าหมาย
+            </button>
+
+        </nav>
+
     </div>
-
-    <nav class="menu">
-
-        <button data-page="info">
-            👤 ข้อมูล
-        </button>
-
-        <button data-page="education">
-            🎓 การศึกษา
-        </button>
-
-        <button data-page="skills">
-            💡 ความสามารถ
-        </button>
-
-        <button data-page="works">
-            🚀 ผลงาน
-        </button>
-
-        <button data-page="certificates">
-            🏆 เกียรติบัตร
-        </button>
-
-        <button data-page="gallery">
-            🖼️ Gallery
-        </button>
-
-        <button data-page="goals">
-            🎯 เป้าหมาย
-        </button>
-
-        <button data-page="university">
-            🏫 สถาบันเป้าหมาย
-        </button>
-
-    </nav>
-
-</div>
 
 </header>
 
@@ -1257,29 +1462,37 @@ footer{
 <main>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
     <div class="hero-text">
 
         <div class="badge">
-            ✦ WELCOME TO MY PORTFOLIO ✦
+            ✦ MY PORTFOLIO ✦
         </div>
 
         <h1>
-            แฟ้มสะสมงานของฉัน
+            แฟ้มสะสมงาน<br>
+            ของฉัน
         </h1>
 
         <p>
-            พื้นที่รวบรวมประวัติ การศึกษา
-            ความสามารถ ผลงาน และเป้าหมาย
-            ของผม
+            ยินดีต้อนรับเข้าสู่ Portfolio ของ
+            <strong>Premmatad</strong>
+            <br>
+            รวมประวัติการศึกษา ความสามารถ ผลงาน
+            และเป้าหมายในอนาคต
         </p>
 
         <div class="status">
+
             <span class="status-dot"></span>
+
             Portfolio Online
+
         </div>
 
     </div>
@@ -1291,7 +1504,7 @@ footer{
 
             <img
                 src="ijii.jpg"
-                alt="Premmatad"
+                alt="Premmatad Profile"
             >
 
         </div>
@@ -1302,24 +1515,19 @@ footer{
 
 
 <!-- =========================
-     CONTENT
+     INFORMATION
 ========================= -->
 
-<div class="page-wrap">
-
-
-<!-- INFO -->
-
-<section
-    id="info"
-    class="page"
->
+<section id="info" class="page">
 
     <div class="page-head">
 
         <div>
             <h2>👤 ข้อมูลส่วนตัว</h2>
-            <p>Personal Information</p>
+
+            <p>
+                ข้อมูลเบื้องต้นเกี่ยวกับตัวผม
+            </p>
         </div>
 
     </div>
@@ -1352,23 +1560,32 @@ footer{
             <strong>098-832-0364</strong>
         </div>
 
+        <div class="info-box">
+            <small>เป้าหมาย</small>
+            <strong>
+                เรียนให้สูงแล้วหางานที่มั่นคง
+            </strong>
+        </div>
+
     </div>
 
 </section>
 
 
-<!-- EDUCATION -->
+<!-- =========================
+     EDUCATION
+========================= -->
 
-<section
-    id="education"
-    class="page"
->
+<section id="education" class="page">
 
     <div class="page-head">
 
         <div>
             <h2>🎓 การศึกษา</h2>
-            <p>Education Journey</p>
+
+            <p>
+                เส้นทางการศึกษาของผม
+            </p>
         </div>
 
     </div>
@@ -1378,7 +1595,9 @@ footer{
 
         <div class="timeline-item">
 
-            <h3>🏫 ประถมศึกษา</h3>
+            <h3>
+                🏫 ระดับประถมศึกษา
+            </h3>
 
             <p>
                 โรงเรียนอนุบาลบ้านบึงอำนาจคณูปถัมภ์
@@ -1389,7 +1608,9 @@ footer{
 
         <div class="timeline-item">
 
-            <h3>🏫 มัธยมศึกษาตอนต้น</h3>
+            <h3>
+                🏫 ระดับมัธยมศึกษาตอนต้น
+            </h3>
 
             <p>
                 โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
@@ -1400,7 +1621,9 @@ footer{
 
         <div class="timeline-item">
 
-            <h3>🎓 มัธยมศึกษาตอนปลาย</h3>
+            <h3>
+                🎓 ระดับมัธยมศึกษาตอนปลาย
+            </h3>
 
             <p>
                 โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
@@ -1413,18 +1636,20 @@ footer{
 </section>
 
 
-<!-- SKILLS -->
+<!-- =========================
+     SKILLS
+========================= -->
 
-<section
-    id="skills"
-    class="page"
->
+<section id="skills" class="page">
 
     <div class="page-head">
 
         <div>
             <h2>💡 ความสามารถ</h2>
-            <p>My Skills</p>
+
+            <p>
+                ทักษะและจุดแข็งของผม
+            </p>
         </div>
 
     </div>
@@ -1433,15 +1658,17 @@ footer{
     <div class="skill">
 
         <div class="skill-top">
-            <span>ความมั่นใจในตนเอง</span>
+
+            <span>
+                ความมั่นใจในตนเอง
+            </span>
+
             <span>100%</span>
+
         </div>
 
         <div class="bar">
-            <div
-                class="fill"
-                data-width="100%"
-            ></div>
+            <div class="fill" data-width="100%"></div>
         </div>
 
     </div>
@@ -1450,15 +1677,17 @@ footer{
     <div class="skill">
 
         <div class="skill-top">
-            <span>ความกล้าที่จะทำสิ่งต่าง ๆ</span>
+
+            <span>
+                ความกล้าที่จะทำสิ่งต่าง ๆ
+            </span>
+
             <span>90%</span>
+
         </div>
 
         <div class="bar">
-            <div
-                class="fill"
-                data-width="90%"
-            ></div>
+            <div class="fill" data-width="90%"></div>
         </div>
 
     </div>
@@ -1467,15 +1696,17 @@ footer{
     <div class="skill">
 
         <div class="skill-top">
-            <span>เรียนรู้เร็วและนำมาปรับใช้</span>
+
+            <span>
+                เรียนรู้เร็วและนำมาปรับใช้
+            </span>
+
             <span>90%</span>
+
         </div>
 
         <div class="bar">
-            <div
-                class="fill"
-                data-width="90%"
-            ></div>
+            <div class="fill" data-width="90%"></div>
         </div>
 
     </div>
@@ -1484,15 +1715,17 @@ footer{
     <div class="skill">
 
         <div class="skill-top">
-            <span>การนำเสนอ</span>
+
+            <span>
+                การนำเสนอ
+            </span>
+
             <span>75%</span>
+
         </div>
 
         <div class="bar">
-            <div
-                class="fill"
-                data-width="75%"
-            ></div>
+            <div class="fill" data-width="75%"></div>
         </div>
 
     </div>
@@ -1501,15 +1734,17 @@ footer{
     <div class="skill">
 
         <div class="skill-top">
-            <span>เทคโนโลยี</span>
+
+            <span>
+                เทคโนโลยี
+            </span>
+
             <span>70%</span>
+
         </div>
 
         <div class="bar">
-            <div
-                class="fill"
-                data-width="70%"
-            ></div>
+            <div class="fill" data-width="70%"></div>
         </div>
 
     </div>
@@ -1517,18 +1752,20 @@ footer{
 </section>
 
 
-<!-- WORKS -->
+<!-- =========================
+     WORKS
+========================= -->
 
-<section
-    id="works"
-    class="page"
->
+<section id="works" class="page">
 
     <div class="page-head">
 
         <div>
-            <h2>🚀 ผลงานและกิจกรรม</h2>
-            <p>Activities & Experiences</p>
+            <h2>🚀 ผลงาน</h2>
+
+            <p>
+                กิจกรรมและประสบการณ์ที่ได้เข้าร่วม
+            </p>
         </div>
 
     </div>
@@ -1537,16 +1774,26 @@ footer{
     <div class="cards">
 
 
+        <!-- WORK A -->
+
         <article class="card">
 
-            <div class="card-img">
+            <div
+                class="card-img"
+                onclick="openLightbox('workA.png')"
+            >
 
                 <img
                     src="workA.png"
                     alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
                 >
 
+                <div class="image-zoom">
+                    🔍 คลิกเพื่อขยาย
+                </div>
+
             </div>
+
 
             <div class="card-body">
 
@@ -1555,7 +1802,7 @@ footer{
                 </h3>
 
                 <p>
-                    เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
+                    การแข่งขันตอบปัญหาวิทยาศาสตร์
                     ณ โรงเรียนสวนกุหลาบวิทยาลัย
                     ปีการศึกษา 2568
                 </p>
@@ -1565,26 +1812,35 @@ footer{
         </article>
 
 
+        <!-- WORK B -->
+
         <article class="card">
 
-            <div class="card-img">
+            <div
+                class="card-img"
+                onclick="openLightbox('Work.png')"
+            >
 
                 <img
                     src="Work.png"
-                    alt="กิจกรรมตักบาตร"
+                    alt="กิจกรรมทำบุญตักบาตร"
                 >
 
+                <div class="image-zoom">
+                    🔍 คลิกเพื่อขยาย
+                </div>
+
             </div>
+
 
             <div class="card-body">
 
                 <h3>
-                    🙏 กิจกรรมตักบาตร
+                    🙏 กิจกรรมทำบุญตักบาตร
                 </h3>
 
                 <p>
-                    เข้าร่วมกิจกรรมตักบาตร
-                    วันครบรอบการก่อตั้งโรงเรียน
+                    กิจกรรมตักบาตรวันครบรอบการก่อตั้งโรงเรียน
                     วันที่ 1 กันยายน 2569
                     พร้อมผู้ปกครอง
                 </p>
@@ -1594,21 +1850,31 @@ footer{
         </article>
 
 
+        <!-- WORK C -->
+
         <article class="card">
 
-            <div class="card-img">
+            <div
+                class="card-img"
+                onclick="openLightbox('workC.png')"
+            >
 
                 <img
                     src="workC.png"
-                    alt="ฝึกประสบการณ์โรงพยาบาล"
+                    alt="ฝึกประสบการณ์โรงพยาบาลบ้านบึง"
                 >
 
+                <div class="image-zoom">
+                    🔍 คลิกเพื่อขยาย
+                </div>
+
             </div>
+
 
             <div class="card-body">
 
                 <h3>
-                    🏥 ฝึกประสบการณ์
+                    🏥 ฝึกประสบการณ์โรงพยาบาล
                 </h3>
 
                 <p>
@@ -1627,18 +1893,22 @@ footer{
 </section>
 
 
-<!-- CERTIFICATES -->
+<!-- =========================
+     CERTIFICATES
+========================= -->
 
-<section
-    id="certificates"
-    class="page"
->
+<section id="certificates" class="page">
 
     <div class="page-head">
 
         <div>
+
             <h2>🏆 เกียรติบัตร</h2>
-            <p>Certificates & Achievements</p>
+
+            <p>
+                เกียรติบัตรและใบรับรองจากกิจกรรมต่าง ๆ
+            </p>
+
         </div>
 
     </div>
@@ -1646,60 +1916,144 @@ footer{
 
     <div class="certificate-grid">
 
-        <div class="certificate">
 
-            <div class="certificate-icon">
-                🏆
+        <!-- CERTIFICATE A -->
+
+        <article class="certificate">
+
+            <div
+                class="certificate-image"
+                onclick="openLightbox('workA.png')"
+            >
+
+                <img
+                    src="workA.png"
+                    alt="เกียรติบัตรการแข่งขันตอบปัญหาวิทยาศาสตร์"
+                >
+
+                <div class="certificate-overlay">
+                    🔍 คลิกเพื่อขยายภาพ
+                </div>
+
             </div>
 
-            <h3>
-                เกียรติบัตรและรางวัล
-            </h3>
 
-            <p>
-                พื้นที่สำหรับรวบรวมเกียรติบัตร
-                รางวัล และความสำเร็จต่าง ๆ
-                จากการเรียนและกิจกรรม
-            </p>
+            <div class="certificate-body">
 
-        </div>
+                <h3>
+                    🧪 การแข่งขันตอบปัญหาวิทยาศาสตร์
+                </h3>
 
+                <p>
+                    เกียรติบัตรจากการแข่งขันตอบปัญหาวิทยาศาสตร์
+                    ณ โรงเรียนสวนกุหลาบวิทยาลัย
+                    ปีการศึกษา 2568
+                </p>
 
-        <div class="certificate">
-
-            <div class="certificate-icon">
-                📜
             </div>
 
-            <h3>
-                กิจกรรมที่เข้าร่วม
-            </h3>
+        </article>
 
-            <p>
-                รวบรวมหลักฐานและผลงาน
-                ที่แสดงถึงประสบการณ์
-                และการพัฒนาตนเอง
-            </p>
 
-        </div>
+        <!-- CERTIFICATE B -->
+
+        <article class="certificate">
+
+            <div
+                class="certificate-image"
+                onclick="openLightbox('Work.png')"
+            >
+
+                <img
+                    src="Work.png"
+                    alt="เกียรติบัตรกิจกรรมทำบุญตักบาตร"
+                >
+
+                <div class="certificate-overlay">
+                    🔍 คลิกเพื่อขยายภาพ
+                </div>
+
+            </div>
+
+
+            <div class="certificate-body">
+
+                <h3>
+                    🙏 กิจกรรมทำบุญตักบาตร
+                </h3>
+
+                <p>
+                    เกียรติบัตรหรือหลักฐานการเข้าร่วมกิจกรรม
+                    ทำบุญตักบาตร เนื่องในวันครบรอบ
+                    การก่อตั้งโรงเรียน
+                    วันที่ 1 กันยายน 2569
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- CERTIFICATE C -->
+
+        <article class="certificate">
+
+            <div
+                class="certificate-image"
+                onclick="openLightbox('workC.png')"
+            >
+
+                <img
+                    src="workC.png"
+                    alt="ใบรับรองการฝึกงานโรงพยาบาลบ้านบึง"
+                >
+
+                <div class="certificate-overlay">
+                    🔍 คลิกเพื่อขยายภาพ
+                </div>
+
+            </div>
+
+
+            <div class="certificate-body">
+
+                <h3>
+                    🏥 ใบรับรองการฝึกงาน
+                </h3>
+
+                <p>
+                    ใบรับรองการฝึกประสบการณ์
+                    ในกลุ่มงานพยาบาล
+                    ณ โรงพยาบาลบ้านบึง
+                    วันที่ 9–13 มีนาคม 2569
+                </p>
+
+            </div>
+
+        </article>
+
 
     </div>
 
 </section>
 
 
-<!-- GALLERY -->
+<!-- =========================
+     GALLERY
+========================= -->
 
-<section
-    id="gallery"
-    class="page"
->
+<section id="gallery" class="page">
 
     <div class="page-head">
 
         <div>
+
             <h2>🖼️ Gallery</h2>
-            <p>My Memories</p>
+
+            <p>
+                รวมภาพกิจกรรม
+            </p>
+
         </div>
 
     </div>
@@ -1715,11 +2069,11 @@ footer{
 
             <img
                 src="workA.png"
-                alt="Gallery 1"
+                alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
             >
 
             <div class="gallery-overlay">
-                🔍 คลิกเพื่อดูภาพ
+                🔍 คลิกเพื่อขยาย
             </div>
 
         </div>
@@ -1732,11 +2086,11 @@ footer{
 
             <img
                 src="Work.png"
-                alt="Gallery 2"
+                alt="กิจกรรมทำบุญตักบาตร"
             >
 
             <div class="gallery-overlay">
-                🔍 คลิกเพื่อดูภาพ
+                🔍 คลิกเพื่อขยาย
             </div>
 
         </div>
@@ -1749,11 +2103,11 @@ footer{
 
             <img
                 src="workC.png"
-                alt="Gallery 3"
+                alt="ฝึกประสบการณ์โรงพยาบาล"
             >
 
             <div class="gallery-overlay">
-                🔍 คลิกเพื่อดูภาพ
+                🔍 คลิกเพื่อขยาย
             </div>
 
         </div>
@@ -1764,18 +2118,22 @@ footer{
 </section>
 
 
-<!-- GOALS -->
+<!-- =========================
+     GOALS
+========================= -->
 
-<section
-    id="goals"
-    class="page"
->
+<section id="goals" class="page">
 
     <div class="page-head">
 
         <div>
+
             <h2>🎯 เป้าหมาย</h2>
-            <p>My Future Goals</p>
+
+            <p>
+                เป้าหมายและสิ่งที่อยากพัฒนาตัวเอง
+            </p>
+
         </div>
 
     </div>
@@ -1787,13 +2145,15 @@ footer{
         <div class="goal-box">
 
             <h3>
-                🎓 เป้าหมายด้านการศึกษา
+                🚀 เป้าหมายในอนาคต
             </h3>
 
             <p>
-                เรียนให้สูงและพัฒนาความรู้
-                ความสามารถของตนเอง
-                อย่างต่อเนื่อง
+                เรียนต่อในระดับที่สูงขึ้น
+                เพื่อพัฒนาความรู้และความสามารถ
+                ของตัวเองให้มากยิ่งขึ้น
+                และนำความรู้ที่ได้รับไปต่อยอด
+                ในการทำงานในอนาคต
             </p>
 
         </div>
@@ -1802,13 +2162,15 @@ footer{
         <div class="goal-box">
 
             <h3>
-                💼 เป้าหมายในอนาคต
+                💡 สิ่งที่ต้องการพัฒนา
             </h3>
 
             <p>
-                นำความรู้และประสบการณ์
-                ไปต่อยอดในการทำงาน
-                และมีงานที่มั่นคงในอนาคต
+                ต้องการพัฒนาทักษะด้านเทคโนโลยี
+                การนำเสนอ การเรียนรู้สิ่งใหม่ ๆ
+                รวมถึงประสบการณ์จากกิจกรรมต่าง ๆ
+                เพื่อเตรียมความพร้อมสำหรับการศึกษา
+                และการทำงานในอนาคต
             </p>
 
         </div>
@@ -1819,18 +2181,22 @@ footer{
 </section>
 
 
-<!-- UNIVERSITY -->
+<!-- =========================
+     UNIVERSITY
+========================= -->
 
-<section
-    id="university"
-    class="page"
->
+<section id="university" class="page">
 
     <div class="page-head">
 
         <div>
+
             <h2>🏫 สถาบันเป้าหมาย</h2>
-            <p>Target University</p>
+
+            <p>
+                มหาวิทยาลัยที่ตั้งเป้าหมายไว้
+            </p>
+
         </div>
 
     </div>
@@ -1839,11 +2205,16 @@ footer{
     <div class="university">
 
 
-        <img
-            src="Mahidol.PNG"
-            alt="มหาวิทยาลัยมหิดล"
-            class="uni-image"
-        >
+        <div>
+
+            <img
+                class="uni-image"
+                src="Mahidol.PNG"
+                alt="มหาวิทยาลัยมหิดล"
+                onclick="openLightbox('Mahidol.PNG')"
+            >
+
+        </div>
 
 
         <div class="uni-content">
@@ -1852,9 +2223,11 @@ footer{
                 ⭐ อันดับเป้าหมายที่ 1
             </div>
 
+
             <h3>
                 มหาวิทยาลัยมหิดล
             </h3>
+
 
             <p>
                 เนื่องจากมหาวิทยาลัยมหิดลคือหนึ่งใน
@@ -1866,31 +2239,38 @@ footer{
                 ของตัวผม
             </p>
 
+
             <p>
-                ผมจึงมีความตั้งใจที่จะพัฒนาตนเอง
-                ทั้งด้านความรู้ ความสามารถ
-                และประสบการณ์ต่าง ๆ
+                ผมต้องการพัฒนาความรู้ ทักษะ
+                และประสบการณ์ของตัวเอง
                 เพื่อเตรียมความพร้อมสำหรับ
-                การศึกษาต่อในมหาวิทยาลัย
-                ที่ตั้งเป้าหมายไว้
+                การศึกษาในระดับมหาวิทยาลัย
+                และการทำงานในอนาคต
             </p>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-</div>
-
 </main>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
     © 2026 Premmatad Portfolio
+
     <br>
+
     Designed with Aurora Glassmorphism ✦
+
 </footer>
 
 
@@ -1942,7 +2322,7 @@ document.addEventListener(
 
 
 /* =========================
-   PAGE SYSTEM
+   PAGE NAVIGATION
 ========================= */
 
 const buttons =
@@ -1957,6 +2337,7 @@ const pages =
 
 
 const pageNames = [
+
     "info",
     "education",
     "skills",
@@ -1965,8 +2346,13 @@ const pageNames = [
     "gallery",
     "goals",
     "university"
+
 ];
 
+
+/* =========================
+   SHOW PAGE
+========================= */
 
 function showPage(name){
 
@@ -1992,20 +2378,24 @@ function showPage(name){
     const page =
         document.getElementById(name);
 
+
     const button =
         document.querySelector(
             `[data-page="${name}"]`
         );
 
 
-    page.classList.add("active");
+    if(page){
+        page.classList.add("active");
+    }
+
 
     if(button){
         button.classList.add("active");
     }
 
 
-    /* Skill animation */
+    /* Animate skill bars */
 
     if(name === "skills"){
 
@@ -2030,7 +2420,7 @@ function showPage(name){
 
 
 /* =========================
-   HASH
+   LOAD HASH
 ========================= */
 
 function loadHash(){
@@ -2038,14 +2428,20 @@ function loadHash(){
     let name =
         location.hash.substring(1);
 
+
     if(!name){
         name = "info";
     }
+
 
     showPage(name);
 
 }
 
+
+/* =========================
+   MENU CLICK
+========================= */
 
 buttons.forEach(button => {
 
@@ -2053,10 +2449,8 @@ buttons.forEach(button => {
         "click",
         () => {
 
-            const page =
+            location.hash =
                 button.dataset.page;
-
-            location.hash = page;
 
         }
     );
@@ -2064,11 +2458,19 @@ buttons.forEach(button => {
 });
 
 
+/* =========================
+   BROWSER BACK/FORWARD
+========================= */
+
 window.addEventListener(
     "hashchange",
     loadHash
 );
 
+
+/* =========================
+   INITIAL PAGE
+========================= */
 
 loadHash();
 
@@ -2092,6 +2494,7 @@ document.addEventListener(
         let current =
             location.hash.substring(1);
 
+
         let index =
             pageNames.indexOf(current);
 
@@ -2102,20 +2505,30 @@ document.addEventListener(
 
 
         if(e.key === "ArrowRight"){
+
             index++;
 
-            if(index >= pageNames.length){
+            if(
+                index >=
+                pageNames.length
+            ){
                 index = 0;
             }
+
         }
 
 
         if(e.key === "ArrowLeft"){
+
             index--;
 
             if(index < 0){
-                index = pageNames.length - 1;
+
+                index =
+                    pageNames.length - 1;
+
             }
+
         }
 
 
@@ -2132,32 +2545,55 @@ document.addEventListener(
 
 function openLightbox(src){
 
-    document
-        .getElementById("lightboxImage")
-        .src = src;
+    const lightbox =
+        document.getElementById(
+            "lightbox"
+        );
 
-    document
-        .getElementById("lightbox")
-        .classList.add("show");
+    const image =
+        document.getElementById(
+            "lightboxImage"
+        );
+
+
+    image.src = src;
+
+    lightbox.classList.add("show");
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
 
 function closeLightbox(){
 
-    document
-        .getElementById("lightbox")
-        .classList.remove("show");
+    const lightbox =
+        document.getElementById(
+            "lightbox"
+        );
+
+
+    lightbox.classList.remove("show");
+
+    document.body.style.overflow =
+        "";
 
 }
 
+
+/* =========================
+   ESC CLOSE LIGHTBOX
+========================= */
 
 document.addEventListener(
     "keydown",
     e => {
 
         if(e.key === "Escape"){
+
             closeLightbox();
+
         }
 
     }

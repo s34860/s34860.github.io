@@ -771,6 +771,28 @@ header h1{
 .skill{
 
     margin:24px 0;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.skill:hover{
+
+    border-color:rgba(255,255,255,.2);
+}
+
+.skill-header{
+
+    padding:20px;
+
+    cursor:pointer;
 }
 
 .skill-top{
@@ -779,13 +801,80 @@ header h1{
 
     justify-content:space-between;
 
+    align-items:center;
+
+    gap:15px;
+
     margin-bottom:9px;
 
     font-size:15px;
 }
 
-.skill-top span:last-child{
+.skill-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.skill-percent{
+
     opacity:.8;
+
+    white-space:nowrap;
+}
+
+.skill-arrow{
+
+    display:inline-block;
+
+    font-size:18px;
+
+    margin-left:5px;
+
+    transition:.4s;
+}
+
+.skill.open .skill-arrow{
+
+    transform:rotate(180deg);
+}
+
+.skill-detail{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .6s ease;
+
+    padding:0 20px;
+}
+
+.skill.open .skill-detail{
+
+    max-height:300px;
+
+    padding:0 20px 20px;
+}
+
+.skill-detail p{
+
+    line-height:1.9;
+
+    opacity:.9;
+
+    margin:0;
+
+    padding:15px 18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .skill-bar{
@@ -806,8 +895,6 @@ header h1{
 .skill-fill{
 
     height:100%;
-
-    width:0;
 
     border-radius:20px;
 
@@ -1433,6 +1520,16 @@ body.dark{
         left:-29px;
     }
 
+    .skill-top{
+
+        font-size:14px;
+    }
+
+    .skill-header{
+
+        padding:17px;
+    }
+
 }
 
 
@@ -1481,6 +1578,24 @@ body.dark{
         border:1px solid #ddd;
 
         break-inside:avoid;
+    }
+
+    .skill,
+    .certificate{
+
+        background:white !important;
+
+        color:black !important;
+
+        border:1px solid #ddd;
+    }
+
+    .skill-detail,
+    .certificate-detail{
+
+        max-height:none !important;
+
+        padding:0 20px 20px !important;
     }
 
     .skill-bar{
@@ -1897,863 +2012,146 @@ body.dark{
         </h2>
 
 
-        <div class="skill">
-
-            <div class="skill-top">
-
-                <span>
-                    💪 ความมั่นใจในตนเอง
-                </span>
-
-                <span>
-                    100%
-                </span>
-
-            </div>
-
-
-            <div class="skill-bar">
-
-                <div class="skill-fill skill-1"></div>
-
-            </div>
-
-        </div>
-
+        <!-- SKILL 1 -->
 
         <div class="skill">
-
-            <div class="skill-top">
-
-                <span>
-                    🔥 ความกล้าที่จะทำสิ่งต่าง ๆ
-                </span>
-
-                <span>
-                    90%
-                </span>
-
-            </div>
-
-
-            <div class="skill-bar">
-
-                <div class="skill-fill skill-2"></div>
-
-            </div>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-top">
-
-                <span>
-                    🧠 เรียนรู้เร็วและนำมาปรับใช้
-                </span>
-
-                <span>
-                    90%
-                </span>
-
-            </div>
-
-
-            <div class="skill-bar">
-
-                <div class="skill-fill skill-3"></div>
-
-            </div>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-top">
-
-                <span>
-                    🎤 การนำเสนอ
-                </span>
-
-                <span>
-                    75%
-                </span>
-
-            </div>
-
-
-            <div class="skill-bar">
-
-                <div class="skill-fill skill-4"></div>
-
-            </div>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-top">
-
-                <span>
-                    💻 เทคโนโลยี
-                </span>
-
-                <span>
-                    70%
-                </span>
-
-            </div>
-
-
-            <div class="skill-bar">
-
-                <div class="skill-fill skill-5"></div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="card">
-
-        <h2>
-            🌟 จุดเด่น
-        </h2>
-
-
-        <p class="about-text">
-
-            • มีความมั่นใจในตนเอง<br>
-
-            • มีความกล้าที่จะทำสิ่งต่าง ๆ
-            ในเวลาที่เหมาะสม<br>
-
-            • เรียนรู้เร็วและพร้อมนำความรู้มาปรับใช้<br>
-
-            • พร้อมพัฒนาตนเอง<br>
-
-            • สามารถเรียนรู้จากประสบการณ์
-
-        </p>
-
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section
-    id="projects"
-    class="page"
->
-
-
-    <div class="card">
-
-        <h2>
-            🚀 ผลงานและกิจกรรม
-        </h2>
-
-
-        <div class="project-grid">
-
-
-            <div class="card project">
-
-                <img
-                    src="workA.png"
-                    onclick="openImage('workA.png')"
-                    alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        🏆 การแข่งขันตอบปัญหาวิทยาศาสตร์
-                    </h3>
-
-                    <p>
-
-                        เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
-                        ณ โรงเรียนสวนกุหลาบวิทยาลัย
-                        ในปีการศึกษา 2568
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="card project">
-
-                <img
-                    src="Work.png"
-                    onclick="openImage('Work.png')"
-                    alt="กิจกรรมทำบุญ"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        📜 กิจกรรมทำบุญ
-                    </h3>
-
-                    <p>
-
-                        เข้าร่วมกิจกรรมตักบาตร
-                        เนื่องในวันครบรอบการก่อตั้งโรงเรียน
-                        วันที่ 1 กันยายน 2569
-                        โดยเข้าร่วมกิจกรรมพร้อมผู้ปกครอง
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="card project">
-
-                <img
-                    src="workC.png"
-                    onclick="openImage('workC.png')"
-                    alt="ประสบการณ์วิชาชีพ"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        🎯 ประสบการณ์วิชาชีพ
-                    </h3>
-
-                    <p>
-
-                        เข้าร่วมกิจกรรมฝึกประสบการณ์
-                        ในกลุ่มงานพยาบาล
-                        ณ โรงพยาบาลบ้านบึง
-                        ระหว่างวันที่ 9–13 มีนาคม 2569
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     CERTIFICATES
-===================================================== -->
-
-<section
-    id="certificates"
-    class="page"
->
-
-
-    <div class="card">
-
-        <h2>
-            🏆 เกียรติบัตรและกิจกรรม
-        </h2>
-
-
-        <div class="certificate">
-
 
             <div
-                class="certificate-header"
-                onclick="toggleCertificate(this)"
+                class="skill-header"
+                onclick="toggleSkill(this)"
             >
 
-                <h3>
-                    🏆 1. รางวัลการแข่งขัน
-                </h3>
+                <div class="skill-top">
 
-                <span class="arrow">
-                    ▼
-                </span>
+                    <span class="skill-title">
+                        💪 ความมั่นใจในตนเอง
+                    </span>
+
+                    <span class="skill-percent">
+                        100%
+                        <span class="skill-arrow">▼</span>
+                    </span>
+
+                </div>
+
+
+                <div class="skill-bar">
+
+                    <div class="skill-fill skill-1"></div>
+
+                </div>
 
             </div>
 
 
-            <div class="certificate-detail">
+            <div class="skill-detail">
 
                 <p>
 
-                    เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
-                    ณ โรงเรียนสวนกุหลาบวิทยาลัย
-                    ในปีการศึกษา 2568
-
-                    โดยได้เตรียมตัวและฝึกฝนอย่างต่อเนื่อง
-                    รวมถึงเรียนรู้การทำงานภายใต้ความกดดัน
+                    มีความมั่นใจที่คอยกระตุ้นในยามที่เกิดปัญหาหรือวิกฤต
+                    เพื่อป้องกันอาการตื่นตระหนก
 
                 </p>
-
-
-                <img
-                    src="workA.png"
-                    onclick="openImage('workA.png')"
-                    alt="รางวัลการแข่งขัน"
-                >
 
             </div>
 
         </div>
 
 
-        <div class="certificate">
+        <!-- SKILL 2 -->
 
+        <div class="skill">
 
             <div
-                class="certificate-header"
-                onclick="toggleCertificate(this)"
+                class="skill-header"
+                onclick="toggleSkill(this)"
             >
 
-                <h3>
-                    📜 2. กิจกรรม / เกียรติบัตรที่ได้รับ
-                </h3>
+                <div class="skill-top">
 
-                <span class="arrow">
-                    ▼
-                </span>
+                    <span class="skill-title">
+                        🔥 ความกล้าที่จะทำสิ่งต่าง ๆ
+                    </span>
+
+                    <span class="skill-percent">
+                        90%
+                        <span class="skill-arrow">▼</span>
+                    </span>
+
+                </div>
+
+
+                <div class="skill-bar">
+
+                    <div class="skill-fill skill-2"></div>
+
+                </div>
 
             </div>
 
 
-            <div class="certificate-detail">
+            <div class="skill-detail">
 
                 <p>
 
-                    เข้าร่วมกิจกรรมตักบาตร
-                    เนื่องในวันครบรอบการก่อตั้งโรงเรียน
-                    วันที่ 1 กันยายน 2569
-                    โดยเข้าร่วมกิจกรรมพร้อมผู้ปกครอง
+                    มีความกล้าที่จะทำสิ่งที่จำเป็น
+                    แม้ในยามที่ทุกสิ่งไม่เป็นไปตามแผน
 
                 </p>
-
-
-                <img
-                    src="Work.png"
-                    onclick="openImage('Work.png')"
-                    alt="กิจกรรมตักบาตร"
-                >
 
             </div>
 
         </div>
 
 
-        <div class="certificate">
+        <!-- SKILL 3 -->
 
+        <div class="skill">
 
             <div
-                class="certificate-header"
-                onclick="toggleCertificate(this)"
+                class="skill-header"
+                onclick="toggleSkill(this)"
             >
 
-                <h3>
-                    🎯 3. กิจกรรมพิเศษ
-                </h3>
+                <div class="skill-top">
 
-                <span class="arrow">
-                    ▼
-                </span>
+                    <span class="skill-title">
+                        🧠 เรียนรู้เร็วและนำมาปรับใช้
+                    </span>
 
-            </div>
+                    <span class="skill-percent">
+                        90%
+                        <span class="skill-arrow">▼</span>
+                    </span>
 
-
-            <div class="certificate-detail">
-
-                <p>
-
-                    เข้าร่วมกิจกรรมฝึกประสบการณ์วิชาชีพ
-                    ในกลุ่มงานพยาบาล
-                    ณ โรงพยาบาลบ้านบึง
-                    ระหว่างวันที่ 9–13 มีนาคม 2569
-
-                </p>
-
-
-                <img
-                    src="workC.png"
-                    onclick="openImage('workC.png')"
-                    alt="กิจกรรมฝึกประสบการณ์"
-                >
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     GALLERY
-===================================================== -->
-
-<section
-    id="gallery"
-    class="page"
->
-
-
-    <div class="card">
-
-        <h2>
-            🖼️ Gallery
-        </h2>
-
-
-        <p
-            class="about-text"
-            style="margin-bottom:20px;"
-        >
-            รวมภาพกิจกรรมและผลงานที่สำคัญ
-        </p>
-
-
-        <div class="gallery">
-
-
-            <img
-                src="workA.png"
-                onclick="openImage('workA.png')"
-                alt="Gallery 1"
-            >
-
-
-            <img
-                src="Work.png"
-                onclick="openImage('Work.png')"
-                alt="Gallery 2"
-            >
-
-
-            <img
-                src="workC.png"
-                onclick="openImage('workC.png')"
-                alt="Gallery 3"
-            >
-
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     GOALS
-===================================================== -->
-
-<section
-    id="goals"
-    class="page"
->
-
-
-    <div class="card">
-
-        <h2>
-            🎯 เป้าหมายในอนาคต
-        </h2>
-
-
-        <div class="goal-grid">
-
-
-            <div class="goal-box">
-
-                <div class="icon">
-                    📚
                 </div>
 
-                <h3>
-                    ระยะสั้น
-                </h3>
 
-                <p>
+                <div class="skill-bar">
 
-                    ตั้งใจเรียนและพัฒนาความรู้
-                    เพื่อเตรียมพร้อมสำหรับการศึกษาต่อ
+                    <div class="skill-fill skill-3"></div>
 
-                </p>
-
-            </div>
-
-
-            <div class="goal-box">
-
-                <div class="icon">
-                    🎓
                 </div>
 
-                <h3>
-                    ระยะกลาง
-                </h3>
+            </div>
+
+
+            <div class="skill-detail">
 
                 <p>
 
-                    ศึกษาต่อในระดับที่สูงขึ้น
-                    และพัฒนาทักษะที่จำเป็นต่ออนาคต
+                    เมื่อพบเจอข้อมูลหรือเนื้อหาใหม่ ๆ
+                    สามารถเข้าใจได้อย่างรวดเร็ว
+                    พร้อมนำมาใช้ประกอบในการทำสิ่งต่าง ๆ
+                    ในหัวข้อที่เกี่ยวข้อง
 
                 </p>
 
             </div>
-
-
-            <div class="goal-box">
-
-                <div class="icon">
-                    💼
-                </div>
-
-                <h3>
-                    ระยะยาว
-                </h3>
-
-                <p>
-
-                    มีงานที่มั่นคง
-                    และสามารถนำความรู้ความสามารถ
-                    มาใช้ในการทำงานได้อย่างเต็มที่
-
-                </p>
-
-            </div>
-
 
         </div>
 
-    </div>
 
+        <!-- SKILL 4 -->
 
-    <div class="card">
-
-        <h2>
-            🌟 คติประจำใจ
-        </h2>
-
-
-        <div class="goal">
-
-            “ความสำเร็จไม่ได้เกิดจากการรอคอย
-            แต่เกิดจากการลงมือทำ
-            และพัฒนาตัวเองในทุกวัน”
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <p>
-        ⚡ Premmatad Portfolio ⚡
-    </p>
-
-    <p>
-        © 2026 All Rights Reserved
-    </p>
-
-</footer>
-
-
-</div>
-
-
-<!-- =====================================================
-     IMAGE VIEWER
-===================================================== -->
-
-<div
-    class="viewer"
-    id="viewer"
-    onclick="closeImage()"
->
-
-
-    <button
-        class="close-viewer"
-        onclick="closeImage(event)"
-    >
-        ×
-    </button>
-
-
-    <img
-        id="viewerImage"
-        src=""
-        alt="รูปภาพขนาดใหญ่"
-        onclick="event.stopPropagation()"
-    >
-
-
-</div>
-
-
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
-
-<button
-    id="topBtn"
-    onclick="window.scrollTo({
-        top:0,
-        behavior:'smooth'
-    })"
->
-    ↑
-</button>
-
-
-<script>
-
-/* =====================================================
-   PAGE SWITCH
-===================================================== */
-
-function showPage(pageId,button){
-
-    document
-        .querySelectorAll(".page")
-        .forEach(page=>{
-
-            page.classList.remove("active");
-
-        });
-
-
-    document
-        .getElementById(pageId)
-        .classList.add("active");
-
-
-    document
-        .querySelectorAll(".nav-btn")
-        .forEach(btn=>{
-
-            btn.classList.remove("active");
-
-        });
-
-
-    button.classList.add("active");
-
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-}
-
-
-/* =====================================================
-   CERTIFICATE
-===================================================== */
-
-function toggleCertificate(header){
-
-    const certificate =
-        header.parentElement;
-
-    certificate.classList.toggle("open");
-
-}
-
-
-/* =====================================================
-   IMAGE VIEWER
-===================================================== */
-
-function openImage(src){
-
-    document
-        .getElementById("viewerImage")
-        .src=src;
-
-
-    document
-        .getElementById("viewer")
-        .classList.add("active");
-
-}
-
-
-function closeImage(event){
-
-    if(event){
-
-        event.stopPropagation();
-
-    }
-
-
-    document
-        .getElementById("viewer")
-        .classList.remove("active");
-
-}
-
-
-/* =====================================================
-   ESC CLOSE IMAGE
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key==="Escape"){
-
-            closeImage();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   DARK MODE
-===================================================== */
-
-function toggleDarkMode(){
-
-    document.body.classList.toggle("dark");
-
-
-    const isDark =
-        document.body.classList.contains("dark");
-
-
-    localStorage.setItem(
-        "portfolioDarkMode",
-        isDark
-    );
-
-}
-
-
-if(
-    localStorage.getItem(
-        "portfolioDarkMode"
-    )==="true"
-){
-
-    document.body.classList.add("dark");
-
-}
-
-
-/* =====================================================
-   BACK BUTTON
-===================================================== */
-
-function goBack(){
-
-    if(window.history.length>1){
-
-        window.history.back();
-
-    }else{
-
-        alert("ไม่มีหน้าก่อนหน้า");
-
-    }
-
-}
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-window.addEventListener(
-    "scroll",
-    function(){
-
-        const btn =
-            document.getElementById("topBtn");
-
-
-        if(window.scrollY>400){
-
-            btn.style.display="block";
-
-        }else{
-
-            btn.style.display="none";
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   MOUSE LIGHT
-===================================================== */
-
-const mouseLight =
-    document.getElementById("mouseLight");
-
-
-document.addEventListener(
-    "mousemove",
-    function(e){
-
-        mouseLight.style.left =
-            e.clientX + "px";
-
-
-        mouseLight.style.top =
-            e.clientY + "px";
-
-    }
-);
-
-</script>
-
-
-</body>
-</html>
+        <div

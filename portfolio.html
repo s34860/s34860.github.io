@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Premmatad Prajong | Portfolio</title>
+<title>Portfolio | Premmatad</title>
 
 <style>
 
-/* =====================================================
+/* =========================
    RESET
-===================================================== */
+========================= */
 
 *{
     margin:0;
@@ -26,1458 +20,715 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:110px;
 }
 
 body{
-
     font-family:
         "Segoe UI",
         "Noto Sans Thai",
         Arial,
         sans-serif;
 
+    min-height:100vh;
     color:#fff;
 
-    min-height:100vh;
-
-    overflow-x:hidden;
-
     background:
-
         radial-gradient(
-            circle at 15% 15%,
-            rgba(99,102,241,.30),
-            transparent 32%
+            circle at 20% 20%,
+            rgba(79,70,229,.25),
+            transparent 35%
         ),
-
         radial-gradient(
-            circle at 85% 25%,
-            rgba(168,85,247,.25),
-            transparent 32%
+            circle at 80% 10%,
+            rgba(139,92,246,.22),
+            transparent 35%
         ),
-
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(59,130,246,.20),
-            transparent 40%
-        ),
-
         linear-gradient(
             135deg,
-            #020617,
-            #0f172a 45%,
-            #1e1b4b
+            #050816,
+            #0b1026,
+            #11113a,
+            #090b1d
         );
 
-    background-attachment:fixed;
+    overflow-x:hidden;
 }
 
 
-/* =====================================================
+/* =========================
    AURORA
-===================================================== */
+========================= */
 
 .aurora{
-
     position:fixed;
-
-    width:500px;
-    height:500px;
-
+    width:450px;
+    height:450px;
     border-radius:50%;
-
-    filter:blur(110px);
-
-    opacity:.22;
-
+    filter:blur(100px);
+    opacity:.35;
     pointer-events:none;
-
-    z-index:-5;
+    z-index:-2;
 }
 
 .aurora.one{
-
-    top:-200px;
-    left:-150px;
-
     background:#6366f1;
-
-    animation:
-        auroraOne
-        14s
-        ease-in-out
-        infinite
-        alternate;
+    top:-180px;
+    left:-120px;
+    animation:aurora1 12s infinite alternate ease-in-out;
 }
 
 .aurora.two{
-
-    right:-180px;
-    bottom:-180px;
-
     background:#a855f7;
-
-    animation:
-        auroraTwo
-        16s
-        ease-in-out
-        infinite
-        alternate;
+    right:-160px;
+    top:25%;
+    animation:aurora2 15s infinite alternate ease-in-out;
 }
 
 .aurora.three{
-
-    top:40%;
-    left:40%;
-
     background:#2563eb;
+    bottom:-200px;
+    left:25%;
+    animation:aurora3 18s infinite alternate ease-in-out;
+}
 
-    animation:
-        auroraThree
-        18s
-        ease-in-out
-        infinite
-        alternate;
+@keyframes aurora1{
+    from{transform:translate(0,0)}
+    to{transform:translate(180px,120px)}
+}
+
+@keyframes aurora2{
+    from{transform:translate(0,0)}
+    to{transform:translate(-160px,120px)}
+}
+
+@keyframes aurora3{
+    from{transform:translate(0,0)}
+    to{transform:translate(120px,-100px)}
 }
 
 
-@keyframes auroraOne{
+/* =========================
+   PARTICLES
+========================= */
 
-    from{
-        transform:
-            translate(0,0)
-            scale(1);
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.particles span{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:rgba(255,255,255,.45);
+    border-radius:50%;
+    animation:floatParticle linear infinite;
+}
+
+.particles span:nth-child(1){
+    left:10%;
+    top:20%;
+    animation-duration:9s;
+}
+
+.particles span:nth-child(2){
+    left:25%;
+    top:70%;
+    animation-duration:13s;
+}
+
+.particles span:nth-child(3){
+    left:50%;
+    top:30%;
+    animation-duration:11s;
+}
+
+.particles span:nth-child(4){
+    left:75%;
+    top:60%;
+    animation-duration:15s;
+}
+
+.particles span:nth-child(5){
+    left:90%;
+    top:15%;
+    animation-duration:10s;
+}
+
+.particles span:nth-child(6){
+    left:60%;
+    top:85%;
+    animation-duration:14s;
+}
+
+@keyframes floatParticle{
+    0%{
+        transform:translateY(0);
+        opacity:.2;
     }
 
-    to{
-        transform:
-            translate(160px,100px)
-            scale(1.3);
+    50%{
+        opacity:1;
     }
 
+    100%{
+        transform:translateY(-100px);
+        opacity:.1;
+    }
 }
 
 
-@keyframes auroraTwo{
-
-    from{
-        transform:
-            translate(0,0)
-            scale(1);
-    }
-
-    to{
-        transform:
-            translate(-120px,-100px)
-            scale(1.25);
-    }
-
-}
-
-
-@keyframes auroraThree{
-
-    from{
-        transform:
-            translate(-50px,50px)
-            scale(.9);
-    }
-
-    to{
-        transform:
-            translate(80px,-80px)
-            scale(1.2);
-    }
-
-}
-
-
-/* =====================================================
-   MOUSE SPOTLIGHT
-===================================================== */
+/* =========================
+   MOUSE LIGHT
+========================= */
 
 .mouse-light{
-
     position:fixed;
-
-    width:400px;
-    height:400px;
-
-    left:0;
-    top:0;
-
-    pointer-events:none;
+    width:350px;
+    height:350px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(129,140,248,.12),
+            rgba(99,102,241,.16),
             transparent 65%
         );
 
-    transform:
-        translate(-50%,-50%);
+    pointer-events:none;
+    transform:translate(-50%,-50%);
 
     z-index:-1;
 }
 
 
-/* =====================================================
-   PARTICLES
-===================================================== */
-
-.particle{
-
-    position:fixed;
-
-    width:4px;
-    height:4px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.55);
-
-    pointer-events:none;
-
-    z-index:-2;
-
-    animation:
-        particleFloat
-        8s
-        ease-in-out
-        infinite;
-}
-
-.p1{
-    top:15%;
-    left:10%;
-}
-
-.p2{
-    top:25%;
-    left:80%;
-    animation-delay:2s;
-}
-
-.p3{
-    top:70%;
-    left:15%;
-    animation-delay:4s;
-}
-
-.p4{
-    top:60%;
-    left:85%;
-    animation-delay:1s;
-}
-
-.p5{
-    top:40%;
-    left:50%;
-    animation-delay:3s;
-}
-
-.p6{
-    top:85%;
-    left:55%;
-    animation-delay:5s;
-}
-
-
-@keyframes particleFloat{
-
-    0%,100%{
-
-        transform:
-            translateY(0)
-            scale(1);
-
-        opacity:.2;
-    }
-
-    50%{
-
-        transform:
-            translateY(-35px)
-            scale(1.5);
-
-        opacity:1;
-    }
-
-}
-
-
-/* =====================================================
+/* =========================
    HEADER
-===================================================== */
+========================= */
 
 header{
-
     position:sticky;
-
     top:0;
+    z-index:100;
 
-    z-index:1000;
+    padding:16px 5%;
 
-    background:
-        rgba(2,6,23,.68);
+    background:rgba(5,8,22,.62);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
-    backdrop-filter:
-        blur(22px);
-
-    -webkit-backdrop-filter:
-        blur(22px);
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.07);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-
-.header-inner{
-
+.navbar{
     max-width:1250px;
-
     margin:auto;
 
-    min-height:75px;
-
-    padding:
-        0 25px;
-
     display:flex;
-
-    justify-content:
-        space-between;
-
+    justify-content:space-between;
     align-items:center;
-
-    gap:25px;
+    gap:20px;
 }
 
-
-/* =====================================================
-   LOGO
-===================================================== */
-
 .logo{
-
-    font-size:22px;
-
-    font-weight:900;
-
-    white-space:nowrap;
+    font-size:20px;
+    font-weight:800;
 
     background:
         linear-gradient(
             90deg,
             #60a5fa,
             #a78bfa,
-            #e879f9,
-            #60a5fa
-        );
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-    animation:
-        logoGradient
-        6s
-        linear
-        infinite;
-}
-
-
-@keyframes logoGradient{
-
-    to{
-        background-position:300%;
-    }
-
-}
-
-
-/* =====================================================
-   NAV
-===================================================== */
-
-nav{
-
-    display:flex;
-
-    gap:5px;
-
-    align-items:center;
-
-    justify-content:flex-end;
-
-    flex-wrap:wrap;
-}
-
-
-nav a{
-
-    position:relative;
-
-    text-decoration:none;
-
-    color:#cbd5e1;
-
-    font-size:13px;
-
-    font-weight:700;
-
-    padding:
-        10px
-        12px;
-
-    border-radius:12px;
-
-    transition:
-        .3s ease;
-}
-
-
-nav a:hover{
-
-    color:#fff;
-
-    background:
-        rgba(255,255,255,.07);
-
-    transform:
-        translateY(-2px);
-}
-
-
-nav a.active{
-
-    color:#fff;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(99,102,241,.28),
-            rgba(168,85,247,.20)
-        );
-
-    box-shadow:
-        0 0 20px
-        rgba(99,102,241,.16);
-}
-
-
-nav a.active::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:20%;
-    right:20%;
-
-    bottom:4px;
-
-    height:2px;
-
-    border-radius:10px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #60a5fa,
             #c084fc
         );
 
+    -webkit-background-clip:text;
+    color:transparent;
+
+    white-space:nowrap;
 }
 
+.nav-menu{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-.menu-btn{
-
-    display:none;
-
+.nav-btn{
     border:none;
+    color:#dbeafe;
 
-    color:white;
+    background:rgba(255,255,255,.05);
 
-    background:
-        rgba(255,255,255,.08);
-
-    width:45px;
-    height:45px;
-
-    border-radius:13px;
-
-    font-size:22px;
+    padding:10px 14px;
+    border-radius:12px;
 
     cursor:pointer;
+
+    transition:.3s;
+
+    font-size:14px;
 }
 
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.container{
-
-    width:
-        min(
-            1120px,
-            92%
-        );
-
-    margin:auto;
+.nav-btn:hover{
+    background:rgba(99,102,241,.2);
+    transform:translateY(-2px);
 }
 
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-    min-height:560px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:
-        80px
-        0
-        40px;
-}
-
-
-.hero-card{
-
-    width:100%;
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:
-        70px
-        30px;
-
-    border-radius:35px;
-
+.nav-btn.active{
     background:
-        rgba(15,23,42,.48);
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    backdrop-filter:
-        blur(25px);
-
-    -webkit-backdrop-filter:
-        blur(25px);
+        linear-gradient(
+            135deg,
+            rgba(99,102,241,.75),
+            rgba(139,92,246,.65)
+        );
 
     box-shadow:
-
-        0 35px 100px
-        rgba(0,0,0,.35),
-
-        inset
-        0 1px
-        rgba(255,255,255,.08);
+        0 0 20px rgba(99,102,241,.25);
 }
 
 
-/* shine */
+/* =========================
+   MAIN
+========================= */
 
-.hero-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    top:-300px;
-    left:-200px;
-
-    border-radius:50%;
-
-    background:#6366f1;
-
-    filter:blur(120px);
-
-    opacity:.15;
-
+main{
+    width:min(1200px,92%);
+    margin:0 auto;
+    padding:50px 0 70px;
 }
 
 
-.hero-card::after{
+/* =========================
+   HERO
+========================= */
 
-    content:"";
-
-    position:absolute;
-
-    inset:-100%;
-
-    background:
-
-        linear-gradient(
-            110deg,
-            transparent 35%,
-            rgba(255,255,255,.06),
-            transparent 65%
-        );
-
-    transform:
-        translateX(-50%);
-
-    animation:
-        cardShine
-        8s
-        infinite;
+.hero{
+    text-align:center;
+    margin-bottom:35px;
 }
-
-
-@keyframes cardShine{
-
-    0%{
-        transform:
-            translateX(-60%)
-            rotate(15deg);
-    }
-
-    60%,100%{
-        transform:
-            translateX(60%)
-            rotate(15deg);
-    }
-
-}
-
 
 .badge{
-
-    position:relative;
-
-    z-index:2;
-
     display:inline-block;
 
-    padding:
-        9px
-        17px;
+    padding:8px 16px;
+    margin-bottom:18px;
+
+    border:1px solid rgba(255,255,255,.12);
 
     border-radius:999px;
 
+    background:rgba(255,255,255,.06);
+
     color:#c4b5fd;
 
-    font-size:12px;
+    font-size:13px;
 
-    font-weight:800;
+    box-shadow:
+        0 0 25px rgba(99,102,241,.12);
+}
 
-    letter-spacing:1px;
+.hero h1{
+    font-size:clamp(38px,7vw,72px);
+    font-weight:900;
 
     background:
-        rgba(99,102,241,.12);
+        linear-gradient(
+            90deg,
+            #60a5fa,
+            #818cf8,
+            #c084fc,
+            #60a5fa
+        );
 
-    border:
-        1px solid
-        rgba(129,140,248,.25);
+    background-size:250% auto;
 
+    -webkit-background-clip:text;
+    color:transparent;
+
+    animation:gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove{
+    to{
+        background-position:250% center;
+    }
+}
+
+.hero p{
+    margin-top:10px;
+    color:#94a3b8;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-card{
+    max-width:850px;
+    margin:0 auto 30px;
+
+    padding:25px;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:24px;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.profile-img{
+    width:115px;
+    height:115px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid rgba(129,140,248,.7);
+
+    box-shadow:
+        0 0 30px rgba(99,102,241,.4);
+}
+
+.profile-card h2{
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+.profile-card p{
+    color:#94a3b8;
+}
+
+
+/* =========================
+   CONTENT PANEL
+========================= */
+
+.content-area{
+    position:relative;
+}
+
+.tab-page{
+    display:none;
+
+    padding:35px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.28);
+}
+
+.tab-page.active{
+    display:block;
+
+    animation:
+        pageIn .5s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(15px) scale(.985);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.section-title{
+    font-size:32px;
+    margin-bottom:25px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #93c5fd,
+            #c4b5fd
+        );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.section-description{
+    color:#94a3b8;
+    line-height:1.8;
     margin-bottom:25px;
 }
 
 
-.hero h1{
-
-    position:relative;
-
-    z-index:2;
-
-    font-size:
-        clamp(
-            42px,
-            8vw,
-            82px
-        );
-
-    font-weight:950;
-
-    line-height:1.05;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #60a5fa,
-            #a78bfa,
-            #e879f9,
-            #60a5fa
-        );
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-
-    color:transparent;
-
-    animation:
-        titleGradient
-        7s
-        linear
-        infinite;
-}
-
-
-@keyframes titleGradient{
-
-    to{
-        background-position:300%;
-    }
-
-}
-
-
-.hero-subtitle{
-
-    position:relative;
-
-    z-index:2;
-
-    margin-top:20px;
-
-    color:#cbd5e1;
-
-    font-size:18px;
-
-    line-height:1.7;
-}
-
-
-.status{
-
-    position:relative;
-
-    z-index:2;
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    margin-top:25px;
-
-    padding:
-        8px
-        14px;
-
-    border-radius:999px;
-
-    background:
-        rgba(34,197,94,.08);
-
-    border:
-        1px solid
-        rgba(74,222,128,.15);
-
-    color:#bbf7d0;
-
-    font-size:13px;
-
-    font-weight:700;
-}
-
-
-.status-dot{
-
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:#4ade80;
-
-    box-shadow:
-        0 0 12px
-        rgba(74,222,128,.8);
-
-    animation:
-        pulseDot
-        2s
-        infinite;
-}
-
-
-@keyframes pulseDot{
-
-    50%{
-        transform:scale(1.5);
-
-        opacity:.5;
-    }
-
-}
-
-
-/* =====================================================
-   PROFILE
-===================================================== */
-
-.profile{
-
-    display:flex;
-
-    justify-content:center;
-
-    margin-top:-65px;
-
-    margin-bottom:70px;
-
-    position:relative;
-
-    z-index:5;
-}
-
-
-.profile-ring{
-
-    padding:7px;
-
-    border-radius:50%;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #60a5fa,
-            #8b5cf6,
-            #e879f9
-        );
-
-    box-shadow:
-        0 0 50px
-        rgba(99,102,241,.4);
-}
-
-
-.profile-img{
-
-    display:block;
-
-    width:155px;
-    height:155px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:
-        5px solid
-        #0f172a;
-}
-
-
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-section{
-
-    position:relative;
-
-    margin-bottom:35px;
-
-    padding:40px;
-
-    border-radius:28px;
-
-    background:
-        rgba(15,23,42,.50);
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
-
-    box-shadow:
-        0 25px 60px
-        rgba(0,0,0,.18);
-
-    scroll-margin-top:100px;
-
-    overflow:hidden;
-}
-
-
-section::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:200px;
-    height:200px;
-
-    top:-150px;
-    right:-100px;
-
-    border-radius:50%;
-
-    background:#6366f1;
-
-    filter:blur(90px);
-
-    opacity:.10;
-
-}
-
-
-.section-title{
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-
-    margin-bottom:28px;
-
-    font-size:29px;
-
-    font-weight:900;
-}
-
-
-.section-icon{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:48px;
-    height:48px;
-
-    border-radius:15px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(99,102,241,.28),
-            rgba(168,85,247,.22)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    box-shadow:
-        0 0 20px
-        rgba(99,102,241,.12);
-}
-
-
-/* =====================================================
-   REVEAL
-===================================================== */
-
-.reveal{
-
-    opacity:0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-
-.reveal.show{
-
-    opacity:1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =====================================================
+/* =========================
    INFO
-===================================================== */
+========================= */
 
 .info-grid{
-
     display:grid;
-
     grid-template-columns:
         repeat(2,1fr);
 
     gap:16px;
 }
 
-
 .info-item{
-
     padding:20px;
 
     border-radius:18px;
 
-    background:
-        rgba(255,255,255,.035);
+    background:rgba(255,255,255,.045);
 
-    border:
-        1px solid
-        rgba(255,255,255,.06);
-
-    transition:
-        .3s ease;
-}
-
-
-.info-item:hover{
-
-    transform:
-        translateY(-4px);
-
-    background:
-        rgba(255,255,255,.065);
-
-    border-color:
-        rgba(167,139,250,.25);
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.15);
-}
-
-
-.info-item strong{
-
-    display:block;
-
-    color:#94a3b8;
-
-    font-size:12px;
-
-    margin-bottom:7px;
-}
-
-
-.info-item p{
-
-    color:#f8fafc;
-
-    font-size:15px;
-}
-
-
-/* =====================================================
-   TIMELINE
-===================================================== */
-
-.timeline{
-
-    position:relative;
-
-    padding-left:35px;
-}
-
-
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:8px;
-
-    top:7px;
-    bottom:7px;
-
-    width:2px;
-
-    background:
-
-        linear-gradient(
-            #6366f1,
-            #a855f7,
-            transparent
-        );
-}
-
-
-.timeline-item{
-
-    position:relative;
-
-    padding:22px;
-
-    margin-bottom:20px;
-
-    border-radius:19px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    border:
-        1px solid
-        rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.07);
 
     transition:.3s;
 }
 
+.info-item:hover{
+    transform:translateY(-4px);
 
-.timeline-item:last-child{
+    background:rgba(99,102,241,.1);
 
-    margin-bottom:0;
+    border-color:rgba(129,140,248,.25);
+}
+
+.info-item span{
+    display:block;
+    color:#94a3b8;
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+.info-item strong{
+    color:#f8fafc;
 }
 
 
-.timeline-item:hover{
+/* =========================
+   EDUCATION
+========================= */
 
-    transform:
-        translateX(6px);
+.timeline{
+    position:relative;
+    padding-left:30px;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+    left:6px;
+    top:5px;
+    bottom:5px;
+
+    width:2px;
 
     background:
-        rgba(255,255,255,.06);
+        linear-gradient(
+            #818cf8,
+            #c084fc,
+            transparent
+        );
 }
 
+.timeline-item{
+    position:relative;
+    margin-bottom:25px;
+}
 
 .timeline-item::before{
-
     content:"";
 
     position:absolute;
 
-    left:-34px;
+    left:-30px;
+    top:6px;
 
-    top:27px;
-
-    width:14px;
-    height:14px;
+    width:12px;
+    height:12px;
 
     border-radius:50%;
 
-    background:#8b5cf6;
+    background:#818cf8;
 
     box-shadow:
-        0 0 20px
-        rgba(139,92,246,.9);
+        0 0 15px rgba(129,140,248,.8);
 }
-
 
 .timeline-item h3{
-
-    margin-bottom:7px;
-
-    font-size:18px;
+    margin-bottom:6px;
 }
-
 
 .timeline-item p{
-
-    color:#cbd5e1;
-
-    line-height:1.6;
+    color:#94a3b8;
+    line-height:1.7;
 }
 
 
-/* =====================================================
+/* =========================
    SKILLS
-===================================================== */
+========================= */
 
 .skill{
-
-    margin-bottom:25px;
+    margin-bottom:24px;
 }
 
-
-.skill:last-child{
-
-    margin-bottom:0;
-}
-
-
-.skill-top{
-
+.skill-head{
     display:flex;
-
     justify-content:space-between;
-
-    margin-bottom:9px;
-
-    color:#e2e8f0;
-
-    font-weight:700;
-
-    font-size:14px;
+    margin-bottom:8px;
 }
 
-
-.skill-percent{
-
-    color:#a78bfa;
+.skill-head span:last-child{
+    color:#a5b4fc;
 }
-
 
 .skill-bar{
+    height:10px;
 
-    height:11px;
+    background:rgba(255,255,255,.08);
 
-    width:100%;
+    border-radius:999px;
 
     overflow:hidden;
-
-    border-radius:30px;
-
-    background:
-        rgba(255,255,255,.07);
 }
 
-
 .skill-fill{
-
     height:100%;
 
-    width:0;
+    width:var(--skill);
 
-    border-radius:30px;
+    border-radius:999px;
 
     background:
-
         linear-gradient(
             90deg,
-            #3b82f6,
-            #8b5cf6,
-            #c084fc
+            #6366f1,
+            #a855f7
         );
 
     box-shadow:
-        0 0 18px
-        rgba(139,92,246,.45);
-
-    transition:
-        width 1.5s
-        cubic-bezier(.2,.8,.2,1);
+        0 0 15px rgba(139,92,246,.35);
 }
 
 
-/* =====================================================
-   WORK CARDS
-===================================================== */
+/* =========================
+   PROJECTS
+========================= */
 
 .cards{
-
     display:grid;
-
     grid-template-columns:
         repeat(3,1fr);
 
     gap:20px;
 }
 
-
-.work-card{
-
-    position:relative;
-
+.card{
     overflow:hidden;
-
-    border-radius:22px;
-
-    background:
-        rgba(255,255,255,.035);
-
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-
-    transition:
-        .4s ease;
-}
-
-
-.work-card:hover{
-
-    transform:
-        translateY(-9px);
-
-    border-color:
-        rgba(167,139,250,.28);
-
-    box-shadow:
-        0 25px 50px
-        rgba(0,0,0,.3),
-
-        0 0 30px
-        rgba(99,102,241,.10);
-}
-
-
-.work-image{
-
-    overflow:hidden;
-
-    height:220px;
-}
-
-
-.work-image img{
-
-    display:block;
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-        transform .6s ease;
-}
-
-
-.work-card:hover img{
-
-    transform:
-        scale(1.08);
-}
-
-
-.work-content{
-
-    padding:21px;
-}
-
-
-.work-content h3{
-
-    margin-bottom:9px;
-
-    font-size:18px;
-}
-
-
-.work-content p{
-
-    color:#cbd5e1;
-
-    line-height:1.7;
-
-    font-size:14px;
-}
-
-
-/* =====================================================
-   CERTIFICATE
-===================================================== */
-
-.certificate-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:18px;
-}
-
-
-.certificate{
-
-    position:relative;
-
-    padding:25px;
 
     border-radius:20px;
 
-    background:
-        rgba(255,255,255,.035);
+    background:rgba(255,255,255,.045);
 
-    border:
-        1px solid
-        rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.08);
 
-    transition:
-        .35s ease;
+    transition:.35s;
 }
 
-
-.certificate:hover{
-
-    transform:
-        translateY(-5px);
+.card:hover{
+    transform:translateY(-8px);
 
     border-color:
-        rgba(192,132,252,.3);
+        rgba(129,140,248,.4);
 
     box-shadow:
-        0 15px 35px
-        rgba(0,0,0,.2);
+        0 20px 45px rgba(0,0,0,.3);
+}
+
+.card img{
+    width:100%;
+    height:210px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#94a3b8;
+    line-height:1.7;
 }
 
 
-.certificate-icon{
+/* =========================
+   CERTIFICATE
+========================= */
 
-    font-size:30px;
+.certificate{
+    padding:22px;
 
-    margin-bottom:13px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
 }
 
+.certificate:hover{
+    transform:translateY(-5px);
+
+    background:rgba(99,102,241,.09);
+}
 
 .certificate h3{
-
     margin-bottom:8px;
-
-    font-size:17px;
 }
-
 
 .certificate p{
-
-    color:#cbd5e1;
-
+    color:#94a3b8;
     line-height:1.7;
-
-    font-size:14px;
 }
 
 
-/* =====================================================
+/* =========================
    GALLERY
-===================================================== */
+========================= */
 
 .gallery{
-
     display:grid;
 
     grid-template-columns:
@@ -1486,1678 +737,1103 @@ section::before{
     gap:18px;
 }
 
-
-.gallery-item{
-
-    position:relative;
-
-    overflow:hidden;
-
-    height:270px;
-
-    border-radius:20px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    cursor:pointer;
-
-    background:#020617;
-}
-
-
-.gallery-item img{
-
+.gallery img{
     width:100%;
-    height:100%;
-
-    display:block;
+    height:250px;
 
     object-fit:cover;
 
-    transition:
-        transform .6s ease,
-        filter .4s ease;
+    border-radius:18px;
+
+    cursor:pointer;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
 }
 
 
-.gallery-item:hover img{
+/* =========================
+   GOALS
+========================= */
 
-    transform:
-        scale(1.08);
+.goal-box{
+    padding:30px;
 
-    filter:
-        brightness(.7);
-}
-
-
-.gallery-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:35px;
+    border-radius:22px;
 
     background:
-        rgba(0,0,0,.15);
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,.10),
+            rgba(168,85,247,.10)
+        );
 
-    opacity:0;
+    border:1px solid rgba(129,140,248,.18);
+}
 
-    transition:.3s;
+.goal-box p{
+    color:#cbd5e1;
+
+    line-height:2;
+
+    font-size:18px;
 }
 
 
-.gallery-item:hover
-.gallery-overlay{
+/* =========================
+   TARGET UNIVERSITY
+========================= */
 
-    opacity:1;
+.university-card{
+    display:grid;
+
+    grid-template-columns:
+        minmax(260px,380px)
+        1fr;
+
+    gap:35px;
+
+    align-items:center;
+}
+
+.university-image{
+    width:100%;
+
+    max-height:330px;
+
+    object-fit:contain;
+
+    padding:20px;
+
+    border-radius:25px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
+
+    transition:.4s;
+}
+
+.university-image:hover{
+    transform:
+        translateY(-5px)
+        scale(1.02);
+
+    box-shadow:
+        0 25px 60px rgba(99,102,241,.2);
+}
+
+.university-content h3{
+    font-size:32px;
+
+    margin-bottom:18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #60a5fa,
+            #c084fc
+        );
+
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.university-content p{
+    color:#cbd5e1;
+
+    line-height:2;
+
+    font-size:17px;
+
+    margin-bottom:20px;
+}
+
+.target-badge{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+        rgba(99,102,241,.15);
+
+    border:
+        1px solid rgba(129,140,248,.25);
+
+    color:#c4b5fd;
+
+    font-weight:600;
 }
 
 
-/* =====================================================
+/* =========================
    LIGHTBOX
-===================================================== */
+========================= */
 
 .lightbox{
-
     position:fixed;
-
     inset:0;
-
-    z-index:2000;
 
     display:none;
 
     align-items:center;
-
     justify-content:center;
 
     padding:25px;
 
     background:
-        rgba(0,0,0,.85);
+        rgba(0,0,0,.82);
 
-    backdrop-filter:
-        blur(10px);
+    backdrop-filter:blur(10px);
+
+    z-index:999;
 }
 
-
 .lightbox.show{
-
     display:flex;
 }
 
-
 .lightbox img{
-
-    max-width:92vw;
-
-    max-height:85vh;
-
-    object-fit:contain;
+    max-width:95%;
+    max-height:90vh;
 
     border-radius:18px;
 
     box-shadow:
-        0 30px 100px
-        rgba(0,0,0,.6);
+        0 30px 80px rgba(0,0,0,.6);
 }
 
-
-.lightbox-close{
-
+.close-lightbox{
     position:absolute;
 
     top:25px;
-    right:25px;
+    right:30px;
 
-    width:48px;
-    height:48px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.1);
+    font-size:35px;
 
     color:white;
-
-    font-size:25px;
 
     cursor:pointer;
 }
 
 
-/* =====================================================
-   GOAL
-===================================================== */
-
-.goal{
-
-    text-align:center;
-
-    padding:
-        55px
-        25px;
-}
-
-
-.goal-icon{
-
-    font-size:52px;
-
-    margin-bottom:15px;
-
-    filter:
-        drop-shadow(
-            0 0 15px
-            rgba(167,139,250,.5)
-        );
-}
-
-
-.goal h3{
-
-    font-size:28px;
-
-    margin-bottom:15px;
-}
-
-
-.goal p{
-
-    max-width:720px;
-
-    margin:auto;
-
-    color:#cbd5e1;
-
-    line-height:1.9;
-}
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-#topBtn{
-
-    position:fixed;
-
-    right:25px;
-    bottom:25px;
-
-    width:52px;
-    height:52px;
-
-    border:none;
-
-    border-radius:50%;
-
-    color:white;
-
-    font-size:20px;
-
-    cursor:pointer;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #4f46e5,
-            #9333ea
-        );
-
-    box-shadow:
-        0 10px 35px
-        rgba(79,70,229,.4);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:
-        translateY(15px);
-
-    transition:.3s;
-
-    z-index:900;
-}
-
-
-#topBtn.show{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
 footer{
-
     text-align:center;
 
-    padding:
-        45px
-        20px;
+    padding:30px 20px;
 
-    color:#94a3b8;
+    color:#64748b;
 
-    font-size:13px;
+    font-size:14px;
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
-    .header-inner{
+    .nav-menu{
+        display:grid;
 
-        flex-wrap:wrap;
-
-        padding:
-            15px 20px;
-    }
-
-    nav{
-
-        justify-content:center;
+        grid-template-columns:
+            repeat(2,1fr);
 
         width:100%;
     }
 
-    .cards{
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-}
-
-
-@media(max-width:700px){
-
-    .header-inner{
-
-        min-height:65px;
-
-        flex-wrap:nowrap;
-    }
-
-    .menu-btn{
-
-        display:block;
-    }
-
-    nav{
-
-        display:none;
-
-        position:absolute;
-
-        left:3%;
-
-        right:3%;
-
-        top:75px;
-
-        width:auto;
-
-        padding:10px;
-
-        border-radius:18px;
-
-        background:
-            rgba(2,6,23,.94);
-
-        backdrop-filter:
-            blur(20px);
-
-        border:
-            1px solid
-            rgba(255,255,255,.08);
-
-        box-shadow:
-            0 20px 50px
-            rgba(0,0,0,.4);
-    }
-
-    nav.open{
-
-        display:flex;
-
+    .navbar{
         flex-direction:column;
-
-        align-items:stretch;
-    }
-
-    nav a{
-
-        text-align:center;
-
-        padding:13px;
-    }
-
-    .hero{
-
-        min-height:470px;
-
-        padding:
-            50px
-            0
-            30px;
-    }
-
-    .hero-card{
-
-        padding:
-            55px
-            18px;
-    }
-
-    .hero-subtitle{
-
-        font-size:15px;
-    }
-
-    section{
-
-        padding:
-            27px
-            18px;
-    }
-
-    .info-grid{
-
-        grid-template-columns:1fr;
     }
 
     .cards{
-
-        grid-template-columns:1fr;
-    }
-
-    .certificate-grid{
-
         grid-template-columns:1fr;
     }
 
     .gallery{
-
         grid-template-columns:
             repeat(2,1fr);
     }
 
-    .gallery-item{
-
-        height:210px;
+    .university-card{
+        grid-template-columns:1fr;
     }
 
 }
 
+@media(max-width:600px){
 
-@media(max-width:480px){
-
-    .logo{
-
-        font-size:18px;
+    main{
+        width:94%;
+        padding-top:30px;
     }
 
-    .profile{
-
-        margin-top:-50px;
+    .profile-card{
+        flex-direction:column;
+        text-align:center;
     }
 
     .profile-img{
+        width:100px;
+        height:100px;
+    }
 
-        width:125px;
-        height:125px;
+    .tab-page{
+        padding:22px;
+        border-radius:22px;
     }
 
     .section-title{
-
-        font-size:23px;
+        font-size:27px;
     }
 
-    .section-icon{
-
-        width:42px;
-        height:42px;
-    }
-
-    .gallery{
-
+    .info-grid{
         grid-template-columns:1fr;
     }
 
-    .gallery-item{
-
-        height:250px;
+    .gallery{
+        grid-template-columns:1fr;
     }
 
-    #topBtn{
-
-        right:17px;
-        bottom:17px;
+    .gallery img{
+        height:230px;
     }
 
+    .university-content h3{
+        font-size:27px;
+    }
+
+    .university-content p{
+        font-size:16px;
+    }
+
+    .nav-btn{
+        font-size:12px;
+        padding:9px 6px;
+    }
 }
 
 </style>
-
 </head>
 
 
 <body>
 
-
-<!-- =====================================================
-     BACKGROUND
-===================================================== -->
+<!-- AURORA -->
 
 <div class="aurora one"></div>
 <div class="aurora two"></div>
 <div class="aurora three"></div>
 
-<div class="mouse-light"></div>
 
-<div class="particle p1"></div>
-<div class="particle p2"></div>
-<div class="particle p3"></div>
-<div class="particle p4"></div>
-<div class="particle p5"></div>
-<div class="particle p6"></div>
+<!-- PARTICLES -->
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
-<header>
-
-<div class="header-inner">
-
-<div class="logo">
-    ⚡ Premmatad
+<div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 </div>
 
 
-<button
-    class="menu-btn"
-    id="menuBtn"
-    aria-label="เปิดเมนู"
->
-    ☰
-</button>
+<!-- MOUSE LIGHT -->
+
+<div class="mouse-light"></div>
 
 
-<nav id="nav">
+<!-- HEADER -->
 
-<a href="#info">
-    👤 ข้อมูล
-</a>
+<header>
 
-<a href="#education">
-    🎓 การศึกษา
-</a>
+<div class="navbar">
 
-<a href="#skills">
-    💡 ความสามารถ
-</a>
+    <div class="logo">
+        ⚡ Premmatad
+    </div>
 
-<a href="#works">
-    🚀 ผลงาน
-</a>
+    <nav class="nav-menu">
 
-<a href="#certificates">
-    🏆 เกียรติบัตร
-</a>
+        <button class="nav-btn" data-page="info">
+            👤 ข้อมูล
+        </button>
 
-<a href="#gallery">
-    🖼️ Gallery
-</a>
+        <button class="nav-btn" data-page="education">
+            🎓 การศึกษา
+        </button>
 
-<a href="#goals">
-    🎯 เป้าหมาย
-</a>
+        <button class="nav-btn" data-page="skills">
+            💡 ความสามารถ
+        </button>
 
-</nav>
+        <button class="nav-btn" data-page="works">
+            🚀 ผลงาน
+        </button>
+
+        <button class="nav-btn" data-page="certificates">
+            🏆 เกียรติบัตร
+        </button>
+
+        <button class="nav-btn" data-page="gallery">
+            🖼️ Gallery
+        </button>
+
+        <button class="nav-btn" data-page="goals">
+            🎯 เป้าหมาย
+        </button>
+
+        <button class="nav-btn" data-page="university">
+            🏫 สถาบันเป้าหมาย
+        </button>
+
+    </nav>
 
 </div>
 
 </header>
 
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
+<!-- MAIN -->
 
-<main class="container">
+<main>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
-<div class="hero">
+<section class="hero">
 
-<div class="hero-card">
+    <div class="badge">
+        ✦ MY PERSONAL PORTFOLIO ✦
+    </div>
 
-<div class="badge">
-    ✦ WELCOME TO MY PORTFOLIO ✦
-</div>
+    <h1>
+        แฟ้มสะสมงานของฉัน
+    </h1>
 
-<h1>
-    Premmatad Prajong
-</h1>
+    <p>
+        Welcome to my portfolio
+    </p>
 
-<p class="hero-subtitle">
-    นักเรียนผู้สนใจด้านการแพทย์
-    <br>
-    และกำลังสร้างเส้นทางของตัวเอง 🚀
-</p>
-
-<div class="status">
-
-<span class="status-dot"></span>
-
-Portfolio Online
-
-</div>
-
-</div>
-
-</div>
+</section>
 
 
-<!-- =====================================================
-     PROFILE
-===================================================== -->
+<!-- PROFILE -->
 
-<div class="profile">
+<div class="profile-card">
 
-<div class="profile-ring">
+    <img
+        src="ijii.jpg"
+        class="profile-img"
+        alt="Premmatad"
+    >
 
-<img
-    src="ijii.jpg"
-    alt="Premmatad Prajong"
-    class="profile-img"
->
+    <div>
 
-</div>
+        <h2>
+            ⚡ Premmatad ⚡
+        </h2>
+
+        <p>
+            นักเรียนผู้มุ่งมั่นในการเรียนรู้
+            และพัฒนาตนเอง
+        </p>
+
+    </div>
 
 </div>
 
 
-<!-- =====================================================
+<!-- CONTENT -->
+
+<div class="content-area">
+
+
+<!-- =========================
      INFO
-===================================================== -->
+========================= -->
 
 <section
     id="info"
-    class="reveal"
+    class="tab-page"
 >
 
-<h2 class="section-title">
+    <h2 class="section-title">
+        👤 ข้อมูลส่วนตัว
+    </h2>
 
-<span class="section-icon">
-    👤
-</span>
+    <div class="info-grid">
 
-ข้อมูลส่วนตัว
+        <div class="info-item">
+            <span>ชื่อ</span>
+            <strong>
+                นายเปรมทัต ประจง
+            </strong>
+        </div>
 
-</h2>
+        <div class="info-item">
+            <span>อายุ</span>
+            <strong>
+                18 ปี
+            </strong>
+        </div>
 
+        <div class="info-item">
+            <span>Facebook</span>
+            <strong>
+                Premmatad Prajong
+            </strong>
+        </div>
 
-<div class="info-grid">
+        <div class="info-item">
+            <span>Line ID</span>
+            <strong>
+                nongiji
+            </strong>
+        </div>
 
+        <div class="info-item">
+            <span>เบอร์ติดต่อ</span>
+            <strong>
+                098-832-0364
+            </strong>
+        </div>
 
-<div class="info-item">
-
-<strong>
-    ชื่อ
-</strong>
-
-<p>
-    นายเปรมทัต ประจง
-</p>
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-    ชื่อภาษาอังกฤษ
-</strong>
-
-<p>
-    Premmatad Prajong
-</p>
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-    อายุ
-</strong>
-
-<p>
-    18 ปี
-</p>
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-    Facebook
-</strong>
-
-<p>
-    Premmatad Prajong
-</p>
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-    Line ID
-</strong>
-
-<p>
-    nongiji
-</p>
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-    เบอร์ติดต่อ
-</strong>
-
-<p>
-    098-832-0364
-</p>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      EDUCATION
-===================================================== -->
+========================= -->
 
 <section
     id="education"
-    class="reveal"
+    class="tab-page"
 >
 
-<h2 class="section-title">
+    <h2 class="section-title">
+        🎓 การศึกษา
+    </h2>
 
-<span class="section-icon">
-    🎓
-</span>
+    <div class="timeline">
 
-การศึกษา
+        <div class="timeline-item">
 
-</h2>
+            <h3>
+                🏫 ประถมศึกษา
+            </h3>
 
+            <p>
+                โรงเรียนอนุบาลบ้านบึงอำนาจคณูปถัมภ์
+            </p>
 
-<div class="timeline">
-
-
-<div class="timeline-item">
-
-<h3>
-    ประถมศึกษา
-</h3>
-
-<p>
-    โรงเรียนอนุบาลบ้านบึงอำนาจคณูปถัมภ์
-</p>
-
-</div>
+        </div>
 
 
-<div class="timeline-item">
+        <div class="timeline-item">
 
-<h3>
-    มัธยมศึกษาตอนต้น
-</h3>
+            <h3>
+                🏫 มัธยมศึกษาตอนต้น
+            </h3>
 
-<p>
-    โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
-</p>
+            <p>
+                โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+            </p>
 
-</div>
-
-
-<div class="timeline-item">
-
-<h3>
-    มัธยมศึกษาตอนปลาย
-</h3>
-
-<p>
-    โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
-</p>
-
-</div>
+        </div>
 
 
-</div>
+        <div class="timeline-item">
+
+            <h3>
+                🎓 มัธยมศึกษาตอนปลาย
+            </h3>
+
+            <p>
+                โรงเรียนบ้านบึง“อุตสาหกรรมนุเคราะห์”
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      SKILLS
-===================================================== -->
+========================= -->
 
 <section
     id="skills"
-    class="reveal"
+    class="tab-page"
 >
 
-<h2 class="section-title">
-
-<span class="section-icon">
-    💡
-</span>
-
-ความสามารถ
-
-</h2>
+    <h2 class="section-title">
+        💡 ความสามารถ
+    </h2>
 
 
-<div class="skill">
+    <div class="skill">
 
-<div class="skill-top">
+        <div class="skill-head">
+            <span>ความมั่นใจในตนเอง</span>
+            <span>100%</span>
+        </div>
 
-<span>
-    ความมั่นใจในตนเอง
-</span>
+        <div class="skill-bar">
+            <div
+                class="skill-fill"
+                style="--skill:100%"
+            ></div>
+        </div>
 
-<span
-    class="skill-percent"
->
-    100%
-</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div
-    class="skill-fill"
-    data-width="100%"
->
-</div>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="skill">
+    <div class="skill">
 
-<div class="skill-top">
+        <div class="skill-head">
+            <span>ความกล้าที่จะทำสิ่งต่าง ๆ</span>
+            <span>90%</span>
+        </div>
 
-<span>
-    ความกล้าที่จะทำสิ่งต่าง ๆ
-</span>
+        <div class="skill-bar">
+            <div
+                class="skill-fill"
+                style="--skill:90%"
+            ></div>
+        </div>
 
-<span
-    class="skill-percent"
->
-    90%
-</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div
-    class="skill-fill"
-    data-width="90%"
->
-</div>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="skill">
+    <div class="skill">
 
-<div class="skill-top">
+        <div class="skill-head">
+            <span>เรียนรู้เร็วและนำมาปรับใช้</span>
+            <span>90%</span>
+        </div>
 
-<span>
-    เรียนรู้เร็วและนำมาปรับใช้
-</span>
+        <div class="skill-bar">
+            <div
+                class="skill-fill"
+                style="--skill:90%"
+            ></div>
+        </div>
 
-<span
-    class="skill-percent"
->
-    90%
-</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div
-    class="skill-fill"
-    data-width="90%"
->
-</div>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="skill">
+    <div class="skill">
 
-<div class="skill-top">
+        <div class="skill-head">
+            <span>การนำเสนอ</span>
+            <span>75%</span>
+        </div>
 
-<span>
-    การนำเสนอ
-</span>
+        <div class="skill-bar">
+            <div
+                class="skill-fill"
+                style="--skill:75%"
+            ></div>
+        </div>
 
-<span
-    class="skill-percent"
->
-    75%
-</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div
-    class="skill-fill"
-    data-width="75%"
->
-</div>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="skill">
+    <div class="skill">
 
-<div class="skill-top">
+        <div class="skill-head">
+            <span>เทคโนโลยี</span>
+            <span>70%</span>
+        </div>
 
-<span>
-    เทคโนโลยี
-</span>
+        <div class="skill-bar">
+            <div
+                class="skill-fill"
+                style="--skill:70%"
+            ></div>
+        </div>
 
-<span
-    class="skill-percent"
->
-    70%
-</span>
-
-</div>
-
-<div class="skill-bar">
-
-<div
-    class="skill-fill"
-    data-width="70%"
->
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      WORKS
-===================================================== -->
+========================= -->
 
 <section
     id="works"
-    class="reveal"
+    class="tab-page"
 >
 
-<h2 class="section-title">
-
-<span class="section-icon">
-    🚀
-</span>
-
-ผลงานและกิจกรรม
-
-</h2>
+    <h2 class="section-title">
+        🚀 ผลงานและกิจกรรม
+    </h2>
 
 
-<div class="cards">
+    <div class="cards">
 
 
-<div class="work-card">
+        <div class="card">
 
-<div class="work-image">
+            <img
+                src="workA.png"
+                alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
+            >
 
-<img
-    src="workA.png"
-    alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
->
+            <div class="card-content">
 
-</div>
+                <h3>
+                    🧪 การแข่งขันตอบปัญหาวิทยาศาสตร์
+                </h3>
 
-<div class="work-content">
+                <p>
+                    เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
+                    ณ โรงเรียนสวนกุหลาบวิทยาลัย
+                    ปีการศึกษา 2568
+                </p>
 
-<h3>
-    🔬 การแข่งขันตอบปัญหาวิทยาศาสตร์
-</h3>
+            </div>
 
-<p>
-    เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
-    ณ โรงเรียนสวนกุหลาบวิทยาลัย
-    ปีการศึกษา 2568
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="work-card">
+        <div class="card">
 
-<div class="work-image">
+            <img
+                src="Work.png"
+                alt="กิจกรรมตักบาตร"
+            >
 
-<img
-    src="Work.png"
-    alt="กิจกรรมตักบาตร"
->
+            <div class="card-content">
 
-</div>
+                <h3>
+                    🙏 กิจกรรมตักบาตร
+                </h3>
 
-<div class="work-content">
+                <p>
+                    เข้าร่วมกิจกรรมตักบาตรวันครบรอบ
+                    การก่อตั้งโรงเรียน
+                    วันที่ 1 กันยายน 2569
+                    พร้อมผู้ปกครอง
+                </p>
 
-<h3>
-    🙏 กิจกรรมตักบาตร
-</h3>
+            </div>
 
-<p>
-    เข้าร่วมกิจกรรมตักบาตร
-    วันครบรอบการก่อตั้งโรงเรียน
-    วันที่ 1 กันยายน 2569 พร้อมผู้ปกครอง
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="work-card">
+        <div class="card">
 
-<div class="work-image">
+            <img
+                src="workC.png"
+                alt="ฝึกประสบการณ์โรงพยาบาล"
+            >
 
-<img
-    src="workC.png"
-    alt="ฝึกประสบการณ์โรงพยาบาล"
->
+            <div class="card-content">
 
-</div>
+                <h3>
+                    🏥 ฝึกประสบการณ์
+                </h3>
 
-<div class="work-content">
+                <p>
+                    ฝึกประสบการณ์ในกลุ่มงานพยาบาล
+                    ณ โรงพยาบาลบ้านบึง
+                    วันที่ 9–13 มีนาคม 2569
+                </p>
 
-<h3>
-    🏥 ฝึกประสบการณ์
-</h3>
+            </div>
 
-<p>
-    ฝึกประสบการณ์ในกลุ่มงานพยาบาล
-    ณ โรงพยาบาลบ้านบึง
-    วันที่ 9–13 มีนาคม 2569
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      CERTIFICATES
-===================================================== -->
+========================= -->
 
 <section
     id="certificates"
-    class="reveal"
+    class="tab-page"
 >
 
-<h2 class="section-title">
+    <h2 class="section-title">
+        🏆 เกียรติบัตร
+    </h2>
 
-<span class="section-icon">
-    🏆
-</span>
+    <div class="certificate">
 
-เกียรติบัตรและกิจกรรม
+        <h3>
+            🏆 เกียรติบัตรและกิจกรรม
+        </h3>
 
-</h2>
+        <p>
+            พื้นที่สำหรับรวบรวมเกียรติบัตร
+            รางวัล และความสำเร็จต่าง ๆ
+            ที่ได้รับจากการเรียนและกิจกรรม
+        </p>
 
-
-<div class="certificate-grid">
-
-
-<div class="certificate">
-
-<div class="certificate-icon">
-    🏅
-</div>
-
-<h3>
-    การแข่งขันตอบปัญหาวิทยาศาสตร์
-</h3>
-
-<p>
-    เข้าร่วมการแข่งขันตอบปัญหาวิทยาศาสตร์
-    ณ โรงเรียนสวนกุหลาบวิทยาลัย
-    ปีการศึกษา 2568
-</p>
-
-</div>
-
-
-<div class="certificate">
-
-<div class="certificate-icon">
-    🏥
-</div>
-
-<h3>
-    ประสบการณ์ด้านการพยาบาล
-</h3>
-
-<p>
-    ฝึกประสบการณ์ในกลุ่มงานพยาบาล
-    ณ โรงพยาบาลบ้านบึง
-    ระหว่างวันที่ 9–13 มีนาคม 2569
-</p>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      GALLERY
-===================================================== -->
+========================= -->
 
 <section
     id="gallery"
-    class="reveal"
+    class="tab-page"
 >
 
-<h2 class="section-title">
+    <h2 class="section-title">
+        🖼️ Gallery
+    </h2>
 
-<span class="section-icon">
-    🖼️
-</span>
-
-Gallery
-
-</h2>
+    <p class="section-description">
+        รวมภาพกิจกรรมและผลงานที่สำคัญ
+    </p>
 
 
-<div class="gallery">
+    <div class="gallery">
 
+        <img
+            src="workA.png"
+            alt="Gallery 1"
+            onclick="openLightbox(this.src)"
+        >
 
-<div
-    class="gallery-item"
-    onclick="openImage('workA.png')"
->
+        <img
+            src="Work.png"
+            alt="Gallery 2"
+            onclick="openLightbox(this.src)"
+        >
 
-<img
-    src="workA.png"
-    alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
->
+        <img
+            src="workC.png"
+            alt="Gallery 3"
+            onclick="openLightbox(this.src)"
+        >
 
-<div class="gallery-overlay">
-    🔍
-</div>
-
-</div>
-
-
-<div
-    class="gallery-item"
-    onclick="openImage('Work.png')"
->
-
-<img
-    src="Work.png"
-    alt="กิจกรรมตักบาตร"
->
-
-<div class="gallery-overlay">
-    🔍
-</div>
-
-</div>
-
-
-<div
-    class="gallery-item"
-    onclick="openImage('workC.png')"
->
-
-<img
-    src="workC.png"
-    alt="ฝึกประสบการณ์โรงพยาบาล"
->
-
-<div class="gallery-overlay">
-    🔍
-</div>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- =========================
      GOALS
-===================================================== -->
+========================= -->
 
 <section
     id="goals"
-    class="goal reveal"
+    class="tab-page"
 >
 
-<div class="goal-icon">
-    🎯
-</div>
+    <h2 class="section-title">
+        🎯 เป้าหมาย
+    </h2>
 
-<h3>
-    เป้าหมายของผม
-</h3>
 
-<p>
-    เรียนให้สูง แล้วนำความรู้และประสบการณ์
-    ไปพัฒนาตัวเอง เพื่อให้สามารถมีงานที่มั่นคง
-    และสร้างอนาคตที่ดีให้กับตัวเอง
-</p>
+    <div class="goal-box">
+
+        <p>
+            เป้าหมายของผมคือ
+            เรียนให้สูงและพัฒนาความรู้ความสามารถ
+            ของตนเองอย่างต่อเนื่อง
+            เพื่อเตรียมพร้อมสำหรับการทำงานในอนาคต
+            และมีงานที่มั่นคง
+        </p>
+
+    </div>
 
 </section>
 
+
+<!-- =========================
+     UNIVERSITY
+========================= -->
+
+<section
+    id="university"
+    class="tab-page"
+>
+
+    <h2 class="section-title">
+        🏫 สถาบันเป้าหมาย
+    </h2>
+
+
+    <div class="university-card">
+
+
+        <img
+            src="Mahidol.PNG"
+            alt="มหาวิทยาลัยมหิดล"
+            class="university-image"
+        >
+
+
+        <div class="university-content">
+
+            <span class="target-badge">
+                ⭐ อันดับเป้าหมายที่ 1
+            </span>
+
+            <h3>
+                มหาวิทยาลัยมหิดล
+            </h3>
+
+            <p>
+                เนื่องจากมหาวิทยาลัยมหิดลคือหนึ่งใน
+                มหาวิทยาลัยชั้นนำของประเทศ
+                ตัวผมจึงตั้งเป้ามหาวิทยาลัยนี้
+                ให้เป็นอันดับแรก
+                อันเนื่องจากความพร้อมของอุปกรณ์
+                และหลักสูตรการศึกษาที่ตอบโจทย์
+                ของตัวผม
+            </p>
+
+            <p>
+                ผมจึงมีความตั้งใจที่จะพัฒนาตนเอง
+                ทั้งด้านความรู้ ความสามารถ
+                และประสบการณ์ต่าง ๆ
+                เพื่อเตรียมความพร้อม
+                สำหรับการศึกษาต่อในมหาวิทยาลัย
+                ที่ตั้งเป้าหมายไว้
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
 
 </main>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
-© 2569 Premmatad Prajong
-
-<br>
-
-Built with HTML • CSS • JavaScript 🚀
+    © 2026 Premmatad Portfolio
+    <br>
+    Designed with Aurora Glassmorphism ✦
 
 </footer>
 
 
-<!-- =====================================================
-     LIGHTBOX
-===================================================== -->
+<!-- LIGHTBOX -->
 
 <div
     class="lightbox"
     id="lightbox"
-    onclick="closeImage(event)"
+    onclick="closeLightbox()"
 >
 
-<button
-    class="lightbox-close"
-    onclick="closeImage()"
->
-    ×
-</button>
+    <div class="close-lightbox">
+        ×
+    </div>
 
-<img
-    id="lightboxImg"
-    src=""
-    alt="Gallery Preview"
->
+    <img
+        id="lightbox-img"
+        src=""
+        alt="Preview"
+        onclick="event.stopPropagation()"
+    >
 
 </div>
 
 
-<!-- =====================================================
-     BACK TO TOP
-===================================================== -->
-
-<button
-    id="topBtn"
-    onclick="window.scrollTo({
-        top:0,
-        behavior:'smooth'
-    })"
->
-    ↑
-</button>
-
-
 <script>
 
-/* =====================================================
+/* =========================
    MOUSE LIGHT
-===================================================== */
+========================= */
 
 const mouseLight =
     document.querySelector(".mouse-light");
 
-document.addEventListener(
-    "mousemove",
-    (e) => {
+document.addEventListener("mousemove", e => {
 
-        mouseLight.style.left =
-            e.clientX + "px";
+    mouseLight.style.left =
+        e.clientX + "px";
 
-        mouseLight.style.top =
-            e.clientY + "px";
+    mouseLight.style.top =
+        e.clientY + "px";
 
+});
+
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+const buttons =
+    document.querySelectorAll(".nav-btn");
+
+const pages =
+    document.querySelectorAll(".tab-page");
+
+
+function showPage(pageName){
+
+    const target =
+        document.getElementById(pageName);
+
+    if(!target){
+        pageName = "info";
     }
-);
+
+    pages.forEach(page => {
+
+        page.classList.remove("active");
+
+    });
+
+    buttons.forEach(button => {
+
+        button.classList.remove("active");
+
+    });
 
 
-/* =====================================================
-   MOBILE MENU
-===================================================== */
+    const activePage =
+        document.getElementById(pageName);
 
-const menuBtn =
-    document.getElementById("menuBtn");
-
-const nav =
-    document.getElementById("nav");
-
-
-menuBtn.addEventListener(
-    "click",
-    () => {
-
-        nav.classList.toggle("open");
-
-    }
-);
-
-
-nav.querySelectorAll("a").forEach(
-    link => {
-
-        link.addEventListener(
-            "click",
-            () => {
-
-                nav.classList.remove("open");
-
-            }
+    const activeButton =
+        document.querySelector(
+            `[data-page="${pageName}"]`
         );
 
+
+    if(activePage){
+        activePage.classList.add("active");
     }
-);
 
-
-/* =====================================================
-   ACTIVE NAV + URL HASH
-===================================================== */
-
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
-
-const navLinks =
-    document.querySelectorAll(
-        "nav a"
-    );
-
-
-function updateActive(){
-
-    let current = "";
-
-    const scrollPosition =
-        window.scrollY + 180;
-
-
-    sections.forEach(
-        section => {
-
-            if(
-                scrollPosition >=
-                section.offsetTop
-            ){
-
-                current =
-                    section.id;
-
-            }
-
-        }
-    );
-
-
-    navLinks.forEach(
-        link => {
-
-            link.classList.remove(
-                "active"
-            );
-
-
-            if(
-                link.getAttribute("href") ===
-                "#" + current
-            ){
-
-                link.classList.add(
-                    "active"
-                );
-
-            }
-
-        }
-    );
+    if(activeButton){
+        activeButton.classList.add("active");
+    }
 
 }
 
 
-window.addEventListener(
-    "scroll",
-    updateActive
-);
+/* =========================
+   BUTTON CLICK
+========================= */
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const page =
+            button.dataset.page;
+
+        location.hash = page;
+
+    });
+
+});
 
 
-/* =====================================================
-   OPEN HASH WHEN PAGE LOADS
-===================================================== */
+/* =========================
+   HASH CHANGE
+========================= */
 
-window.addEventListener(
-    "load",
-    () => {
+function loadFromHash(){
 
-        updateActive();
+    let page =
+        location.hash.replace("#","");
 
-        if(window.location.hash){
-
-            const target =
-                document.querySelector(
-                    window.location.hash
-                );
-
-            if(target){
-
-                setTimeout(
-                    () => {
-
-                        target.scrollIntoView({
-                            behavior:"smooth"
-                        });
-
-                    },
-                    150
-                );
-
-            }
-
-        }
-
+    if(!page){
+        page = "info";
     }
+
+    showPage(page);
+
+}
+
+
+/* เมื่อ URL เปลี่ยน */
+
+window.addEventListener(
+    "hashchange",
+    loadFromHash
 );
 
 
-/* =====================================================
-   REVEAL ON SCROLL
-===================================================== */
+/* โหลดครั้งแรก */
 
-const revealElements =
-    document.querySelectorAll(
-        ".reveal"
-    );
+loadFromHash();
 
 
-const revealObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if(
-                        entry.isIntersecting
-                    ){
-
-                        entry.target.classList.add(
-                            "show"
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold:.12
-        }
-    );
-
-
-revealElements.forEach(
-    element => {
-
-        revealObserver.observe(
-            element
-        );
-
-    }
-);
-
-
-/* =====================================================
-   SKILL BAR
-===================================================== */
-
-const skillSection =
-    document.getElementById(
-        "skills"
-    );
-
-
-const skillFills =
-    document.querySelectorAll(
-        ".skill-fill"
-    );
-
-
-const skillObserver =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if(
-                        entry.isIntersecting
-                    ){
-
-                        skillFills.forEach(
-                            bar => {
-
-                                bar.style.width =
-                                    bar.dataset.width;
-
-                            }
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold:.25
-        }
-    );
-
-
-skillObserver.observe(
-    skillSection
-);
-
-
-/* =====================================================
+/* =========================
    LIGHTBOX
-===================================================== */
+========================= */
 
-const lightbox =
-    document.getElementById(
-        "lightbox"
-    );
+function openLightbox(src){
 
-const lightboxImg =
-    document.getElementById(
-        "lightboxImg"
-    );
+    const lightbox =
+        document.getElementById("lightbox");
 
+    const image =
+        document.getElementById("lightbox-img");
 
-function openImage(src){
+    image.src = src;
 
-    lightboxImg.src =
-        src;
-
-    lightbox.classList.add(
-        "show"
-    );
-
-    document.body.style.overflow =
-        "hidden";
+    lightbox.classList.add("show");
 
 }
 
 
-function closeImage(event){
+function closeLightbox(){
 
-    if(
-        event &&
-        event.target === lightboxImg
-    ){
-
-        return;
-
-    }
-
-    lightbox.classList.remove(
-        "show"
-    );
-
-    document.body.style.overflow =
-        "";
+    document
+        .getElementById("lightbox")
+        .classList.remove("show");
 
 }
 
-
-/* =====================================================
-   ESC CLOSE LIGHTBOX
-===================================================== */
 
 document.addEventListener(
     "keydown",
-    event => {
+    e => {
 
-        if(
-            event.key === "Escape"
-        ){
-
-            closeImage();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-const topBtn =
-    document.getElementById(
-        "topBtn"
-    );
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if(
-            window.scrollY > 450
-        ){
-
-            topBtn.classList.add(
-                "show"
-            );
-
-        }else{
-
-            topBtn.classList.remove(
-                "show"
-            );
-
+        if(e.key === "Escape"){
+            closeLightbox();
         }
 
     }
@@ -3166,5 +1842,4 @@ window.addEventListener(
 </script>
 
 </body>
-
 </html>

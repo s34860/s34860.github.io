@@ -1407,9 +1407,6 @@ body.dark{
         font-size:22px;
     }
 
-
-    /* Gallery มือถือ */
-
     .gallery{
 
         grid-template-columns:1fr;
@@ -1421,7 +1418,6 @@ body.dark{
 
         height:230px;
     }
-
 
     .timeline{
 
@@ -1580,62 +1576,67 @@ body.dark{
 
 <div class="navbar">
 
-
     <button
+        type="button"
         class="nav-btn active"
-        onclick="showPage('information',this)"
+        onclick="showPage('information', this)"
     >
         👤 ข้อมูล
     </button>
 
 
     <button
+        type="button"
         class="nav-btn"
-        onclick="showPage('education',this)"
+        onclick="showPage('education', this)"
     >
         🎓 การศึกษา
     </button>
 
 
     <button
+        type="button"
         class="nav-btn"
-        onclick="showPage('skills',this)"
+        onclick="showPage('skills', this)"
     >
         💡 ความสามารถ
     </button>
 
 
     <button
+        type="button"
         class="nav-btn"
-        onclick="showPage('projects',this)"
+        onclick="showPage('projects', this)"
     >
         🚀 ผลงาน
     </button>
 
 
     <button
+        type="button"
         class="nav-btn"
-        onclick="showPage('certificates',this)"
+        onclick="showPage('certificates', this)"
     >
         🏆 เกียรติบัตร
     </button>
 
 
     <button
+        type="button"
         class="nav-btn"
-        onclick="showPage('gallery',this)"
+        onclick="showPage('gallery', this)"
     >
         🖼️ Gallery
     </button>
 
 
     <button
+        type="button"
         class="nav-btn"
-        onclick="showPage('goals',this)"
+        onclick="showPage('goals', this)"
     >
         🎯 เป้าหมาย
     </button>
-
 
 </div>
 
@@ -1647,6 +1648,7 @@ body.dark{
 <div class="back-area">
 
     <button
+        type="button"
         class="back-btn"
         onclick="goBack()"
     >
@@ -1664,7 +1666,6 @@ body.dark{
     id="information"
     class="page active"
 >
-
 
     <div class="card">
 
@@ -1801,7 +1802,6 @@ body.dark{
     class="page"
 >
 
-
     <div class="card">
 
         <h2>
@@ -1876,7 +1876,6 @@ body.dark{
 
     </div>
 
-
 </section>
 
 
@@ -1888,7 +1887,6 @@ body.dark{
     id="skills"
     class="page"
 >
-
 
     <div class="card">
 
@@ -2057,7 +2055,6 @@ body.dark{
     class="page"
 >
 
-
     <div class="card">
 
         <h2>
@@ -2170,7 +2167,6 @@ body.dark{
     id="certificates"
     class="page"
 >
-
 
     <div class="card">
 
@@ -2309,7 +2305,6 @@ body.dark{
 
     </div>
 
-
 </section>
 
 
@@ -2321,7 +2316,6 @@ body.dark{
     id="gallery"
     class="page"
 >
-
 
     <div class="card">
 
@@ -2366,7 +2360,6 @@ body.dark{
 
     </div>
 
-
 </section>
 
 
@@ -2378,7 +2371,6 @@ body.dark{
     id="goals"
     class="page"
 >
-
 
     <div class="card">
 
@@ -2507,8 +2499,8 @@ body.dark{
     onclick="closeImage()"
 >
 
-
     <button
+        type="button"
         class="close-viewer"
         onclick="closeImage(event)"
     >
@@ -2523,7 +2515,6 @@ body.dark{
         onclick="event.stopPropagation()"
     >
 
-
 </div>
 
 
@@ -2532,6 +2523,7 @@ body.dark{
 ===================================================== -->
 
 <button
+    type="button"
     id="topBtn"
     onclick="window.scrollTo({
         top:0,
@@ -2548,34 +2540,52 @@ body.dark{
    PAGE SWITCH
 ===================================================== */
 
-function showPage(pageId,button){
+function showPage(pageId, button){
 
-    document
-        .querySelectorAll(".page")
-        .forEach(page=>{
+    // ซ่อนทุกหน้า
+    const pages = document.querySelectorAll(".page");
 
-            page.classList.remove("active");
+    pages.forEach(function(page){
 
-        });
+        page.classList.remove("active");
 
-
-    document
-        .getElementById(pageId)
-        .classList.add("active");
+    });
 
 
-    document
-        .querySelectorAll(".nav-btn")
-        .forEach(btn=>{
-
-            btn.classList.remove("active");
-
-        });
+    // ค้นหาหน้าที่ต้องการเปิด
+    const targetPage =
+        document.getElementById(pageId);
 
 
-    button.classList.add("active");
+    // ถ้ามีหน้านี้ ให้เปิดหน้า
+    if(targetPage){
+
+        targetPage.classList.add("active");
+
+    }
 
 
+    // ลบ active จากปุ่มทั้งหมด
+    const buttons =
+        document.querySelectorAll(".nav-btn");
+
+
+    buttons.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+
+    // เพิ่ม active ให้ปุ่มที่ถูกกด
+    if(button){
+
+        button.classList.add("active");
+
+    }
+
+
+    // เลื่อนกลับด้านบน
     window.scrollTo({
 
         top:0,
@@ -2607,14 +2617,16 @@ function toggleCertificate(header){
 
 function openImage(src){
 
-    document
-        .getElementById("viewerImage")
-        .src=src;
+    const viewerImage =
+        document.getElementById("viewerImage");
+
+    const viewer =
+        document.getElementById("viewer");
 
 
-    document
-        .getElementById("viewer")
-        .classList.add("active");
+    viewerImage.src = src;
+
+    viewer.classList.add("active");
 
 }
 
@@ -2628,9 +2640,11 @@ function closeImage(event){
     }
 
 
-    document
-        .getElementById("viewer")
-        .classList.remove("active");
+    const viewer =
+        document.getElementById("viewer");
+
+
+    viewer.classList.remove("active");
 
 }
 
@@ -2643,7 +2657,7 @@ document.addEventListener(
     "keydown",
     function(event){
 
-        if(event.key==="Escape"){
+        if(event.key === "Escape"){
 
             closeImage();
 
@@ -2677,7 +2691,7 @@ function toggleDarkMode(){
 if(
     localStorage.getItem(
         "portfolioDarkMode"
-    )==="true"
+    ) === "true"
 ){
 
     document.body.classList.add("dark");
@@ -2691,7 +2705,7 @@ if(
 
 function goBack(){
 
-    if(window.history.length>1){
+    if(window.history.length > 1){
 
         window.history.back();
 
@@ -2716,13 +2730,13 @@ window.addEventListener(
             document.getElementById("topBtn");
 
 
-        if(window.scrollY>400){
+        if(window.scrollY > 400){
 
-            btn.style.display="block";
+            btn.style.display = "block";
 
         }else{
 
-            btn.style.display="none";
+            btn.style.display = "none";
 
         }
 
@@ -2750,3 +2764,9 @@ document.addEventListener(
             e.clientY + "px";
 
     }
+);
+
+</script>
+
+</body>
+</html>

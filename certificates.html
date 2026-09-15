@@ -3,161 +3,282 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Premmatad | เกียรติบัตร</title>
+    <title>
+        เกียรติบัตร | Premmatad
+    </title>
 
-<link
-rel="stylesheet"
-href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
 
 <body data-page="certificates">
 
-<div class="mouse-light"></div>
 
-<div class="particle p1"></div>
-<div class="particle p2"></div>
-<div class="particle p3"></div>
-<div class="particle p4"></div>
-<div class="particle p5"></div>
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
 
-
-<header>
-
-<div class="nav-wrap">
-
-<div class="logo">
-Premmatad
-</div>
+    <div class="mouse-light"></div>
 
 
-<nav class="menu">
+    <header>
 
-<a href="info.html" data-page="info">👤 ข้อมูล</a>
-<a href="education.html" data-page="education">🎓 การศึกษา</a>
-<a href="skills.html" data-page="skills">💡 ความสามารถ</a>
-<a href="works.html" data-page="works">🚀 ผลงาน</a>
-<a href="certificates.html" data-page="certificates">🏆 เกียรติบัตร</a>
-<a href="gallery.html" data-page="gallery">🖼️ Gallery</a>
-<a href="goals.html" data-page="goals">🎯 เป้าหมาย</a>
-<a href="university.html" data-page="university">🏫 สถาบันเป้าหมาย</a>
+        <div class="nav-wrap">
 
-</nav>
+            <div class="logo">
+                Premmatad
+            </div>
 
-</div>
+            <nav class="menu">
 
-</header>
+                <a href="info.html" data-page="info">
+                    👤 ข้อมูล
+                </a>
 
+                <a href="education.html" data-page="education">
+                    🎓 การศึกษา
+                </a>
 
-<main class="page-container">
+                <a href="skills.html" data-page="skills">
+                    💡 ความสามารถ
+                </a>
 
-<section class="page-card">
+                <a href="works.html" data-page="works">
+                    🚀 ผลงาน
+                </a>
 
+                <a
+                    href="certificates.html"
+                    data-page="certificates"
+                >
+                    🏆 เกียรติบัตร
+                </a>
 
-<div class="page-title">
+                <a href="gallery.html" data-page="gallery">
+                    🖼️ Gallery
+                </a>
 
-<span class="emoji">
-🏆
-</span>
+                <a href="goals.html" data-page="goals">
+                    🎯 เป้าหมาย
+                </a>
 
-<h1>
-เกียรติบัตร
-</h1>
+                <a href="university.html" data-page="university">
+                    🏫 สถาบันเป้าหมาย
+                </a>
 
-<p>
-ใบประกาศนียบัตรและกิจกรรมต่าง ๆ
-</p>
+            </nav>
 
-</div>
+        </div>
 
-
-<div class="certificate-grid">
-
-
-<div
-class="image-card"
-onclick="openLightbox('workA.png')">
-
-<img
-src="workA.png"
-alt="เกียรติบัตรการแข่งขันตอบปัญหาวิทยาศาสตร์">
-
-<div class="image-caption">
-🔬 เกียรติบัตรการแข่งขันตอบปัญหาวิทยาศาสตร์
-</div>
-
-</div>
+    </header>
 
 
-<div
-class="image-card"
-onclick="openLightbox('Work.png')">
+    <main class="page-container">
 
-<img
-src="Work.png"
-alt="เกียรติบัตรกิจกรรมทำบุญ">
-
-<div class="image-caption">
-🙏 เกียรติบัตรกิจกรรมทำบุญตักบาตร
-</div>
-
-</div>
+        <section class="page-card">
 
 
-<div
-class="image-card"
-onclick="openLightbox('workC.png')">
+            <div class="page-title">
 
-<img
-src="workC.png"
-alt="เกียรติบัตรฝึกประสบการณ์">
+                <span class="emoji">
+                    🏆
+                </span>
 
-<div class="image-caption">
-🏥 เกียรติบัตรฝึกประสบการณ์โรงพยาบาล
-</div>
+                <h1>
+                    เกียรติบัตร
+                </h1>
 
-</div>
+                <p>
+                    เกียรติบัตรและกิจกรรมที่เข้าร่วม
+                </p>
 
-
-</div>
-
-</section>
-
-</main>
+            </div>
 
 
-<div
-class="lightbox"
-id="lightbox">
+            <div class="certificate-grid">
 
 
-<button
-class="lightbox-close"
-onclick="closeLightbox()">
-✕
-</button>
+                <!-- CERTIFICATE A -->
+
+                <div
+                    class="image-card"
+                    onclick="openCertificatePopup('certA')"
+                >
+
+                    <img
+                        src="workA.png"
+                        alt="เกียรติบัตรการแข่งขันตอบปัญหาวิทยาศาสตร์"
+                    >
+
+                    <div class="image-caption">
+
+                        <strong>
+                            🧪 การแข่งขันตอบปัญหาวิทยาศาสตร์
+                        </strong>
+
+                        <br>
+
+                        การแข่งขันตอบปัญหาวิทยาศาสตร์
+                        ณ โรงเรียนสวนกุหลาบวิทยาลัย
+                        ปีการศึกษา 2568
+
+                    </div>
+
+                </div>
 
 
-<img
-id="lightboxImage"
-src=""
-alt="ขยายภาพ">
+                <!-- CERTIFICATE B -->
 
-</div>
+                <div
+                    class="image-card"
+                    onclick="openCertificatePopup('certB')"
+                >
+
+                    <img
+                        src="Work.png"
+                        alt="เกียรติบัตรกิจกรรมทำบุญตักบาตร"
+                    >
+
+                    <div class="image-caption">
+
+                        <strong>
+                            🙏 กิจกรรมทำบุญตักบาตร
+                        </strong>
+
+                        <br>
+
+                        กิจกรรมทำบุญตักบาตร
+                        วันครบรอบก่อตั้งโรงเรียน
+                        วันที่ 1 กันยายน 2569
+                        พร้อมผู้ปกครอง
+
+                    </div>
+
+                </div>
 
 
-<footer>
-© 2569 Premmatad | Portfolio
-</footer>
+                <!-- CERTIFICATE C -->
+
+                <div
+                    class="image-card"
+                    onclick="openCertificatePopup('certC')"
+                >
+
+                    <img
+                        src="workC.png"
+                        alt="เกียรติบัตรฝึกประสบการณ์"
+                    >
+
+                    <div class="image-caption">
+
+                        <strong>
+                            🏥 ฝึกประสบการณ์ในกลุ่มงานพยาบาล
+                        </strong>
+
+                        <br>
+
+                        ณ โรงพยาบาลบ้านบึง
+                        วันที่ 9–13 มีนาคม 2569
+
+                    </div>
+
+                </div>
 
 
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         CERTIFICATE POPUP
+    ========================== -->
+
+    <div
+        class="work-popup"
+        id="certificatePopup"
+    >
+
+        <div class="work-popup-box">
+
+
+            <div class="work-popup-header">
+
+                <h2 id="certificatePopupTitle">
+                    เกียรติบัตร
+                </h2>
+
+                <button
+                    class="popup-close"
+                    onclick="closeCertificatePopup()"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div
+                class="work-popup-images"
+                id="certificatePopupImages"
+            ></div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+    >
+
+        <button
+            class="lightbox-close"
+            onclick="closeLightbox()"
+        >
+            ✕
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="รูปภาพขนาดใหญ่"
+        >
+
+    </div>
+
+
+    <footer>
+        © 2569 Premmatad | Portfolio
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
 <script src="script.js"></script>
 
 </body>

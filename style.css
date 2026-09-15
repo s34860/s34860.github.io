@@ -1695,3 +1695,38 @@ footer{
 
 }
 }
+/* =====================================================
+   CERTIFICATE CLICK EFFECT
+===================================================== */
+
+.certificate-card{
+    cursor:pointer;
+    user-select:none;
+    -webkit-tap-highlight-color:transparent;
+}
+
+.certificate-card:active{
+    transform:scale(.98);
+}
+
+.click-hint{
+    margin-top:10px;
+    font-size:.78rem;
+    color:rgba(147,197,253,.8);
+    opacity:.85;
+}
+
+.certificate-card:hover .click-hint{
+    opacity:1;
+}
+
+
+/* ป้องกัน popup ถูก element อื่นบัง */
+
+#certificatePopup{
+    z-index:1000;
+}
+
+#lightbox{
+    z-index:2000;
+}

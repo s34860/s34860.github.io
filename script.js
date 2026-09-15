@@ -1,65 +1,495 @@
 /* =====================================================
-   WAIT FOR PAGE
+   PORTFOLIO SCRIPT.JS
+   รวมระบบทั้งหมดไว้ในไฟล์เดียว
 ===================================================== */
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =================================================
+
+    /* =====================================================
        ACTIVE MENU
-    ================================================= */
+    ===================================================== */
 
-    const currentPage = document.body.dataset.page;
+    const currentPage =
+        document.body.dataset.page;
 
-    document.querySelectorAll(".menu a").forEach(function (link) {
+    document
+        .querySelectorAll(".menu a")
+        .forEach(function (link) {
 
-        if (link.dataset.page === currentPage) {
-            link.classList.add("active");
-        }
+            if (
+                link.dataset.page ===
+                currentPage
+            ) {
 
-    });
+                link.classList.add("active");
+
+            }
+
+        });
 
 
-    /* =================================================
+    /* =====================================================
        MOUSE LIGHT
-    ================================================= */
+    ===================================================== */
 
-    const mouseLight = document.querySelector(".mouse-light");
+    const mouseLight =
+        document.querySelector(".mouse-light");
 
     if (mouseLight) {
 
-        document.addEventListener("mousemove", function (e) {
+        document.addEventListener(
+            "mousemove",
+            function (e) {
 
-            mouseLight.style.left = e.clientX + "px";
-            mouseLight.style.top = e.clientY + "px";
+                mouseLight.style.left =
+                    e.clientX + "px";
 
-        });
+                mouseLight.style.top =
+                    e.clientY + "px";
+
+            }
+        );
 
     }
 
 
-    /* =================================================
-       CERTIFICATE POPUP
-    ================================================= */
+    /* =====================================================
+       LIGHTBOX ELEMENTS
+    ===================================================== */
 
-    const certificateCards =
-        document.querySelectorAll(".certificate-card");
+    const lightbox =
+        document.getElementById("lightbox");
 
-    const certificatePopup =
-        document.getElementById("certificatePopup");
+    const lightboxImage =
+        document.getElementById("lightboxImage");
 
-    const certificatePopupTitle =
-        document.getElementById("certificatePopupTitle");
-
-    const certificatePopupImages =
-        document.getElementById("certificatePopupImages");
-
-    const certificatePopupClose =
-        document.getElementById("certificatePopupClose");
+    const lightboxClose =
+        document.getElementById("lightboxClose");
 
 
-    /* -----------------------------------------------
-       DATA
-    ------------------------------------------------ */
+    /* =====================================================
+       OPEN LIGHTBOX
+    ===================================================== */
+
+    function openLightbox(src) {
+
+        if (
+            !lightbox ||
+            !lightboxImage
+        ) {
+
+            console.error(
+                "ไม่พบ Lightbox"
+            );
+
+            return;
+
+        }
+
+        lightboxImage.src = src;
+
+        lightbox.classList.add("show");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+
+    /* =====================================================
+       CLOSE LIGHTBOX
+    ===================================================== */
+
+    function closeLightbox() {
+
+        if (!lightbox) {
+            return;
+        }
+
+        lightbox.classList.remove("show");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        if (lightboxImage) {
+
+            lightboxImage.src = "";
+
+        }
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    /* =====================================================
+       LIGHTBOX CLOSE BUTTON
+    ===================================================== */
+
+    if (lightboxClose) {
+
+        lightboxClose.addEventListener(
+            "click",
+            function () {
+
+                closeLightbox();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       LIGHTBOX CLICK OUTSIDE
+    ===================================================== */
+
+    if (lightbox) {
+
+        lightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    lightbox
+                ) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       WORK POPUP DATA
+    ===================================================== */
+
+    const workPopupData = {
+
+        workA: {
+
+            title:
+                "🚀 การแข่งขันตอบปัญหาวิทยาศาสตร์",
+
+            images: [
+
+                {
+                    src: "workA.png",
+
+                    label:
+                        "การแข่งขันตอบปัญหาวิทยาศาสตร์ ณ โรงเรียนสวนกุหลาบวิทยาลัย ปีการศึกษา 2568"
+                }
+
+            ]
+
+        },
+
+
+        workB: {
+
+            title:
+                "🙏 กิจกรรมทำบุญตักบาตร",
+
+            images: [
+
+                {
+                    src: "Work.png",
+
+                    label:
+                        "กิจกรรมทำบุญตักบาตร วันครบรอบก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569 พร้อมผู้ปกครอง"
+                },
+
+                {
+                    src: "Bun.JPG",
+
+                    label:
+                        "ภาพกิจกรรมเพิ่มเติม"
+                }
+
+            ]
+
+        },
+
+
+        workC: {
+
+            title:
+                "🏥 ฝึกประสบการณ์ในกลุ่มงานพยาบาล",
+
+            images: [
+
+                {
+                    src: "workC.png",
+
+                    label:
+                        "ฝึกประสบการณ์ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง วันที่ 9–13 มีนาคม 2569"
+                },
+
+                {
+                    src: "Hos.JPG",
+
+                    label:
+                        "ภาพกิจกรรมเพิ่มเติม"
+                }
+
+            ]
+
+        }
+
+    };
+
+
+    /* =====================================================
+       WORK POPUP ELEMENTS
+    ===================================================== */
+
+    const workPopup =
+        document.getElementById("workPopup");
+
+    const workPopupTitle =
+        document.getElementById("workPopupTitle");
+
+    const workPopupImages =
+        document.getElementById("workPopupImages");
+
+
+    /* =====================================================
+       OPEN WORK POPUP
+    ===================================================== */
+
+    function openWorkPopup(workId) {
+
+        const data =
+            workPopupData[workId];
+
+        if (!data) {
+
+            console.error(
+                "ไม่พบข้อมูลผลงาน:",
+                workId
+            );
+
+            return;
+
+        }
+
+        if (
+            !workPopup ||
+            !workPopupTitle ||
+            !workPopupImages
+        ) {
+
+            console.error(
+                "ไม่พบ Work Popup ในหน้านี้"
+            );
+
+            return;
+
+        }
+
+
+        workPopupTitle.textContent =
+            data.title;
+
+
+        workPopupImages.innerHTML =
+            "";
+
+
+        data.images.forEach(
+            function (image) {
+
+                const item =
+                    document.createElement("div");
+
+                item.className =
+                    "work-popup-item";
+
+
+                const img =
+                    document.createElement("img");
+
+                img.src =
+                    image.src;
+
+                img.alt =
+                    image.label;
+
+                img.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.stopPropagation();
+
+                        openLightbox(
+                            image.src
+                        );
+
+                    }
+                );
+
+
+                const text =
+                    document.createElement("p");
+
+                text.textContent =
+                    image.label;
+
+
+                item.appendChild(img);
+
+                item.appendChild(text);
+
+                workPopupImages.appendChild(
+                    item
+                );
+
+            }
+        );
+
+
+        workPopup.classList.add(
+            "show"
+        );
+
+        workPopup.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+
+    /* =====================================================
+       CLOSE WORK POPUP
+    ===================================================== */
+
+    function closeWorkPopup() {
+
+        if (!workPopup) {
+            return;
+        }
+
+        workPopup.classList.remove(
+            "show"
+        );
+
+        workPopup.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    /* =====================================================
+       WORK CARDS
+    ===================================================== */
+
+    const workCards =
+        document.querySelectorAll(
+            ".work-card"
+        );
+
+
+    workCards.forEach(
+        function (card) {
+
+            card.addEventListener(
+                "click",
+                function () {
+
+                    const workId =
+                        card.dataset.work;
+
+                    if (workId) {
+
+                        openWorkPopup(
+                            workId
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       WORK POPUP CLOSE BUTTON
+    ===================================================== */
+
+    const workPopupClose =
+        document.getElementById(
+            "workPopupClose"
+        );
+
+
+    if (workPopupClose) {
+
+        workPopupClose.addEventListener(
+            "click",
+            function () {
+
+                closeWorkPopup();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       WORK POPUP CLICK OUTSIDE
+    ===================================================== */
+
+    if (workPopup) {
+
+        workPopup.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    workPopup
+                ) {
+
+                    closeWorkPopup();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CERTIFICATE POPUP DATA
+    ===================================================== */
 
     const certificateData = {
 
@@ -136,82 +566,131 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    /* -----------------------------------------------
+    /* =====================================================
+       CERTIFICATE POPUP ELEMENTS
+    ===================================================== */
+
+    const certificatePopup =
+        document.getElementById(
+            "certificatePopup"
+        );
+
+    const certificatePopupTitle =
+        document.getElementById(
+            "certificatePopupTitle"
+        );
+
+    const certificatePopupImages =
+        document.getElementById(
+            "certificatePopupImages"
+        );
+
+
+    /* =====================================================
        OPEN CERTIFICATE POPUP
-    ------------------------------------------------ */
+    ===================================================== */
 
-    function openCertificatePopup(certificateId) {
+    function openCertificatePopup(
+        certificateId
+    ) {
 
-        const data = certificateData[certificateId];
+        const data =
+            certificateData[
+                certificateId
+            ];
+
 
         if (!data) {
+
             console.error(
-                "ไม่พบข้อมูล certificate:",
+                "ไม่พบข้อมูลเกียรติบัตร:",
                 certificateId
             );
 
             return;
+
         }
 
-        if (!certificatePopup) {
+
+        if (
+            !certificatePopup ||
+            !certificatePopupTitle ||
+            !certificatePopupImages
+        ) {
+
             console.error(
-                "ไม่พบ #certificatePopup"
+                "ไม่พบ Certificate Popup ในหน้านี้"
             );
 
             return;
+
         }
+
 
         certificatePopupTitle.textContent =
             data.title;
 
-        certificatePopupImages.innerHTML = "";
+
+        certificatePopupImages.innerHTML =
+            "";
 
 
-        data.images.forEach(function (image) {
+        data.images.forEach(
+            function (image) {
 
-            const item =
-                document.createElement("div");
+                const item =
+                    document.createElement("div");
 
-            item.className =
-                "work-popup-item";
-
-
-            const img =
-                document.createElement("img");
-
-            img.src = image.src;
-
-            img.alt = image.label;
-
-            img.addEventListener(
-                "click",
-                function (event) {
-
-                    event.stopPropagation();
-
-                    openLightbox(image.src);
-
-                }
-            );
+                item.className =
+                    "work-popup-item";
 
 
-            const text =
-                document.createElement("p");
+                const img =
+                    document.createElement("img");
 
-            text.textContent =
-                image.label;
+                img.src =
+                    image.src;
 
-
-            item.appendChild(img);
-
-            item.appendChild(text);
-
-            certificatePopupImages.appendChild(item);
-
-        });
+                img.alt =
+                    image.label;
 
 
-        certificatePopup.classList.add("show");
+                img.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.stopPropagation();
+
+                        openLightbox(
+                            image.src
+                        );
+
+                    }
+                );
+
+
+                const text =
+                    document.createElement("p");
+
+                text.textContent =
+                    image.label;
+
+
+                item.appendChild(img);
+
+                item.appendChild(text);
+
+                certificatePopupImages.appendChild(
+                    item
+                );
+
+            }
+        );
+
+
+        certificatePopup.classList.add(
+            "show"
+        );
 
         certificatePopup.setAttribute(
             "aria-hidden",
@@ -225,9 +704,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* -----------------------------------------------
+    /* =====================================================
        CLOSE CERTIFICATE POPUP
-    ------------------------------------------------ */
+    ===================================================== */
 
     function closeCertificatePopup() {
 
@@ -235,7 +714,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        certificatePopup.classList.remove("show");
+
+        certificatePopup.classList.remove(
+            "show"
+        );
+
 
         certificatePopup.setAttribute(
             "aria-hidden",
@@ -249,57 +732,82 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* -----------------------------------------------
-       CLICK CERTIFICATE CARDS
-    ------------------------------------------------ */
+    /* =====================================================
+       CERTIFICATE CARDS
+    ===================================================== */
 
-    certificateCards.forEach(function (card) {
-
-        card.addEventListener(
-            "click",
-            function () {
-
-                const certificateId =
-                    card.dataset.certificate;
-
-                openCertificatePopup(
-                    certificateId
-                );
-
-            }
+    const certificateCards =
+        document.querySelectorAll(
+            ".certificate-card"
         );
 
 
-        /* รองรับการกด Enter */
-        card.addEventListener(
-            "keydown",
-            function (event) {
+    certificateCards.forEach(
+        function (card) {
 
-                if (
-                    event.key === "Enter" ||
-                    event.key === " "
-                ) {
-
-                    event.preventDefault();
+            card.addEventListener(
+                "click",
+                function () {
 
                     const certificateId =
                         card.dataset.certificate;
 
-                    openCertificatePopup(
-                        certificateId
-                    );
+                    if (certificateId) {
+
+                        openCertificatePopup(
+                            certificateId
+                        );
+
+                    }
 
                 }
+            );
 
-            }
+
+            /* ---------------------------------------------
+               ENTER / SPACE
+            --------------------------------------------- */
+
+            card.addEventListener(
+                "keydown",
+                function (event) {
+
+                    if (
+                        event.key === "Enter" ||
+                        event.key === " "
+                    ) {
+
+                        event.preventDefault();
+
+                        const certificateId =
+                            card.dataset.certificate;
+
+                        if (certificateId) {
+
+                            openCertificatePopup(
+                                certificateId
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CERTIFICATE POPUP CLOSE BUTTON
+    ===================================================== */
+
+    const certificatePopupClose =
+        document.getElementById(
+            "certificatePopupClose"
         );
 
-    });
-
-
-    /* -----------------------------------------------
-       CLOSE BUTTON
-    ------------------------------------------------ */
 
     if (certificatePopupClose) {
 
@@ -315,9 +823,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* -----------------------------------------------
-       CLICK OUTSIDE CERTIFICATE POPUP
-    ------------------------------------------------ */
+    /* =====================================================
+       CERTIFICATE POPUP CLICK OUTSIDE
+    ===================================================== */
 
     if (certificatePopup) {
 
@@ -340,124 +848,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =================================================
-       LIGHTBOX
-    ================================================= */
-
-    const lightbox =
-        document.getElementById("lightbox");
-
-    const lightboxImage =
-        document.getElementById("lightboxImage");
-
-    const lightboxClose =
-        document.getElementById("lightboxClose");
-
-
-    function openLightbox(src) {
-
-        if (
-            !lightbox ||
-            !lightboxImage
-        ) {
-
-            return;
-
-        }
-
-        lightboxImage.src = src;
-
-        lightbox.classList.add("show");
-
-        lightbox.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-    }
-
-
-    function closeLightbox() {
-
-        if (!lightbox) {
-            return;
-        }
-
-        lightbox.classList.remove("show");
-
-        lightbox.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-        if (lightboxImage) {
-            lightboxImage.src = "";
-        }
-
-    }
-
-
-    /* -----------------------------------------------
-       LIGHTBOX CLOSE BUTTON
-    ------------------------------------------------ */
-
-    if (lightboxClose) {
-
-        lightboxClose.addEventListener(
-            "click",
-            function () {
-
-                closeLightbox();
-
-            }
-        );
-
-    }
-
-
-    /* -----------------------------------------------
-       CLICK OUTSIDE LIGHTBOX
-    ------------------------------------------------ */
-
-    if (lightbox) {
-
-        lightbox.addEventListener(
-            "click",
-            function (event) {
-
-                if (
-                    event.target ===
-                    lightbox
-                ) {
-
-                    closeLightbox();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /* =================================================
+    /* =====================================================
        ESC KEY
-    ================================================= */
+    ===================================================== */
 
     document.addEventListener(
         "keydown",
         function (event) {
 
-            if (event.key !== "Escape") {
+            if (
+                event.key !==
+                "Escape"
+            ) {
+
                 return;
+
             }
 
 
-            /* ปิด Lightbox ก่อน */
+            /* ---------------------------------------------
+               ปิด Lightbox ก่อน
+            --------------------------------------------- */
 
             if (
                 lightbox &&
-                lightbox.classList.contains("show")
+                lightbox.classList.contains(
+                    "show"
+                )
             ) {
 
                 closeLightbox();
@@ -467,22 +884,43 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* แล้วค่อยปิด Certificate Popup */
+            /* ---------------------------------------------
+               ปิด Work Popup
+            --------------------------------------------- */
+
+            if (
+                workPopup &&
+                workPopup.classList.contains(
+                    "show"
+                )
+            ) {
+
+                closeWorkPopup();
+
+                return;
+
+            }
+
+
+            /* ---------------------------------------------
+               ปิด Certificate Popup
+            --------------------------------------------- */
 
             if (
                 certificatePopup &&
-                certificatePopup.classList.contains("show")
+                certificatePopup.classList.contains(
+                    "show"
+                )
             ) {
 
                 closeCertificatePopup();
+
+                return;
 
             }
 
         }
     );
 
-
-});
-    }
 
 });

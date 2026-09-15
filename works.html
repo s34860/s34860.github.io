@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Premmatad | ผลงาน</title>
+
+<link
+rel="stylesheet"
+href="style.css">
+
+</head>
+
+
+<body data-page="works">
+
+<div class="mouse-light"></div>
+
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
+
+
+<header>
+
+<div class="nav-wrap">
+
+<div class="logo">
+Premmatad
+</div>
+
+
+<nav class="menu">
+
+<a href="info.html" data-page="info">👤 ข้อมูล</a>
+
+<a href="education.html" data-page="education">🎓 การศึกษา</a>
+
+<a href="skills.html" data-page="skills">💡 ความสามารถ</a>
+
+<a href="works.html" data-page="works">🚀 ผลงาน</a>
+
+<a href="certificates.html" data-page="certificates">🏆 เกียรติบัตร</a>
+
+<a href="gallery.html" data-page="gallery">🖼️ Gallery</a>
+
+<a href="goals.html" data-page="goals">🎯 เป้าหมาย</a>
+
+<a href="university.html" data-page="university">🏫 สถาบันเป้าหมาย</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main class="page-container">
+
+<section class="page-card">
+
+
+<div class="page-title">
+
+<span class="emoji">
+🚀
+</span>
+
+<h1>
+ผลงาน
+</h1>
+
+<p>
+กิจกรรมและประสบการณ์ที่ฉันภาคภูมิใจ
+</p>
+
+</div>
+
+
+<div class="work-grid">
+
+
+<div
+class="work-card"
+onclick="openWorkPopup('workA')">
+
+<img
+src="workA.png"
+alt="การแข่งขันตอบปัญหาวิทยาศาสตร์">
+
+
+<div class="work-content">
+
+<h3>
+🔬 การแข่งขันตอบปัญหาวิทยาศาสตร์
+</h3>
+
+<p>
+การแข่งขันตอบปัญหาวิทยาศาสตร์
+ณ โรงเรียนสวนกุหลาบวิทยาลัย
+ปีการศึกษา 2568
+</p>
+
+</div>
+
+</div>
+
+
+<div
+class="work-card"
+onclick="openWorkPopup('workB')">
+
+<img
+src="Work.png"
+alt="กิจกรรมทำบุญตักบาตร">
+
+
+<div class="work-content">
+
+<h3>
+🙏 กิจกรรมทำบุญตักบาตร
+</h3>
+
+<p>
+กิจกรรมทำบุญตักบาตร
+วันครบรอบก่อตั้งโรงเรียน
+วันที่ 1 กันยายน 2569
+พร้อมผู้ปกครอง
+</p>
+
+</div>
+
+</div>
+
+
+<div
+class="work-card"
+onclick="openWorkPopup('workC')">
+
+<img
+src="workC.png"
+alt="ฝึกประสบการณ์โรงพยาบาล">
+
+
+<div class="work-content">
+
+<h3>
+🏥 ฝึกประสบการณ์ในกลุ่มงานพยาบาล
+</h3>
+
+<p>
+ฝึกประสบการณ์ในกลุ่มงานพยาบาล
+ณ โรงพยาบาลบ้านบึง
+วันที่ 9–13 มีนาคม 2569
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- WORK POPUP -->
+
+<div
+class="work-popup"
+id="workPopup">
+
+
+<div class="work-popup-box">
+
+
+<div class="work-popup-header">
+
+<h2 id="workPopupTitle">
+ผลงาน
+</h2>
+
+
+<button
+class="popup-close"
+onclick="closeWorkPopup()">
+
+✕
+
+</button>
+
+</div>
+
+
+<div
+class="work-popup-images"
+id="workPopupImages">
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- LIGHTBOX -->
+
+<div
+class="lightbox"
+id="lightbox">
+
+
+<button
+class="lightbox-close"
+onclick="closeLightbox()">
+
+✕
+
+</button>
+
+
+<img
+id="lightboxImage"
+src=""
+alt="ขยายภาพ">
+
+
+</div>
+
+
+<footer>
+© 2569 Premmatad | Portfolio
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

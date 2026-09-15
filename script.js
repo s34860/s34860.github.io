@@ -1,8 +1,7 @@
 /* =====================================================
-   PORTFOLIO SCRIPT.JS
-   รวมระบบทั้งหมดไว้ในไฟล์เดียว
+   PREMMATAD PORTFOLIO
+   COMPLETE SCRIPT.JS
 ===================================================== */
-
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -41,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.addEventListener(
             "mousemove",
-            function (e) {
+            function (event) {
 
                 mouseLight.style.left =
-                    e.clientX + "px";
+                    event.clientX + "px";
 
                 mouseLight.style.top =
-                    e.clientY + "px";
+                    event.clientY + "px";
 
             }
         );
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       LIGHTBOX ELEMENTS
+       LIGHTBOX
     ===================================================== */
 
     const lightbox =
@@ -68,10 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const lightboxClose =
         document.getElementById("lightboxClose");
 
-
-    /* =====================================================
-       OPEN LIGHTBOX
-    ===================================================== */
 
     function openLightbox(src) {
 
@@ -103,17 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       CLOSE LIGHTBOX
-    ===================================================== */
-
     function closeLightbox() {
 
         if (!lightbox) {
             return;
         }
 
-        lightbox.classList.remove("show");
+        lightbox.classList.remove(
+            "show"
+        );
 
         lightbox.setAttribute(
             "aria-hidden",
@@ -132,10 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       LIGHTBOX CLOSE BUTTON
-    ===================================================== */
-
     if (lightboxClose) {
 
         lightboxClose.addEventListener(
@@ -149,10 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =====================================================
-       LIGHTBOX CLICK OUTSIDE
-    ===================================================== */
 
     if (lightbox) {
 
@@ -176,10 +161,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       WORK POPUP DATA
+       WORK POPUP
     ===================================================== */
 
-    const workPopupData = {
+    const workPopup =
+        document.getElementById(
+            "workPopup"
+        );
+
+    const workPopupTitle =
+        document.getElementById(
+            "workPopupTitle"
+        );
+
+    const workPopupImages =
+        document.getElementById(
+            "workPopupImages"
+        );
+
+    const workPopupClose =
+        document.getElementById(
+            "workPopupClose"
+        );
+
+
+    const workData = {
 
         workA: {
 
@@ -189,7 +195,8 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
 
                 {
-                    src: "workA.png",
+                    src:
+                        "workA.png",
 
                     label:
                         "การแข่งขันตอบปัญหาวิทยาศาสตร์ ณ โรงเรียนสวนกุหลาบวิทยาลัย ปีการศึกษา 2568"
@@ -208,14 +215,16 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
 
                 {
-                    src: "Work.png",
+                    src:
+                        "Work.png",
 
                     label:
                         "กิจกรรมทำบุญตักบาตร วันครบรอบก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569 พร้อมผู้ปกครอง"
                 },
 
                 {
-                    src: "Bun.JPG",
+                    src:
+                        "Bun.JPG",
 
                     label:
                         "ภาพกิจกรรมเพิ่มเติม"
@@ -234,14 +243,16 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
 
                 {
-                    src: "workC.png",
+                    src:
+                        "workC.png",
 
                     label:
                         "ฝึกประสบการณ์ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง วันที่ 9–13 มีนาคม 2569"
                 },
 
                 {
-                    src: "Hos.JPG",
+                    src:
+                        "Hos.JPG",
 
                     label:
                         "ภาพกิจกรรมเพิ่มเติม"
@@ -254,28 +265,11 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    /* =====================================================
-       WORK POPUP ELEMENTS
-    ===================================================== */
-
-    const workPopup =
-        document.getElementById("workPopup");
-
-    const workPopupTitle =
-        document.getElementById("workPopupTitle");
-
-    const workPopupImages =
-        document.getElementById("workPopupImages");
-
-
-    /* =====================================================
-       OPEN WORK POPUP
-    ===================================================== */
-
     function openWorkPopup(workId) {
 
         const data =
-            workPopupData[workId];
+            workData[workId];
+
 
         if (!data) {
 
@@ -287,6 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
 
         }
+
 
         if (
             !workPopup ||
@@ -315,14 +310,18 @@ document.addEventListener("DOMContentLoaded", function () {
             function (image) {
 
                 const item =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
 
                 item.className =
                     "work-popup-item";
 
 
                 const img =
-                    document.createElement("img");
+                    document.createElement(
+                        "img"
+                    );
 
                 img.src =
                     image.src;
@@ -345,7 +344,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const text =
-                    document.createElement("p");
+                    document.createElement(
+                        "p"
+                    );
 
                 text.textContent =
                     image.label;
@@ -378,10 +379,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       CLOSE WORK POPUP
-    ===================================================== */
-
     function closeWorkPopup() {
 
         if (!workPopup) {
@@ -403,48 +400,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       WORK CARDS
-    ===================================================== */
+    document
+        .querySelectorAll(".work-card")
+        .forEach(
+            function (card) {
 
-    const workCards =
-        document.querySelectorAll(
-            ".work-card"
-        );
+                card.addEventListener(
+                    "click",
+                    function () {
 
+                        const workId =
+                            card.dataset.work;
 
-    workCards.forEach(
-        function (card) {
+                        if (workId) {
 
-            card.addEventListener(
-                "click",
-                function () {
+                            openWorkPopup(
+                                workId
+                            );
 
-                    const workId =
-                        card.dataset.work;
-
-                    if (workId) {
-
-                        openWorkPopup(
-                            workId
-                        );
+                        }
 
                     }
+                );
 
-                }
-            );
-
-        }
-    );
-
-
-    /* =====================================================
-       WORK POPUP CLOSE BUTTON
-    ===================================================== */
-
-    const workPopupClose =
-        document.getElementById(
-            "workPopupClose"
+            }
         );
 
 
@@ -461,10 +440,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* =====================================================
-       WORK POPUP CLICK OUTSIDE
-    ===================================================== */
 
     if (workPopup) {
 
@@ -488,8 +463,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CERTIFICATE POPUP DATA
+       CERTIFICATE POPUP
     ===================================================== */
+
+    const certificatePopup =
+        document.getElementById(
+            "certificatePopup"
+        );
+
+    const certificatePopupTitle =
+        document.getElementById(
+            "certificatePopupTitle"
+        );
+
+    const certificatePopupImages =
+        document.getElementById(
+            "certificatePopupImages"
+        );
+
+    const certificatePopupClose =
+        document.getElementById(
+            "certificatePopupClose"
+        );
+
 
     const certificateData = {
 
@@ -501,7 +497,8 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
 
                 {
-                    src: "workA.png",
+                    src:
+                        "workA.png",
 
                     label:
                         "การแข่งขันตอบปัญหาวิทยาศาสตร์ ณ โรงเรียนสวนกุหลาบวิทยาลัย ปีการศึกษา 2568"
@@ -520,14 +517,16 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
 
                 {
-                    src: "Work.png",
+                    src:
+                        "Work.png",
 
                     label:
                         "กิจกรรมทำบุญตักบาตร วันครบรอบก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569"
                 },
 
                 {
-                    src: "Bun.JPG",
+                    src:
+                        "Bun.JPG",
 
                     label:
                         "ภาพกิจกรรมเพิ่มเติม"
@@ -546,14 +545,16 @@ document.addEventListener("DOMContentLoaded", function () {
             images: [
 
                 {
-                    src: "workC.png",
+                    src:
+                        "workC.png",
 
                     label:
                         "ฝึกประสบการณ์ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง วันที่ 9–13 มีนาคม 2569"
                 },
 
                 {
-                    src: "Hos.JPG",
+                    src:
+                        "Hos.JPG",
 
                     label:
                         "ภาพกิจกรรมเพิ่มเติม"
@@ -566,33 +567,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    /* =====================================================
-       CERTIFICATE POPUP ELEMENTS
-    ===================================================== */
-
-    const certificatePopup =
-        document.getElementById(
-            "certificatePopup"
-        );
-
-    const certificatePopupTitle =
-        document.getElementById(
-            "certificatePopupTitle"
-        );
-
-    const certificatePopupImages =
-        document.getElementById(
-            "certificatePopupImages"
-        );
-
-
-    /* =====================================================
-       OPEN CERTIFICATE POPUP
-    ===================================================== */
-
     function openCertificatePopup(
         certificateId
     ) {
+
+        console.log(
+            "Certificate clicked:",
+            certificateId
+        );
+
 
         const data =
             certificateData[
@@ -619,7 +602,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ) {
 
             console.error(
-                "ไม่พบ Certificate Popup ในหน้านี้"
+                "ไม่พบ Certificate Popup ใน HTML"
             );
 
             return;
@@ -639,14 +622,18 @@ document.addEventListener("DOMContentLoaded", function () {
             function (image) {
 
                 const item =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
 
                 item.className =
                     "work-popup-item";
 
 
                 const img =
-                    document.createElement("img");
+                    document.createElement(
+                        "img"
+                    );
 
                 img.src =
                     image.src;
@@ -670,7 +657,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 const text =
-                    document.createElement("p");
+                    document.createElement(
+                        "p"
+                    );
 
                 text.textContent =
                     image.label;
@@ -697,16 +686,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "false"
         );
 
-
         document.body.style.overflow =
             "hidden";
 
     }
 
-
-    /* =====================================================
-       CLOSE CERTIFICATE POPUP
-    ===================================================== */
 
     function closeCertificatePopup() {
 
@@ -733,13 +717,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CERTIFICATE CARDS
+       CERTIFICATE CARD CLICK
     ===================================================== */
 
     const certificateCards =
         document.querySelectorAll(
             ".certificate-card"
         );
+
+
+    console.log(
+        "จำนวนการ์ดเกียรติบัตร:",
+        certificateCards.length
+    );
 
 
     certificateCards.forEach(
@@ -763,10 +753,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             );
 
-
-            /* ---------------------------------------------
-               ENTER / SPACE
-            --------------------------------------------- */
 
             card.addEventListener(
                 "keydown",
@@ -800,14 +786,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CERTIFICATE POPUP CLOSE BUTTON
+       CERTIFICATE CLOSE BUTTON
     ===================================================== */
-
-    const certificatePopupClose =
-        document.getElementById(
-            "certificatePopupClose"
-        );
-
 
     if (certificatePopupClose) {
 
@@ -824,7 +804,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CERTIFICATE POPUP CLICK OUTSIDE
+       CERTIFICATE POPUP OUTSIDE CLICK
     ===================================================== */
 
     if (certificatePopup) {
@@ -866,9 +846,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* ---------------------------------------------
-               ปิด Lightbox ก่อน
-            --------------------------------------------- */
+            /* -----------------------------
+               LIGHTBOX
+            ----------------------------- */
 
             if (
                 lightbox &&
@@ -884,9 +864,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* ---------------------------------------------
-               ปิด Work Popup
-            --------------------------------------------- */
+            /* -----------------------------
+               WORK POPUP
+            ----------------------------- */
 
             if (
                 workPopup &&
@@ -902,9 +882,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /* ---------------------------------------------
-               ปิด Certificate Popup
-            --------------------------------------------- */
+            /* -----------------------------
+               CERTIFICATE POPUP
+            ----------------------------- */
 
             if (
                 certificatePopup &&
@@ -922,5 +902,46 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
+
+    /* =====================================================
+       GENERAL IMAGE LIGHTBOX
+       สำหรับ Gallery / University / Image Card
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".gallery-grid img, .university img"
+        )
+        .forEach(
+            function (img) {
+
+                img.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.stopPropagation();
+
+                        if (img.src) {
+
+                            openLightbox(
+                                img.src
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       READY
+    ===================================================== */
+
+    console.log(
+        "✅ Premmatad Portfolio พร้อมใช้งาน"
+    );
 
 });

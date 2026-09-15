@@ -3,193 +3,236 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>Premmatad | Gallery</title>
+    <title>
+        Gallery | Premmatad
+    </title>
 
-<link
-rel="stylesheet"
-href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
 
 <body data-page="gallery">
 
-<div class="mouse-light"></div>
 
-<div class="particle p1"></div>
-<div class="particle p2"></div>
-<div class="particle p3"></div>
-<div class="particle p4"></div>
-<div class="particle p5"></div>
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
 
-
-<header>
-
-<div class="nav-wrap">
-
-<div class="logo">
-Premmatad
-</div>
+    <div class="mouse-light"></div>
 
 
-<nav class="menu">
+    <header>
 
-<a href="info.html" data-page="info">👤 ข้อมูล</a>
-<a href="education.html" data-page="education">🎓 การศึกษา</a>
-<a href="skills.html" data-page="skills">💡 ความสามารถ</a>
-<a href="works.html" data-page="works">🚀 ผลงาน</a>
-<a href="certificates.html" data-page="certificates">🏆 เกียรติบัตร</a>
-<a href="gallery.html" data-page="gallery">🖼️ Gallery</a>
-<a href="goals.html" data-page="goals">🎯 เป้าหมาย</a>
-<a href="university.html" data-page="university">🏫 สถาบันเป้าหมาย</a>
+        <div class="nav-wrap">
 
-</nav>
+            <div class="logo">
+                Premmatad
+            </div>
 
-</div>
+            <nav class="menu">
 
-</header>
+                <a href="info.html" data-page="info">
+                    👤 ข้อมูล
+                </a>
 
+                <a href="education.html" data-page="education">
+                    🎓 การศึกษา
+                </a>
 
-<main class="page-container">
+                <a href="skills.html" data-page="skills">
+                    💡 ความสามารถ
+                </a>
 
-<section class="page-card">
+                <a href="works.html" data-page="works">
+                    🚀 ผลงาน
+                </a>
 
+                <a href="certificates.html" data-page="certificates">
+                    🏆 เกียรติบัตร
+                </a>
 
-<div class="page-title">
+                <a href="gallery.html" data-page="gallery">
+                    🖼️ Gallery
+                </a>
 
-<span class="emoji">
-🖼️
-</span>
+                <a href="goals.html" data-page="goals">
+                    🎯 เป้าหมาย
+                </a>
 
-<h1>
-Gallery
-</h1>
+                <a href="university.html" data-page="university">
+                    🏫 สถาบันเป้าหมาย
+                </a>
 
-<p>
-รวมภาพกิจกรรมและผลงาน
-</p>
+            </nav>
 
-</div>
+        </div>
 
-
-<div class="gallery-grid">
-
-
-<div
-class="image-card"
-onclick="openLightbox('workA.png')">
-
-<img
-src="workA.png"
-alt="การแข่งขันตอบปัญหาวิทยาศาสตร์">
-
-<div class="image-caption">
-🔬 การแข่งขันตอบปัญหาวิทยาศาสตร์
-</div>
-
-</div>
+    </header>
 
 
-<div
-class="image-card"
-onclick="openLightbox('Work.png')">
+    <main class="page-container">
 
-<img
-src="Work.png"
-alt="กิจกรรมทำบุญตักบาตร">
-
-<div class="image-caption">
-🙏 กิจกรรมทำบุญตักบาตร
-</div>
-
-</div>
+        <section class="page-card">
 
 
-<div
-class="image-card"
-onclick="openLightbox('Bun.JPG')">
+            <div class="page-title">
 
-<img
-src="Bun.JPG"
-alt="ภาพกิจกรรมทำบุญเพิ่มเติม">
+                <span class="emoji">
+                    🖼️
+                </span>
 
-<div class="image-caption">
-📸 ภาพกิจกรรมเพิ่มเติม
-</div>
+                <h1>
+                    Gallery
+                </h1>
 
-</div>
+                <p>
+                    รวมภาพกิจกรรมและผลงาน
+                </p>
 
-
-<div
-class="image-card"
-onclick="openLightbox('workC.png')">
-
-<img
-src="workC.png"
-alt="ฝึกประสบการณ์โรงพยาบาล">
-
-<div class="image-caption">
-🏥 ฝึกประสบการณ์โรงพยาบาล
-</div>
-
-</div>
+            </div>
 
 
-<div
-class="image-card"
-onclick="openLightbox('Hos.JPG')">
-
-<img
-src="Hos.JPG"
-alt="ภาพฝึกประสบการณ์เพิ่มเติม">
-
-<div class="image-caption">
-🩺 ภาพฝึกประสบการณ์เพิ่มเติม
-</div>
-
-</div>
+            <div class="gallery-grid">
 
 
-</div>
+                <div
+                    class="image-card"
+                    onclick="openLightbox('workA.png')"
+                >
 
-</section>
+                    <img
+                        src="workA.png"
+                        alt="การแข่งขันตอบปัญหาวิทยาศาสตร์"
+                    >
 
-</main>
+                    <div class="image-caption">
+                        การแข่งขันตอบปัญหาวิทยาศาสตร์
+                    </div>
 
-
-<div
-class="lightbox"
-id="lightbox">
-
-
-<button
-class="lightbox-close"
-onclick="closeLightbox()">
-✕
-</button>
+                </div>
 
 
-<img
-id="lightboxImage"
-src=""
-alt="ขยายภาพ">
+                <div
+                    class="image-card"
+                    onclick="openLightbox('Work.png')"
+                >
 
-</div>
+                    <img
+                        src="Work.png"
+                        alt="กิจกรรมทำบุญตักบาตร"
+                    >
+
+                    <div class="image-caption">
+                        กิจกรรมทำบุญตักบาตร
+                    </div>
+
+                </div>
 
 
-<footer>
-© 2569 Premmatad | Portfolio
-</footer>
+                <div
+                    class="image-card"
+                    onclick="openLightbox('Bun.JPG')"
+                >
+
+                    <img
+                        src="Bun.JPG"
+                        alt="ภาพกิจกรรมเพิ่มเติม"
+                    >
+
+                    <div class="image-caption">
+                        ภาพกิจกรรมเพิ่มเติม
+                    </div>
+
+                </div>
 
 
-<script src="script.js"></script>
+                <div
+                    class="image-card"
+                    onclick="openLightbox('workC.png')"
+                >
 
+                    <img
+                        src="workC.png"
+                        alt="ฝึกประสบการณ์"
+                    >
+
+                    <div class="image-caption">
+                        ฝึกประสบการณ์ในกลุ่มงานพยาบาล
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="image-card"
+                    onclick="openLightbox('Hos.JPG')"
+                >
+
+                    <img
+                        src="Hos.JPG"
+                        alt="ภาพกิจกรรมโรงพยาบาล"
+                    >
+
+                    <div class="image-caption">
+                        ภาพกิจกรรมเพิ่มเติม
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- LIGHTBOX -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+    >
+
+        <button
+            class="lightbox-close"
+            onclick="closeLightbox()"
+        >
+            ✕
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="รูปภาพขนาดใหญ่"
+        >
+
+    </div>
+
+
+    <footer>
+        © 2569 Premmatad | Portfolio
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
 </body>
 
 </html>

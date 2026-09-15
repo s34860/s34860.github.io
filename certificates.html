@@ -2,28 +2,13 @@
 <html lang="th">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        เกียรติบัตร | Premmatad
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกียรติบัตร | Premmatad</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body data-page="certificates">
-
 
     <div class="particle p1"></div>
     <div class="particle p2"></div>
@@ -33,9 +18,7 @@
 
     <div class="mouse-light"></div>
 
-
     <header>
-
         <div class="nav-wrap">
 
             <div class="logo">
@@ -60,10 +43,7 @@
                     🚀 ผลงาน
                 </a>
 
-                <a
-                    href="certificates.html"
-                    data-page="certificates"
-                >
+                <a href="certificates.html" data-page="certificates">
                     🏆 เกียรติบัตร
                 </a>
 
@@ -82,14 +62,12 @@
             </nav>
 
         </div>
-
     </header>
 
 
     <main class="page-container">
 
         <section class="page-card">
-
 
             <div class="page-title">
 
@@ -110,12 +88,12 @@
 
             <div class="certificate-grid">
 
-
-                <!-- CERTIFICATE A -->
-
+                <!-- ใบที่ 1 -->
                 <div
-                    class="image-card"
-                    onclick="openCertificatePopup('certA')"
+                    class="image-card certificate-card"
+                    data-certificate="certA"
+                    role="button"
+                    tabindex="0"
                 >
 
                     <img
@@ -135,16 +113,21 @@
                         ณ โรงเรียนสวนกุหลาบวิทยาลัย
                         ปีการศึกษา 2568
 
+                        <div class="click-hint">
+                            👆 กดเพื่อดูรายละเอียด
+                        </div>
+
                     </div>
 
                 </div>
 
 
-                <!-- CERTIFICATE B -->
-
+                <!-- ใบที่ 2 -->
                 <div
-                    class="image-card"
-                    onclick="openCertificatePopup('certB')"
+                    class="image-card certificate-card"
+                    data-certificate="certB"
+                    role="button"
+                    tabindex="0"
                 >
 
                     <img
@@ -165,16 +148,21 @@
                         วันที่ 1 กันยายน 2569
                         พร้อมผู้ปกครอง
 
+                        <div class="click-hint">
+                            👆 กดเพื่อดูรายละเอียด
+                        </div>
+
                     </div>
 
                 </div>
 
 
-                <!-- CERTIFICATE C -->
-
+                <!-- ใบที่ 3 -->
                 <div
-                    class="image-card"
-                    onclick="openCertificatePopup('certC')"
+                    class="image-card certificate-card"
+                    data-certificate="certC"
+                    role="button"
+                    tabindex="0"
                 >
 
                     <img
@@ -193,10 +181,13 @@
                         ณ โรงพยาบาลบ้านบึง
                         วันที่ 9–13 มีนาคม 2569
 
+                        <div class="click-hint">
+                            👆 กดเพื่อดูรายละเอียด
+                        </div>
+
                     </div>
 
                 </div>
-
 
             </div>
 
@@ -205,17 +196,17 @@
     </main>
 
 
-    <!-- =========================
+    <!-- =========================================
          CERTIFICATE POPUP
-    ========================== -->
+    ========================================== -->
 
     <div
         class="work-popup"
         id="certificatePopup"
+        aria-hidden="true"
     >
 
         <div class="work-popup-box">
-
 
             <div class="work-popup-header">
 
@@ -224,38 +215,41 @@
                 </h2>
 
                 <button
+                    type="button"
                     class="popup-close"
-                    onclick="closeCertificatePopup()"
+                    id="certificatePopupClose"
+                    aria-label="ปิด"
                 >
                     ✕
                 </button>
 
             </div>
 
-
             <div
                 class="work-popup-images"
                 id="certificatePopupImages"
             ></div>
-
 
         </div>
 
     </div>
 
 
-    <!-- =========================
+    <!-- =========================================
          LIGHTBOX
-    ========================== -->
+    ========================================== -->
 
     <div
         class="lightbox"
         id="lightbox"
+        aria-hidden="true"
     >
 
         <button
+            type="button"
             class="lightbox-close"
-            onclick="closeLightbox()"
+            id="lightboxClose"
+            aria-label="ปิดรูป"
         >
             ✕
         </button>
@@ -274,13 +268,7 @@
     </footer>
 
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 
 </body>
-
-</html>
-<script src="script.js"></script>
-
-</body>
-
 </html>

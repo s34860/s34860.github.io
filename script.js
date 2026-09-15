@@ -1,6 +1,6 @@
-/* =========================
+/* =====================================================
    ACTIVE MENU
-========================= */
+===================================================== */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -9,14 +9,15 @@ document.addEventListener(
         const currentPage =
             document.body.dataset.page;
 
+
         document
             .querySelectorAll(".menu a")
             .forEach(link => {
 
-                if(
+                if (
                     link.dataset.page ===
                     currentPage
-                ){
+                ) {
 
                     link.classList.add(
                         "active"
@@ -30,9 +31,9 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    MOUSE LIGHT
-========================= */
+===================================================== */
 
 const mouseLight =
     document.querySelector(
@@ -40,7 +41,7 @@ const mouseLight =
     );
 
 
-if(mouseLight){
+if (mouseLight) {
 
     document.addEventListener(
         "mousemove",
@@ -58,11 +59,11 @@ if(mouseLight){
 }
 
 
-/* =========================
+/* =====================================================
    LIGHTBOX
-========================= */
+===================================================== */
 
-function openLightbox(src){
+function openLightbox(src) {
 
     const lightbox =
         document.getElementById(
@@ -75,10 +76,10 @@ function openLightbox(src){
         );
 
 
-    if(
+    if (
         !lightbox ||
         !image
-    ){
+    ) {
 
         return;
 
@@ -87,6 +88,7 @@ function openLightbox(src){
 
     image.src = src;
 
+
     lightbox.classList.add(
         "show"
     );
@@ -94,7 +96,7 @@ function openLightbox(src){
 }
 
 
-function closeLightbox(){
+function closeLightbox() {
 
     const lightbox =
         document.getElementById(
@@ -102,7 +104,7 @@ function closeLightbox(){
         );
 
 
-    if(lightbox){
+    if (lightbox) {
 
         lightbox.classList.remove(
             "show"
@@ -113,22 +115,26 @@ function closeLightbox(){
 }
 
 
-/* =========================
+/* =====================================================
    WORK POPUP DATA
-========================= */
+===================================================== */
 
 const workPopupData = {
 
-    workA:{
+
+    workA: {
 
         title:
             "การแข่งขันตอบปัญหาวิทยาศาสตร์",
 
-        images:[
+        images: [
 
             {
-                src:"workA.png",
-                label:"ภาพกิจกรรม"
+                src:
+                    "workA.png",
+
+                label:
+                    "ภาพกิจกรรม"
             }
 
         ]
@@ -136,21 +142,27 @@ const workPopupData = {
     },
 
 
-    workB:{
+    workB: {
 
         title:
             "กิจกรรมทำบุญตักบาตร",
 
-        images:[
+        images: [
 
             {
-                src:"Work.png",
-                label:"ภาพกิจกรรมหลัก"
+                src:
+                    "Work.png",
+
+                label:
+                    "ภาพกิจกรรมหลัก"
             },
 
             {
-                src:"Bun.JPG",
-                label:"ภาพเพิ่มเติม"
+                src:
+                    "Bun.JPG",
+
+                label:
+                    "ภาพเพิ่มเติม"
             }
 
         ]
@@ -158,21 +170,27 @@ const workPopupData = {
     },
 
 
-    workC:{
+    workC: {
 
         title:
             "ฝึกประสบการณ์ในกลุ่มงานพยาบาล",
 
-        images:[
+        images: [
 
             {
-                src:"workC.png",
-                label:"ภาพกิจกรรมหลัก"
+                src:
+                    "workC.png",
+
+                label:
+                    "ภาพกิจกรรมหลัก"
             },
 
             {
-                src:"Hos.JPG",
-                label:"ภาพเพิ่มเติม"
+                src:
+                    "Hos.JPG",
+
+                label:
+                    "ภาพเพิ่มเติม"
             }
 
         ]
@@ -182,17 +200,17 @@ const workPopupData = {
 };
 
 
-/* =========================
+/* =====================================================
    OPEN WORK POPUP
-========================= */
+===================================================== */
 
-function openWorkPopup(workId){
+function openWorkPopup(workId) {
 
     const data =
         workPopupData[workId];
 
 
-    if(!data){
+    if (!data) {
 
         return;
 
@@ -215,11 +233,11 @@ function openWorkPopup(workId){
         );
 
 
-    if(
+    if (
         !popup ||
         !title ||
         !container
-    ){
+    ) {
 
         return;
 
@@ -276,11 +294,11 @@ function openWorkPopup(workId){
 }
 
 
-/* =========================
+/* =====================================================
    CLOSE WORK POPUP
-========================= */
+===================================================== */
 
-function closeWorkPopup(){
+function closeWorkPopup() {
 
     const popup =
         document.getElementById(
@@ -288,7 +306,7 @@ function closeWorkPopup(){
         );
 
 
-    if(popup){
+    if (popup) {
 
         popup.classList.remove(
             "show"
@@ -299,28 +317,251 @@ function closeWorkPopup(){
 }
 
 
-/* =========================
-   CLICK OUTSIDE POPUP
-========================= */
+/* =====================================================
+   CERTIFICATE POPUP DATA
+===================================================== */
+
+const certificatePopupData = {
+
+
+    certA: {
+
+        title:
+            "🏆 เกียรติบัตรการแข่งขันตอบปัญหาวิทยาศาสตร์",
+
+        images: [
+
+            {
+                src:
+                    "workA.png",
+
+                label:
+                    "การแข่งขันตอบปัญหาวิทยาศาสตร์ ณ โรงเรียนสวนกุหลาบวิทยาลัย ปีการศึกษา 2568"
+            }
+
+        ]
+
+    },
+
+
+    certB: {
+
+        title:
+            "🙏 เกียรติบัตรกิจกรรมทำบุญตักบาตร",
+
+        images: [
+
+            {
+                src:
+                    "Work.png",
+
+                label:
+                    "กิจกรรมทำบุญตักบาตร วันครบรอบก่อตั้งโรงเรียน วันที่ 1 กันยายน 2569"
+            },
+
+            {
+                src:
+                    "Bun.JPG",
+
+                label:
+                    "ภาพกิจกรรมเพิ่มเติม"
+            }
+
+        ]
+
+    },
+
+
+    certC: {
+
+        title:
+            "🏥 เกียรติบัตรฝึกประสบการณ์ในกลุ่มงานพยาบาล",
+
+        images: [
+
+            {
+                src:
+                    "workC.png",
+
+                label:
+                    "ฝึกประสบการณ์ในกลุ่มงานพยาบาล ณ โรงพยาบาลบ้านบึง วันที่ 9–13 มีนาคม 2569"
+            },
+
+            {
+                src:
+                    "Hos.JPG",
+
+                label:
+                    "ภาพกิจกรรมเพิ่มเติม"
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* =====================================================
+   OPEN CERTIFICATE POPUP
+===================================================== */
+
+function openCertificatePopup(
+    certificateId
+) {
+
+    const data =
+        certificatePopupData[
+            certificateId
+        ];
+
+
+    if (!data) {
+
+        return;
+
+    }
+
+
+    const popup =
+        document.getElementById(
+            "certificatePopup"
+        );
+
+    const title =
+        document.getElementById(
+            "certificatePopupTitle"
+        );
+
+    const container =
+        document.getElementById(
+            "certificatePopupImages"
+        );
+
+
+    if (
+        !popup ||
+        !title ||
+        !container
+    ) {
+
+        return;
+
+    }
+
+
+    title.textContent =
+        data.title;
+
+
+    container.innerHTML = "";
+
+
+    data.images.forEach(
+        image => {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "work-popup-item";
+
+
+            item.innerHTML = `
+
+                <img
+                    src="${image.src}"
+                    alt="${image.label}"
+                    onclick="openLightbox('${image.src}')"
+                >
+
+                <p>
+                    ${image.label}
+                </p>
+
+            `;
+
+
+            container.appendChild(
+                item
+            );
+
+        }
+    );
+
+
+    popup.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE CERTIFICATE POPUP
+===================================================== */
+
+function closeCertificatePopup() {
+
+    const popup =
+        document.getElementById(
+            "certificatePopup"
+        );
+
+
+    if (popup) {
+
+        popup.classList.remove(
+            "show"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE POPUPS
+===================================================== */
 
 document.addEventListener(
     "click",
     e => {
 
-        if(
+
+        /* WORK POPUP */
+
+        if (
             e.target.id ===
             "workPopup"
-        ){
+        ) {
 
             closeWorkPopup();
 
         }
 
 
-        if(
+        /* CERTIFICATE POPUP */
+
+        if (
+            e.target.id ===
+            "certificatePopup"
+        ) {
+
+            closeCertificatePopup();
+
+        }
+
+
+        /* LIGHTBOX */
+
+        if (
             e.target.id ===
             "lightbox"
-        ){
+        ) {
 
             closeLightbox();
 
@@ -330,19 +571,24 @@ document.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    ESC KEY
-========================= */
+===================================================== */
 
 document.addEventListener(
     "keydown",
     e => {
 
-        if(e.key === "Escape"){
+        if (
+            e.key ===
+            "Escape"
+        ) {
 
             closeLightbox();
 
             closeWorkPopup();
+
+            closeCertificatePopup();
 
         }
 
